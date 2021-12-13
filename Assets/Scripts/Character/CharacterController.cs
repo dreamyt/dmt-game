@@ -21,6 +21,9 @@ public class CharacterController : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
 
     static public float x_coordinate;
+
+    public int Health = 10;
+
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -88,5 +91,20 @@ public class CharacterController : MonoBehaviour
         isGrounded = m_Grounded;
         FacingRight = m_FacingRight;
         x_coordinate = m_Rigidbody2D.position.x;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Heart")
+        {
+            //if (Health < 10)
+            //{
+                //pickAudio.Play();
+                Destroy(collision.gameObject);
+                Health += 1;
+                //HealthNum.text = Health.ToString();
+            //}
+
+        }
     }
 }
