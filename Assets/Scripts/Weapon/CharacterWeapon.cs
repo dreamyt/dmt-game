@@ -13,6 +13,7 @@ public class CharacterWeapon : CharacterComponents
     // The reference of Weapon being used by player
     public Weapon CurrentWeapon { get; set; }
 
+    public bool shootingAllowed = true;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -30,9 +31,12 @@ public class CharacterWeapon : CharacterComponents
 
     protected override void HandleInput()
     {
-        if (Input.GetKey("j"))
+        if (shootingAllowed)
         {
-            Shoot();
+            if (Input.GetKey("j"))
+            {
+                Shoot();
+            }
         }
     }
 
@@ -53,4 +57,13 @@ public class CharacterWeapon : CharacterComponents
         CurrentWeapon.SetOwner(character);
     }
 
+    public void ShowWeapon()
+    {
+        CurrentWeapon.ShowWeapon();
+    }
+
+    public void RemoveWeapon()
+    {
+        CurrentWeapon.RemoveWeapon();
+    }
 }

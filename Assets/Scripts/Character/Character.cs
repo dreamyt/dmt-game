@@ -9,6 +9,7 @@ public class Character : MonoBehaviour
     public Vector3 spawnPosition;
     private float spawnPositionCheckInterval = 10.0f;//spawnPosition won't be update within 10 second
     private float nextCheckTime;
+    private CharacterWeapon weapon;
     //basic movement
     private Rigidbody2D rigid;
     private CharacterController cc;
@@ -31,14 +32,15 @@ public class Character : MonoBehaviour
     float getHitTime = 0.4f;
     //record the time when get hit animation ends
     float HitFinishTime;
-    float rendererEndInterval = 1.5f;//after how many seconds, the rigid simulation is ended
-    float rendererEndTime;//Time to end the rigid simulation
+    private float rendererEndInterval = 1.5f;
+    private float rendererEndTime;
     bool check = false;//used to ensure death check only execute once
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         cc = GetComponent<CharacterController>();
+        weapon = GetComponent<CharacterWeapon>();
         groundCheck = transform.Find("GroundCheck");
         anim = GetComponent<Animator>();
         previousHealth = health;
@@ -165,9 +167,11 @@ public class Character : MonoBehaviour
     {
         if (!check)
         {
-            check = true;
             rendererEndTime = Time.time + rendererEndInterval;
+            check = true;
             rigid.simulated = false;
+            weapon.RemoveWeapon();
+            weapon.shootingAllowed = false;
             /*BGM.Stop();
             Gameover.Play();
             //destroy weapon
@@ -181,8 +185,6 @@ public class Character : MonoBehaviour
         {
             sr.enabled = false;
         }
-        
- 
     }
     //Revive from the previous revive point
     private void Revive()
@@ -194,6 +196,8 @@ public class Character : MonoBehaviour
         weapon.ShootingAllowed = true;
         deadNotice.SetActive(false);
         */
+        weapon.ShowWeapon();
+        weapon.shootingAllowed = true;
         dead = false;
         rigid.simulated = true;
         sr.enabled = true;
@@ -213,6 +217,38 @@ public class Character : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // 被敌人Enemy碰到
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            // 如果在空中，要先检测是不是脚底踩到敌人
+            if (!cc.isGrounded)
+            {
+                float w = 0.3f;
+                if (transform.localScale.x > 1.1f)
+                {
+                    w = 0.5f;
+                }
+                Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.position, new Vector2(w, 0.2f), 0, LayerMask.GetMask("Enemy"));
+                foreach (Collider2D c in colliders)
+                {
+                    RoleDie rd = c.GetComponent<RoleDie>();
+                    if (rd != null)
+                    {
+                        rd.Die(c.transform);
+                        // 反弹
+                        rigid.velocity = new Vector2(rigid.velocity.x, 0);
+                        rigid.AddForce(new Vector2(0, 300));
+                    }
+                }
+                if (colliders.Length > 0)
+                {
+                    return;
+                }
+            }
 
+            // 运行到这里说明没踩到敌人，碰撞死亡
+            dead = true;
+          
+        }
     }
 }

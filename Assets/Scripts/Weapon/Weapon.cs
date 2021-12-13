@@ -28,5 +28,14 @@ public class Weapon : MonoBehaviour
     {
         WeaponOwner = owner;
     }
+    public void ShowWeapon()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void RemoveWeapon()
+    {
+        gameObject.SetActive(false);
+    }
 
 }
