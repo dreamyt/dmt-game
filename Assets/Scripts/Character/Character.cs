@@ -22,8 +22,9 @@ public class Character : MonoBehaviour
     public float health = 10.0f;
     private float previousHealth;//health when in the revive point
     public float shield = 0;
-    private float previousShield ;//shiedl when in the revive point
+    private float previousShield ;//shield when in the revive point
     bool dead = false;
+    //bool attack = false;  /* Moved to CharacterWeapon. */
     bool freezeInput = false;
     public bool getHit = false;
     //how long the get hit animation lasts
@@ -65,9 +66,12 @@ public class Character : MonoBehaviour
         {
             if (!freezeInput)
             {
-                move = Input.GetAxis("Horizontal");
-                jump = Input.GetKey("k");
-                dead = Input.GetKey("z");
+                move = Input.GetAxis("Horizontal");         // Get horizontal movement
+                jump = Input.GetKey("k");                   // Press K to jump
+                dead = Input.GetKey("z");                   // Press Z to suicide
+
+                /* use CharacterWeapon to deal with attack.
+                 * attack = Input.GetKey("j");                 // Press J to attack (either melee or ranged) */
             }
             else
             {
