@@ -14,7 +14,6 @@ public class Type1 : MonoBehaviour
     [SerializeField] private float offsetX=0;
     [SerializeField] private float offsetY=0;
     [SerializeField] private float dist = 1;
-        
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();

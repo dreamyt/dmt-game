@@ -6,6 +6,7 @@ public class Type2 : MonoBehaviour
 {
     Rigidbody2D rigid;
     Animator anim;
+    private RoleDie die;
     public bool FacingRight = true;
     float face;
     public float speed = 3;
@@ -19,11 +20,11 @@ public class Type2 : MonoBehaviour
     //animation control
     private bool attacking=false;
     private bool hurt=false;
-    private bool death=false;
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        die = GetComponent<RoleDie>();
         if (FacingRight)
             face = transform.localScale.x;
         else
@@ -42,55 +43,74 @@ public class Type2 : MonoBehaviour
 
     private void Update()
     {
-        bool forward_down = Physics2D.Raycast(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(face, -1), 1.3f*dist, LayerMask.GetMask("Tilemap_Platform"));
-        bool forward = Physics2D.Raycast(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(face, 0), 1.2f*dist, LayerMask.GetMask("Tilemap_Platform"));
-        bool down = Physics2D.Raycast(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(0, -1), 1f*dist, LayerMask.GetMask("Tilemap_Platform"));
-        bool player_behind = Physics2D.Raycast(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(-face, 0), detectRange*dist, LayerMask.GetMask("Player"));
-        bool attack_range = Physics2D.Raycast(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(face, 0), attackRange*dist, LayerMask.GetMask("Player"));
-        DebugLine(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(face, -1), 1.3f*dist, forward_down);
-        DebugLine(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(face, 0), 1.2f*dist, forward);
-        DebugLine(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(0, -1), 1f*dist, down);
-        DebugLine(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(-face, 0), detectRange*dist, player_behind);
-        DebugLine(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(face, 0), attackRange*dist, attack_range);
-        bool flip = false;
-
-        if (down)
+        if (!die.death)
         {
-            if (player_behind)
+            bool forward_down =
+                Physics2D.Raycast(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
+                    new Vector2(face, -1), 1.3f * dist, LayerMask.GetMask("Tilemap_Platform"));
+            bool forward =
+                Physics2D.Raycast(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
+                    new Vector2(face, 0), 1.2f * dist, LayerMask.GetMask("Tilemap_Platform"));
+            bool down = Physics2D.Raycast(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
+                new Vector2(0, -1), 1f * dist, LayerMask.GetMask("Tilemap_Platform"));
+            bool player_behind =
+                Physics2D.Raycast(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
+                    new Vector2(-face, 0), detectRange * dist, LayerMask.GetMask("Player"));
+            bool attack_range =
+                Physics2D.Raycast(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
+                    new Vector2(face, 0), attackRange * dist, LayerMask.GetMask("Player"));
+            DebugLine(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
+                new Vector2(face, -1), 1.3f * dist, forward_down);
+            DebugLine(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY), new Vector2(face, 0),
+                1.2f * dist, forward);
+            DebugLine(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY), new Vector2(0, -1),
+                1f * dist, down);
+            DebugLine(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
+                new Vector2(-face, 0), detectRange * dist, player_behind);
+            DebugLine(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY), new Vector2(face, 0),
+                attackRange * dist, attack_range);
+            bool flip = false;
+
+            if (down)
             {
-                flip = true;
+                if (player_behind)
+                {
+                    flip = true;
+                }
+
+                if (attack_range)
+                {
+                    attacking = true;
+                }
+                else
+                {
+                    attacking = false;
+                }
+
+                if (forward)
+                {
+                    flip = true;
+                }
+                else if (!forward_down)
+                {
+                    flip = true;
+                }
             }
 
-            if (attack_range)
+            if (flip)
             {
-                attacking = true;
+                transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
+                face = transform.localScale.x;
             }
-            else
-            {
-                attacking = false;
-            }
-            if (forward)
-            {
-                flip = true;
-            }
-            else if (!forward_down)
-            {
-                flip = true;
-            }
-        }
-        if (flip)
-        {
-            transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
-            face = transform.localScale.x;
-        }
 
-        rigid.velocity = new Vector2(face * speed, rigid.velocity.y);
+            rigid.velocity = new Vector2(face * speed, rigid.velocity.y);
+        }
         SetAnim();
     }
 
     private void SetAnim()
     {
-        if (death)
+        if (die.death)
         {
             anim.SetBool("Attack", false);
             anim.SetBool("Hurt", false);

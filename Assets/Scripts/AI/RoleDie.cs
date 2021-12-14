@@ -7,6 +7,8 @@ public class RoleDie : MonoBehaviour
     private Animator anim;
 
     private Rigidbody2D rigid;
+
+    public bool death = false;
     //public GameObject prefabDeadFX;
     void Start()
     {
@@ -17,6 +19,7 @@ public class RoleDie : MonoBehaviour
     public virtual void Die(Transform trans)
     {
         //Instantiate(prefabDeadFX, trans.position, Quaternion.identity);
+        death = true;
         rigid.simulated = false;
         anim.SetBool("Death", true);
         Destroy(gameObject, 1.5f);
