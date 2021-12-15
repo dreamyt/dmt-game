@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a368e80787e4ca848957ab6d0754c9f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterDialog: {fileID: 0}
+  enterDialog: {fileID: 5440284379354654388}
 --- !u!61 &5440284379354654389
 BoxCollider2D:
   m_ObjectHideFlags: 0
