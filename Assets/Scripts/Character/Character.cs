@@ -30,7 +30,6 @@ public class Character : MonoBehaviour
     bool freezeInput = false;
     public bool getHit = false;
     public bool isSpelling = false;
-    public SpellAttack basicSpell;
     //how long the get hit animation lasts
     float getHitTime = 0.15f;
     float spellTime = 0.7f;
@@ -41,7 +40,7 @@ public class Character : MonoBehaviour
     private float rendererEndTime;
     bool check = false;//used to ensure death check only execute once
 
-    CharacterSpell characterSpell;
+    public CharacterSpell characterSpell;
 
     void Awake()
     {
@@ -54,7 +53,6 @@ public class Character : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         cc = GetComponent<CharacterController>();
         weapon = GetComponent<CharacterWeapon>();
-        characterSpell = GetComponent<CharacterSpell>();
         groundCheck = transform.Find("GroundCheck");
         anim = GetComponent<Animator>();
         previousHealth = health;
@@ -120,7 +118,6 @@ public class Character : MonoBehaviour
                         if (Time.time >= spellFinishTime)
                         {
                             StartSpellAttack();
-                            basicSpell.gameObject.SetActive(true);
                             isSpelling = false;
                         }
                     }
