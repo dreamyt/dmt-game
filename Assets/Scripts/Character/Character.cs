@@ -299,6 +299,20 @@ public class Character : MonoBehaviour
         {
             TakeDamage(1);
         }
+
+        if (collision.tag == "Heart")
+        {
+            //if (Health < 10)
+            //{
+            //pickAudio.Play();
+            Destroy(collision.gameObject);
+            health += 1;
+            //HealthNum.text = Health.ToString();
+            //}
+            UIManager.Instance.UpdateHealth(health, maxHealth);
+
+        }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -336,11 +350,12 @@ public class Character : MonoBehaviour
           
         }
 
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Collection"))
-        { // Collection 包括： 血量，金币，药水等
+        //if(collision.gameObject.layer == LayerMask.NameToLayer("Collection"))
+        //{ // Collection 包括： 血量，金币，药水等
 
-        }
-
+        //}
        
+
     }
+    
 }
