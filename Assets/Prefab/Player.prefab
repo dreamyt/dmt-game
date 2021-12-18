@@ -390,11 +390,10 @@ MonoBehaviour:
   canAirControl: 1
   groundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 16448
   m_GroundCheck: {fileID: 6748207607137697997}
   isGrounded: 0
   FacingRight: 1
-  Health: 10
 --- !u!114 &6748207607574455596
 MonoBehaviour:
   m_ObjectHideFlags: 0
