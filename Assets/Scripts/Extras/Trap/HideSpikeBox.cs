@@ -18,13 +18,14 @@ public class HideSpikeBox : MonoBehaviour
     {
         
     }
-
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Player")&&other.GetType().ToString()=="UnityEngine.PolygonCollider2D")                                  
+
+        if (other.gameObject.tag == "Player" )
         {
             Debug.Log("damage");
             //playerHealth.DamagePlayer(damage);
         }
     }
+    
 }

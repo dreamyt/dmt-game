@@ -17,7 +17,8 @@ public class Spike : MonoBehaviour
     void Update()
     {
         
-    }                                                                                                                                                                          
+    }     
+    
     void OnTriggerEnter2D(Collider2D other)             
     {
         if(other.CompareTag("Player"))//&&other.GetType().ToString()=="UnityEngine.PolygonCollider2D")                                  
