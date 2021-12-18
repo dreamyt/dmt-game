@@ -304,6 +304,20 @@ public class Character : MonoBehaviour
         {
             rigid.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
         }
+
+        if (collision.tag == "Heart")
+        {
+            //if (Health < 10)
+            //{
+            //pickAudio.Play();
+            Destroy(collision.gameObject);
+            health += 1;
+            //HealthNum.text = Health.ToString();
+            //}
+            UIManager.Instance.UpdateHealth(health, maxHealth);
+
+        }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
