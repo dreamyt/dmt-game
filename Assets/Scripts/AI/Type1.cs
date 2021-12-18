@@ -10,6 +10,10 @@ public class Type1 : MonoBehaviour
     float face;
     public float speed = 3;
 
+    [Header("Raycast offset settings")] 
+    [SerializeField] private float offsetX=0;
+    [SerializeField] private float offsetY=0;
+    [SerializeField] private float dist = 1;
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -27,18 +31,17 @@ public class Type1 : MonoBehaviour
         {
             color = Color.red;
         }
-        Debug.DrawLine(transform.position, transform.position + (dir.normalized * dist), color);
+        Debug.DrawLine(pos, pos + (dir.normalized * dist), color);
     }
 
     private void Update()
     {
-        bool forward_down = Physics2D.Raycast(transform.position, new Vector2(face, -1), 1.3f, LayerMask.GetMask("Tilemap_Platform"));
-        bool forward = Physics2D.Raycast(transform.position, new Vector2(face, 0), 1.2f, LayerMask.GetMask("Tilemap_Platform"));
-        bool down = Physics2D.Raycast(transform.position, new Vector2(0, -1), 1f, LayerMask.GetMask("Tilemap_Platform"));
-
-        DebugLine(transform.position, new Vector2(face, -1), 1.3f, forward_down);
-        DebugLine(transform.position, new Vector2(face, 0), 1.2f, forward);
-        DebugLine(transform.position, new Vector2(0, -1), 1f, down);
+        bool forward_down = Physics2D.Raycast(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(face, -1), 1.3f*dist, LayerMask.GetMask("Tilemap_Platform"));
+        bool forward = Physics2D.Raycast(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(face, 0), 1.2f*dist, LayerMask.GetMask("Tilemap_Platform"));
+        bool down = Physics2D.Raycast(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(0, -1), 1f*dist, LayerMask.GetMask("Tilemap_Platform"));
+        DebugLine(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(face, -1), 1.3f*dist, forward_down);
+        DebugLine(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(face, 0), 1.2f*dist, forward);
+        DebugLine(new Vector2(transform.position.x+offsetX, transform.position.y+offsetY), new Vector2(0, -1), 1f*dist, down);
 
         bool flip = false;
 

@@ -15,12 +15,12 @@ TagManager:
   - Tilemap_Platform
   - Enemy
   - Player
+  - Weapon
   - 
   - 
-  - Spike
   - 
-  - TriggerBox
-  - MovingPlatform
+  - 
+  - 
   - 
   - 
   - 

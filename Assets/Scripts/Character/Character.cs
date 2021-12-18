@@ -207,6 +207,36 @@ public class Character : MonoBehaviour
         health = previousHealth;
         shield = previousShield;
     }
+    //hurt 
+    public void TakeDamage(float damage)
+    {
+        if (health <= 0)
+        {
+            return;
+        }
+        //damage-shield
+        float remainingDamage = damage;
+        getHit = true;
+        HitFinishTime = Time.time + getHitTime;
+        if (shield>0)
+        {
+            if (shield >= damage)
+            {
+                shield -= damage;
+                return;
+            }
+            else
+            {
+                shield = 0;
+                remainingDamage = damage - shield;
+            }
+        }
+        else
+        {
+            health -= remainingDamage;
+        }
+
+    }
     //Revive from the beginning of the scene
     private void ReviveFromBeginning()
     {
@@ -214,6 +244,10 @@ public class Character : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Weapon"))
+        {
+            TakeDamage(1);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -247,8 +281,10 @@ public class Character : MonoBehaviour
             }
 
             // 运行到这里说明没踩到敌人，碰撞死亡
-            dead = true;
+            TakeDamage(1);
           
         }
+
+       
     }
 }
