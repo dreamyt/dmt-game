@@ -6,7 +6,7 @@ public class FallingPlatform : MonoBehaviour
 {
     public float fallingTime = 3;
     private TargetJoint2D _targeJoint2D;
-    private CapsuleCollider2D _capsuleCollider2D;
+   
 
 
 
@@ -14,7 +14,6 @@ public class FallingPlatform : MonoBehaviour
     void Start()
     {
         _targeJoint2D = GetComponent<TargetJoint2D>();
-        _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -35,6 +34,5 @@ public class FallingPlatform : MonoBehaviour
     private void Falling()
     {
         _targeJoint2D.enabled = false;
-        _capsuleCollider2D.isTrigger = false;
     }
 }
