@@ -37,18 +37,22 @@ public class MovingPlatform : MonoBehaviour
             }
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Player")&& other.GetType().ToString() == "UnityEngine.BoxCollider2D")
+
+        if (other.gameObject.tag == "Player" && transform.position.y < other.gameObject.transform.position.y)
         {
             other.gameObject.transform.parent = gameObject.transform;
         }
     }
-    void OnTriggerExit2D(Collider2D other)
+    void OnCollisionExit2D(Collision2D other)
     {
-        if (other.CompareTag("Player") && other.GetType().ToString() == "UnityEngine.BoxCollider2D")
+
+        if (other.gameObject.tag == "Player" && transform.position.y < other.gameObject.transform.position.y)
         {
             other.gameObject.transform.parent = playerDefTransform;
         }
     }
+    
 }

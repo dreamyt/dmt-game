@@ -636,13 +636,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6748207607574455572, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6748207607574455572, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
-      propertyPath: m_TagString
-      value: Player
+    - target: {fileID: 6748207607574455593, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455594, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_RootOrder
@@ -687,6 +683,10 @@ PrefabInstance:
     - target: {fileID: 6748207607574455594, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748207607574455595, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 16448
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
@@ -1338,7 +1338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1490036280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1789,6 +1789,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5942140506852432477, guid: 7a81b0d0c8c09874597d260ce947b819, type: 3}
   m_PrefabInstance: {fileID: 5942140505206490448}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1714233107
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714233101}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1852844127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,69 +3083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2086214509 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6748207607574455572, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
-  m_PrefabInstance: {fileID: 741628843}
-  m_PrefabAsset: {fileID: 0}
---- !u!60 &2086214510
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086214509}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0625, y: 2.125}
-    newSize: {x: 1.0625, y: 2.125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.26170158, y: 0.9992604}
-      - {x: -0.38670254, y: 0.6566982}
-      - {x: -0.52911377, y: -0.42750978}
-      - {x: -0.413805, y: -1.0534658}
-      - {x: 0.52221584, y: -1.0625}
-      - {x: 0.37766743, y: 0.6227808}
-      - {x: 0.108119965, y: 1.0625}
---- !u!61 &2086214518
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086214509}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.8661754}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0625, y: 2.125}
-    newSize: {x: 1.0625, y: 2.125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0625, y: 0.39264917}
-  m_EdgeRadius: 0
 --- !u!1 &2099038200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3475,6 +3433,10 @@ PrefabInstance:
       propertyPath: hideSpikeBox
       value: 
       objectReference: {fileID: 1714233101}
+    - target: {fileID: 5942140506852432450, guid: 7a81b0d0c8c09874597d260ce947b819, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5942140506852432477, guid: 7a81b0d0c8c09874597d260ce947b819, type: 3}
       propertyPath: m_Name
       value: HideSpike

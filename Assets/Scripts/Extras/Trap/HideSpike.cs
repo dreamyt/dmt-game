@@ -20,12 +20,14 @@ public class HideSpike : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")&& other.GetType().ToString()=="UnityEngine.PolygonCollider2D")                                  
+
+        if (other.gameObject.tag == "Player")
         {
             Debug.Log("damage by hidespike");
             StartCoroutine(SpikeAttack());
         }
     }
+    
     IEnumerator SpikeAttack()
     {
         yield return new WaitForSeconds(time);
