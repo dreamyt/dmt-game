@@ -21,6 +21,7 @@ public class Character : MonoBehaviour
     Transform groundCheck;
     //status
     public float health = 10.0f;
+    public float maxHealth = 10.0f;
     private float previousHealth;//health when in the revive point
     public float shield = 0;
     private float previousShield ;//shield when in the revive point
@@ -35,6 +36,10 @@ public class Character : MonoBehaviour
     private float rendererEndInterval = 1.5f;
     private float rendererEndTime;
     bool check = false;//used to ensure death check only execute once
+    void Awake()
+    {
+       UIManager.Instance.UpdateHealth(health, maxHealth);
+    }
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -46,6 +51,9 @@ public class Character : MonoBehaviour
         previousHealth = health;
         previousShield = shield;
         spawnPosition = rigid.position;
+        
+        
+        
     }
 
     //Update is called once per frame
@@ -206,6 +214,8 @@ public class Character : MonoBehaviour
         check = false;
         health = previousHealth;
         shield = previousShield;
+        UIManager.Instance.UpdateHealth(health, maxHealth);
+        
     }
     //hurt 
     public void TakeDamage(float damage)
@@ -235,7 +245,8 @@ public class Character : MonoBehaviour
         {
             health -= remainingDamage;
         }
-
+        UIManager.Instance.UpdateHealth(health, maxHealth);
+        
     }
     //Revive from the beginning of the scene
     private void ReviveFromBeginning()
