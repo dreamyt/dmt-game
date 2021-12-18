@@ -21,6 +21,7 @@ public class Character : MonoBehaviour
     Transform groundCheck;
     //status
     public float health = 10.0f;
+    public float maxHealth = 10.0f;
     private float previousHealth;//health when in the revive point
     public float shield = 0;
     private float previousShield ;//shield when in the revive point
@@ -42,6 +43,10 @@ public class Character : MonoBehaviour
 
     CharacterSpell characterSpell;
 
+    void Awake()
+    {
+        UIManager.Instance.UpdateHealth(health, maxHealth);
+    }
 
     void Start()
     {
@@ -247,6 +252,7 @@ public class Character : MonoBehaviour
         check = false;
         health = previousHealth;
         shield = previousShield;
+        UIManager.Instance.UpdateHealth(health, maxHealth);
     }
     //hurt 
     public void TakeDamage(float damage)
@@ -276,6 +282,7 @@ public class Character : MonoBehaviour
         {
             health -= remainingDamage;
         }
+        UIManager.Instance.UpdateHealth(health, maxHealth);
 
     }
     private void StartSpellAttack()
