@@ -299,6 +299,11 @@ public class Character : MonoBehaviour
         {
             TakeDamage(1);
         }
+
+        if (collision.CompareTag("Trampoline"))
+        {
+            rigid.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
