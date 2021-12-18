@@ -14,13 +14,13 @@ TagManager:
   - UI
   - Tilemap_Platform
   - Enemy
+  - Player
   - 
   - 
+  - Spike
   - 
-  - 
-  - 
-  - 
-  - 
+  - TriggerBox
+  - MovingPlatform
   - 
   - 
   - 
