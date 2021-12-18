@@ -280,7 +280,7 @@ public class Character : MonoBehaviour
     }
     private void StartSpellAttack()
     {
-        CharacterSpell.startSpellAttacking();
+        characterSpell.startSpellAttacking();
         /* This code is for start spelling */
     }
 

@@ -16,7 +16,7 @@ public class CharacterSpell : CharacterComponents
     {
         spellMode = 0;
         spellGeneratePosition = new Vector3(0f, 0f, 0f);
-        Pooler = GetComponent(ObjectPooler);
+        Pooler = GetComponent<ObjectPooler>();
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class CharacterSpell : CharacterComponents
         GameObject projectilePooled = Pooler.GetObjectFromPool();
         SpellGeneratePosition = transform.position + spellGeneratePosition;
         projectilePooled.transform.position = SpellGeneratePosition;
-        projectilePooled.SetActive(ture);
+        projectilePooled.SetActive(true);
 
     }
 
