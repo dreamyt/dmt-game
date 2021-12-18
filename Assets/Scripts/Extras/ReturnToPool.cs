@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class ReturnToPool : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Settings")]
+    [SerializeField] private float lifeTime = 2f;
+
+    // Returns this object to the pool
+    private void Return()
     {
-        
+        gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        Invoke(nameof(Return), lifeTime);
     }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+
 }

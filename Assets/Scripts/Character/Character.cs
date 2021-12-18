@@ -21,6 +21,7 @@ public class Character : MonoBehaviour
     Transform groundCheck;
     //status
     public float health = 10.0f;
+    public float maxHealth = 10.0f;
     private float previousHealth;//health when in the revive point
     public float shield = 0;
     private float previousShield ;//shield when in the revive point
@@ -28,13 +29,24 @@ public class Character : MonoBehaviour
     //bool attack = false;  /* Moved to CharacterWeapon. */
     bool freezeInput = false;
     public bool getHit = false;
+    public bool isSpelling = false;
     //how long the get hit animation lasts
-    float getHitTime = 0.4f;
+    float getHitTime = 0.15f;
+    float spellTime = 0.7f;
     //record the time when get hit animation ends
     float HitFinishTime;
+    float spellFinishTime;
     private float rendererEndInterval = 1.5f;
     private float rendererEndTime;
     bool check = false;//used to ensure death check only execute once
+
+    public CharacterSpell characterSpell;
+
+    void Awake()
+    {
+        UIManager.Instance.UpdateHealth(health, maxHealth);
+    }
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -71,6 +83,13 @@ public class Character : MonoBehaviour
                 move = Input.GetAxis("Horizontal");         // Get horizontal movement
                 jump = Input.GetKey("k");                   // Press K to jump
                 dead = Input.GetKey("z");                   // Press Z to suicide
+                //isSpelling = Input.GetKey("l");             // Press L to attack with spell
+
+                if (!isSpelling && Input.GetKey("l"))   
+                {
+                    spellFinishTime = Time.time + spellTime;
+                    isSpelling = true;
+                }
 
                 /* use CharacterWeapon to deal with attack.
                  * attack = Input.GetKey("j");                 // Press J to attack (either melee or ranged) */
@@ -79,6 +98,7 @@ public class Character : MonoBehaviour
             {
                 move = 0;
                 jump = false;
+                isSpelling = false;
             }
             IsDead();
         }
@@ -90,6 +110,18 @@ public class Character : MonoBehaviour
         {
             if (!getHit)
             {
+                /* Can only start spelling when not hit && jumping (of course not dead!) */
+                if (!jump)
+                {
+                    if (isSpelling)
+                    {
+                        if (Time.time >= spellFinishTime)
+                        {
+                            StartSpellAttack();
+                            isSpelling = false;
+                        }
+                    }
+                }
                 cc.Move(move * speed * Time.fixedDeltaTime, jump);
                 //weapon.ShootingAllowed = true;
             }
@@ -112,6 +144,7 @@ public class Character : MonoBehaviour
             anim.SetBool("Jump", false);
             anim.SetBool("Moving", false);
             anim.SetBool("Hurt", false);
+            anim.SetBool("Spelling", false);  // Spelling is stopped by Death
             anim.SetBool("Death", true);
         }
         else
@@ -121,6 +154,7 @@ public class Character : MonoBehaviour
                 anim.SetBool("Jump", false);
                 anim.SetBool("Moving", false);
                 anim.SetBool("Hurt", true);
+                anim.SetBool("Spelling", false);  // Spelling is also stopped by Hurt
             }       
             else
             {
@@ -135,6 +169,15 @@ public class Character : MonoBehaviour
                     else
                     {
                         anim.SetBool("Moving", false);
+                    }
+
+                    if (isSpelling)
+                    {
+                        anim.SetBool("Spelling", true);
+                    }
+                    else
+                    {
+                        anim.SetBool("Spelling", false);
                     }
                 }
                 else
@@ -206,6 +249,7 @@ public class Character : MonoBehaviour
         check = false;
         health = previousHealth;
         shield = previousShield;
+        UIManager.Instance.UpdateHealth(health, maxHealth);
     }
     //hurt 
     public void TakeDamage(float damage)
@@ -235,8 +279,15 @@ public class Character : MonoBehaviour
         {
             health -= remainingDamage;
         }
+        UIManager.Instance.UpdateHealth(health, maxHealth);
 
     }
+    private void StartSpellAttack()
+    {
+        characterSpell.startSpellAttacking();
+        /* This code is for start spelling */
+    }
+
     //Revive from the beginning of the scene
     private void ReviveFromBeginning()
     {
@@ -283,6 +334,11 @@ public class Character : MonoBehaviour
             // 运行到这里说明没踩到敌人，碰撞死亡
             TakeDamage(1);
           
+        }
+
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Collection"))
+        { // Collection 包括： 血量，金币，药水等
+
         }
 
        

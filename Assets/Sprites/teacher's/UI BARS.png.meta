@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: c7aa1332870aece41ac3fdb2727cdebf
+guid: 50bf79de1bae55940af9000a79bde445
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6983372327507459144
-    second: Punk_attack1_0
+      213: 8339861808335888049
+    second: UI BARS_0
   - first:
-      213: -5339744630182338861
-    second: Punk_attack1_1
+      213: 2640106903787657396
+    second: UI BARS_1
   - first:
-      213: 225203629906607936
-    second: Punk_attack1_2
-  - first:
-      213: 5895516016956703320
-    second: Punk_attack1_3
-  - first:
-      213: -6810403483812997936
-    second: Punk_attack1_4
-  - first:
-      213: 8894230793338122510
-    second: Punk_attack1_5
+      213: 3827135579134162365
+    second: UI BARS_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -64,7 +55,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,34 +100,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Punk_attack1_0
+      name: UI BARS_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 17
-        height: 34
+        x: 1
+        y: 10
+        width: 30
+        height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b300ac1ed3161f90800000000000000
-      internalID: -6983372327507459144
+      spriteID: 1be15b1d0242db370800000000000000
+      internalID: 8339861808335888049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_attack1_1
+      name: UI BARS_1
       rect:
         serializedVersion: 2
-        x: 51
-        y: 0
-        width: 19
-        height: 34
+        x: 3
+        y: 7
+        width: 26
+        height: 2
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +135,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3de9eaecc8a65e5b0800000000000000
-      internalID: -5339744630182338861
+      spriteID: 4b8d159bd3b83a420800000000000000
+      internalID: 2640106903787657396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_attack1_2
+      name: UI BARS_2
       rect:
         serializedVersion: 2
-        x: 98
-        y: 0
-        width: 20
-        height: 34
+        x: 3
+        y: 3
+        width: 26
+        height: 2
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,71 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04f36ba1285102300800000000000000
-      internalID: 225203629906607936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Punk_attack1_3
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 0
-        width: 16
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8528456e49411d150800000000000000
-      internalID: 5895516016956703320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Punk_attack1_4
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 0
-        width: 20
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d45e325d169c71a0800000000000000
-      internalID: -6810403483812997936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Punk_attack1_5
-      rect:
-        serializedVersion: 2
-        x: 247
-        y: 0
-        width: 15
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e01724b68c7ae6b70800000000000000
-      internalID: 8894230793338122510
+      spriteID: db5fc8d3887bc1530800000000000000
+      internalID: 3827135579134162365
       vertices: []
       indices: 
       edges: []
