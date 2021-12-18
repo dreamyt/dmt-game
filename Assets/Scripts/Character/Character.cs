@@ -31,7 +31,7 @@ public class Character : MonoBehaviour
     public bool isSpelling = false;
     public SpellAttack basicSpell;
     //how long the get hit animation lasts
-    float getHitTime = 0.4f;
+    float getHitTime = 0.15f;
     float spellTime = 0.7f;
     //record the time when get hit animation ends
     float HitFinishTime;
