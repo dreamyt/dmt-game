@@ -24,6 +24,7 @@ public class HideSpike : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("damage by hidespike");
+            
             StartCoroutine(SpikeAttack());
         }
     }
@@ -32,6 +33,7 @@ public class HideSpike : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         anim.SetTrigger("Attack");
+
         Instantiate(hideSpikeBox, transform.position, Quaternion.identity);
     }
 }

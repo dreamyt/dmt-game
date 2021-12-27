@@ -625,6 +625,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &573046725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7457423224328197177, guid: 7a81b0d0c8c09874597d260ce947b819, type: 3}
+  m_PrefabInstance: {fileID: 7457423223894412084}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &573046732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573046725}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9d854ddfa28be46842d91194dbeb4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  destroyTime: 1
 --- !u!1001 &741628843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3305,6 +3324,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3843353155878574106, guid: 9d860969fa1981e48bbbc79a30162fe9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4713406612421135319, guid: 9d860969fa1981e48bbbc79a30162fe9, type: 3}
       propertyPath: m_Name
       value: MovingPlatformBase
@@ -3475,6 +3498,14 @@ PrefabInstance:
     - target: {fileID: 7457423224328197156, guid: 7a81b0d0c8c09874597d260ce947b819, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457423224328197157, guid: 7a81b0d0c8c09874597d260ce947b819, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457423224328197158, guid: 7a81b0d0c8c09874597d260ce947b819, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7457423224328197177, guid: 7a81b0d0c8c09874597d260ce947b819, type: 3}
       propertyPath: m_Name

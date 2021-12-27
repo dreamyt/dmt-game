@@ -6,11 +6,10 @@ public class HideSpikeBox : MonoBehaviour
 {
     public int damage;
     public float destroyTime;
-    //private PlayerHealth playerHealth;
+    //public Character character;
     
     void Start()
     {
-        //playerHealth = GameObject.FindGameObjectsWithTag("Player").GetComponent<PlayerHealth>();
         Destroy(gameObject, destroyTime);
     }
 
@@ -20,11 +19,10 @@ public class HideSpikeBox : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-
         if (other.gameObject.tag == "Player" )
         {
             Debug.Log("damage");
-            //playerHealth.DamagePlayer(damage);
+            this.GetComponent<Character>().TakeDamage(damage);
         }
     }
     

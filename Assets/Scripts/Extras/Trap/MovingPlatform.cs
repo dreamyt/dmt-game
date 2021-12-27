@@ -49,10 +49,11 @@ public class MovingPlatform : MonoBehaviour
     void OnCollisionExit2D(Collision2D other)
     {
 
-        if (other.gameObject.tag == "Player" && transform.position.y < other.gameObject.transform.position.y)
+        if (other.gameObject.tag == "Player")
         {
             other.gameObject.transform.parent = playerDefTransform;
         }
     }
+
     
 }
