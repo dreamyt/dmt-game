@@ -27,7 +27,6 @@ public class FallingPlatform : MonoBehaviour
         
         if (other.gameObject.tag=="Player"&& transform.position.y<other.gameObject.transform.position.y)
         {
-            Debug.Log(transform.position.y);
             Invoke("Falling", fallingTime);
         }
     }

@@ -6,24 +6,24 @@ public class HideSpikeBox : MonoBehaviour
 {
     public int damage;
     public float destroyTime;
-    //public Character character;
     
     void Start()
     {
         Destroy(gameObject, destroyTime);
+
     }
 
     void Update()
     {
         
     }
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player" )
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("damage");
-            this.GetComponent<Character>().TakeDamage(damage);
+            other.GetComponent<Character>().TakeDamage(damage);
         }
+        
     }
-    
+
 }
