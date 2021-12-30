@@ -25,7 +25,7 @@ public class Circle : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("damage");
-            other.GetComponent<Character>().TakeDamage(damage);
+            other.GetComponent<Health>().TakeDamage(damage);
         }
 
     }
@@ -41,7 +41,7 @@ public class Circle : MonoBehaviour
     {
         if(lifePoint==true)
         {
-            GetComponent<Character>().TakeDamage(damage);
+            GetComponent<Health>().TakeDamage(damage);
         }    
         
     }
