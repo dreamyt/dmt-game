@@ -22,6 +22,7 @@ public class Character : MonoBehaviour
     //status
     public float health = 10.0f;
     public float maxHealth = 10.0f;
+    
     private float previousHealth;//health when in the revive point
     public float shield = 0;
     private float previousShield ;//shield when in the revive point
