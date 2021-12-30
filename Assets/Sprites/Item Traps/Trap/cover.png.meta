@@ -1,28 +1,34 @@
 fileFormatVersion: 2
-guid: 6da98410de22b9e4fa7553ae9735ddbe
+guid: 168d1f84f2c74d944be6d17056851642
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2960689470227135930
-    second: RockDestroy_0
+      213: 8158265256486050621
+    second: cover_0
   - first:
-      213: -8218544791510561261
-    second: RockDestroy_1
+      213: 1016266817714038590
+    second: cover_1
   - first:
-      213: 7544970781502856488
-    second: RockDestroy_2
+      213: -8433211622890722904
+    second: cover_2
   - first:
-      213: 6316394329477499836
-    second: RockDestroy_3
+      213: -2324568776941961195
+    second: cover_3
   - first:
-      213: 9016323672740363997
-    second: RockDestroy_4
+      213: -3707966306824726637
+    second: cover_4
   - first:
-      213: -6107776584197089185
-    second: RockDestroy_5
+      213: -9057868627459734285
+    second: cover_5
   - first:
-      213: 4232961827615899178
-    second: RockDestroy_6
+      213: -143711213958564523
+    second: cover_6
+  - first:
+      213: 6027795051507198600
+    second: cover_7
+  - first:
+      213: -7965653064040554561
+    second: cover_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -67,7 +73,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -112,13 +118,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RockDestroy_0
+      name: cover_0
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 708
+        width: 105
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b1344c60bf73170800000000000000
+      internalID: 8158265256486050621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cover_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 707
+        width: 103
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37acda49418a1e00800000000000000
+      internalID: 1016266817714038590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cover_2
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 707
+        width: 103
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a927e5c5b637fa80800000000000000
+      internalID: -8433211622890722904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cover_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 710
+        width: 111
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510096273097dbfd0800000000000000
+      internalID: -2324568776941961195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cover_4
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 710
+        width: 107
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39758922a48aa8cc0800000000000000
+      internalID: -3707966306824726637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cover_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 388
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f48b16597cfb4280800000000000000
+      internalID: -9057868627459734285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cover_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 32
+        y: 132
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abdb023036b761920800000000000000
-      internalID: 2960689470227135930
+      spriteID: 55572cd896f610ef0800000000000000
+      internalID: -143711213958564523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RockDestroy_1
+      name: cover_7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 256
+        y: 132
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31e406b4e0dd1fd80800000000000000
-      internalID: -8218544791510561261
+      spriteID: 88aa1f7a9a707a350800000000000000
+      internalID: 6027795051507198600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RockDestroy_2
+      name: cover_8
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
+        x: 512
+        y: 132
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,92 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82ddd2863fe15b860800000000000000
-      internalID: 7544970781502856488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RockDestroy_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbb4ccd4d2758a750800000000000000
-      internalID: 6316394329477499836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RockDestroy_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dde72ad1c9a602d70800000000000000
-      internalID: 9016323672740363997
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RockDestroy_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f58db7b9e81dc3ba0800000000000000
-      internalID: -6107776584197089185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RockDestroy_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2e75d2ea508eba30800000000000000
-      internalID: 4232961827615899178
+      spriteID: fbf5cd9fdb0547190800000000000000
+      internalID: -7965653064040554561
       vertices: []
       indices: 
       edges: []
