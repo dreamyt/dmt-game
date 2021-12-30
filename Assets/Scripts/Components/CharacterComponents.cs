@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class CharacterComponents : MonoBehaviour
 {
-    protected float horizontalInput;
-    protected float verticalInput;
-
+    protected float move;
+    protected bool jump;
+    protected bool dash = false;
+    
+    protected bool freezeInput = false;
+    protected CharacterController controller;
+    protected CharacterMovement characterMovement;
+    protected CharacterWeapon characterWeapon;
     protected Animator animator;
     protected Character character;
+    protected Health currentHealth;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        controller = GetComponent<CharacterController>();
         character = GetComponent<Character>();
+        characterWeapon = GetComponent<CharacterWeapon>();
+        characterMovement = GetComponent<CharacterMovement>();
         animator = GetComponent<Animator>();
+        currentHealth = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -25,14 +35,21 @@ public class CharacterComponents : MonoBehaviour
 
     protected virtual void HandleAbility()
     {
-        InternalInput();
+        if (!currentHealth.dead&&!currentHealth.getHit)
+        {
+            InternalInput();
+        }
         HandleInput();
     }
 
     protected virtual void InternalInput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        if (!freezeInput)
+        {
+            move = Input.GetAxis("Horizontal");// Get horizontal movement
+            jump = Input.GetKey("k");//detect jumping 
+            dash = Input.GetKey("left shift"); 
+        }
     }
 
     protected virtual void HandleInput()

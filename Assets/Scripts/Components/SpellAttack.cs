@@ -56,12 +56,20 @@ public class SpellAttack : MonoBehaviour
 
     public void trackEnemy(GameObject enemy)
     {
-        module = Mathf.Sqrt((enemy.transform.position.x-transform.position.x) * (enemy.transform.position.x - transform.position.x)+ (enemy.transform.position.y - transform.position.y)*(enemy.transform.position.y - transform.position.y));
-        trackDirection = enemy.transform.position - transform.position;
-        setDirection(trackDirection / module);
+        if (enemy != null)
+        {
+            module = Mathf.Sqrt(
+                (enemy.transform.position.x - transform.position.x) *
+                (enemy.transform.position.x - transform.position.x) +
+                (enemy.transform.position.y - transform.position.y) *
+                (enemy.transform.position.y - transform.position.y));
+            trackDirection = enemy.transform.position - transform.position;
+            setDirection(trackDirection / module);
 
-        rotationAngle = Mathf.Atan2(enemy.transform.position.x-transform.position.x, enemy.transform.position.y - transform.position.y) * Mathf.Deg2Rad;
-        transform.Rotate(0,0,-rotationAngle);
+            rotationAngle = Mathf.Atan2(enemy.transform.position.x - transform.position.x,
+                enemy.transform.position.y - transform.position.y) * Mathf.Deg2Rad;
+            transform.Rotate(0, 0, -rotationAngle);
+        }
     }
 
     public GameObject detectEnemy()
@@ -78,7 +86,13 @@ public class SpellAttack : MonoBehaviour
                 Debug.Log(cols[i].gameObject.name);
             }
         }
-        return cols[0].gameObject;
+
+        if (cols.Length>0)
+        {
+            return cols[0].gameObject;
+        }
+
+        return null;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
