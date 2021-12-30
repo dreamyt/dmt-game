@@ -47,7 +47,7 @@ public class Projectile : MonoBehaviour
         Speed = speed;
         FacingRight = true;
         Damage = damage;
-        //Direction = new Vector2(1.0f, 0.0f);
+        Direction = new Vector2(1.0f, 0.0f);
 
 
         myRigidbody2D = GetComponent<Rigidbody2D>();

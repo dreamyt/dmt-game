@@ -20,6 +20,8 @@ public class SpellAttack : MonoBehaviour
     public int spellMode;
 
     public bool canDetect;
+
+    static public bool facingRight;
     //public Transform overlapSphereCube;
     public float range = 25.0f;
 
@@ -54,6 +56,11 @@ public class SpellAttack : MonoBehaviour
         currentDirection = newDirection;
     }
 
+    public void turnToLeft()
+    {
+        facingRight = false;
+    }
+    
     public void trackEnemy(GameObject enemy)
     {
         if (enemy != null)
@@ -68,6 +75,7 @@ public class SpellAttack : MonoBehaviour
 
             rotationAngle = Mathf.Atan2(enemy.transform.position.x - transform.position.x,
                 enemy.transform.position.y - transform.position.y) * Mathf.Deg2Rad;
+            Debug.Log(rotationAngle);
             transform.Rotate(0, 0, -rotationAngle);
         }
     }
