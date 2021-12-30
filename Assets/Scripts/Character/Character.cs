@@ -42,6 +42,14 @@ public class Character : MonoBehaviour
 
     public CharacterSpell characterSpell;
 
+    // Speed, can be higher or lower.
+    private bool dash = false;
+    private float currentStamina;     // The stamina is the value of physical strength.
+    private float maxStamina;         // The maximum of stamina. Stamina is used for dashing etc.
+        // maybe have dashing effect, an image or particle effects.
+    private bool isSlower = false;
+    private bool isfaster = false;
+
     void Awake()
     {
         UIManager.Instance.UpdateHealth(health, maxHealth);
@@ -58,6 +66,9 @@ public class Character : MonoBehaviour
         previousHealth = health;
         previousShield = shield;
         spawnPosition = rigid.position;
+
+        maxStamina = 30;
+        currentStamina = maxStamina;
     }
 
     //Update is called once per frame
@@ -83,6 +94,7 @@ public class Character : MonoBehaviour
                 move = Input.GetAxis("Horizontal");         // Get horizontal movement
                 jump = Input.GetKey("k");                   // Press K to jump
                 dead = Input.GetKey("z");                   // Press Z to suicide
+                dash = Input.GetKey("left shift");               // Press Shift to dash
                 //isSpelling = Input.GetKey("l");             // Press L to attack with spell
 
                 if (!isSpelling && Input.GetKey("l"))   
@@ -121,6 +133,35 @@ public class Character : MonoBehaviour
                             isSpelling = false;
                         }
                     }
+
+                    if (dash)
+                    {
+                        if (currentStamina >= 0)
+                        {
+                            if (move > 0.3 || move < -0.3)
+                            {
+                                /* Notice: "speed" only controls the left or right moving, but not affects jumping */
+                                speed = 480;
+                                currentStamina -= 1.0f;
+                            }
+                            /*
+                             * Consider the way to improve
+                             * if >= 0.1, is ok, but not necessary
+                             * speed offers HighSpeed and LowSpeed, not necessary
+                             */
+                        }
+                        else
+                        {
+                            Debug.Log("cannot run!");
+                            speed = 280;
+                            /* Cannot dash, just show red color in stamina bar */
+                        }
+                    }
+                    else
+                    {
+                        speed = 280;
+                        currentStamina = (currentStamina >= maxStamina ? maxStamina : currentStamina + 0.3f);
+                    }
                 }
                 cc.Move(move * speed * Time.fixedDeltaTime, jump);
                 //weapon.ShootingAllowed = true;
@@ -143,6 +184,7 @@ public class Character : MonoBehaviour
         {
             anim.SetBool("Jump", false);
             anim.SetBool("Moving", false);
+            anim.SetBool("Dashing",false);   // Dashing is stopped by Death
             anim.SetBool("Hurt", false);
             anim.SetBool("Spelling", false);  // Spelling is stopped by Death
             anim.SetBool("Death", true);
@@ -153,6 +195,7 @@ public class Character : MonoBehaviour
             {
                 anim.SetBool("Jump", false);
                 anim.SetBool("Moving", false);
+                anim.SetBool("Dashing",false);    // Dashing is also stopped by Hurt
                 anim.SetBool("Hurt", true);
                 anim.SetBool("Spelling", false);  // Spelling is also stopped by Hurt
             }       
@@ -179,6 +222,16 @@ public class Character : MonoBehaviour
                     {
                         anim.SetBool("Spelling", false);
                     }
+
+                    if (dash && currentStamina >= 0 && move != 0)
+                    {
+                        anim.SetBool("Dashing", true);
+                    }
+                    else
+                    {
+                        anim.SetBool("Dashing", false);
+                    }
+                    
                 }
                 else
                 {   

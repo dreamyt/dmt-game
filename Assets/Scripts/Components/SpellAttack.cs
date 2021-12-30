@@ -10,19 +10,28 @@ public class SpellAttack : MonoBehaviour
     public Vector3 initialDirection;
     public float speed = 0.05f;
 
+    /*
+     * speelMode
+     * 0 - one spell fly direct      ) --->
+     * 1 - 1st of three                 / --->
+     * 2 - 2nd of three                { +---->
+     * 3 - 3rd of three                 \ --->
+     */
+    public int spellMode;
+
     public bool canDetect;
     //public Transform overlapSphereCube;
     public float range = 25.0f;
 
     /* Calculate the */
     public float module;
-    public float angle;
-
+    private float rotationAngle; // The angle to rotate.
 
     // Start is called before the first frame update
     void Start()
     {
         initialState = transform;
+        rotationAngle = 0.0f;
         initialDirection = new Vector3 (1.0f, 0.0f, 0.0f);
         trackDirection = new Vector3(0.0f, 0.0f, 0.0f);
         currentDirection = initialDirection;
@@ -47,16 +56,12 @@ public class SpellAttack : MonoBehaviour
 
     public void trackEnemy(GameObject enemy)
     {
-        if (enemy != null)
-        {
-            module = Mathf.Sqrt(
-                (enemy.transform.position.x - transform.position.x) *
-                (enemy.transform.position.x - transform.position.x) +
-                (enemy.transform.position.y - transform.position.y) *
-                (enemy.transform.position.y - transform.position.y));
-            trackDirection = enemy.transform.position - transform.position;
-            setDirection(trackDirection / module);
-        }
+        module = Mathf.Sqrt((enemy.transform.position.x-transform.position.x) * (enemy.transform.position.x - transform.position.x)+ (enemy.transform.position.y - transform.position.y)*(enemy.transform.position.y - transform.position.y));
+        trackDirection = enemy.transform.position - transform.position;
+        setDirection(trackDirection / module);
+
+        rotationAngle = Mathf.Atan2(enemy.transform.position.x-transform.position.x, enemy.transform.position.y - transform.position.y) * Mathf.Deg2Rad;
+        transform.Rotate(0,0,-rotationAngle);
     }
 
     public GameObject detectEnemy()
@@ -71,11 +76,9 @@ public class SpellAttack : MonoBehaviour
             for(int i=0; i<cols.Length; i++)
             {
                 Debug.Log(cols[i].gameObject.name);
-                return cols[0].gameObject;
             }
         }
-
-        return null;
+        return cols[0].gameObject;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
