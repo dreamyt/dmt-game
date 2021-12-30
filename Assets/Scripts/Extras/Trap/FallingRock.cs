@@ -40,7 +40,7 @@ public class FallingRock : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("damage");
-            other.GetComponent<Character>().TakeDamage(damage);
+            other.GetComponent<Health>().TakeDamage(damage);
         }
 
     }
