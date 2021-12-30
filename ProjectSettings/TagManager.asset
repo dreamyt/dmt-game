@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Heart
   - Trampoline
+  - merchant
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Collection
   - TriggerBox
   - MovingPlatform
-  - 
+  - merchant
   - 
   - 
   - 

@@ -8,20 +8,38 @@ public class CharacterDetect : MonoBehaviour
     private Rigidbody2D rigid;
     private CharacterController controller;
     private Health currentHealth;
+    private CoinManager currentCoin;
+    private CharacterMovement move;
     Transform groundCheck;
+    private bool isMerchant = false;
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         controller = GetComponent<CharacterController>();
         currentHealth = GetComponent<Health>();
+        currentCoin = GetComponent<CoinManager>();
         groundCheck = transform.Find("GroundCheck");
+        move = GetComponent<CharacterMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (isMerchant)
+            {
+
+                currentHealth.TakeDamage(0.1f);
+                currentHealth.previousHealth -= 1;
+                move.changespeed(1000);
+                if(controller.jumpForce <= 1100)
+                    controller.jumpForce += 100;
+            }
+
+
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -75,5 +93,17 @@ public class CharacterDetect : MonoBehaviour
             currentHealth.TakeDamage(1);
 
         }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("merchant"))
+        {
+
+            isMerchant = true;
+            
+        }
     }
+    private void OnCollisionExit2D(Collider2D collision)
+    {
+        if (collision.tag == "merchant")
+            isMerchant = false;
+    }
+
 }
