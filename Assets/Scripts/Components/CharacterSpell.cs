@@ -7,6 +7,7 @@ public class CharacterSpell : CharacterComponents
     /* It's standing for the spell position togehter with the player */
     public int spellMode = 0;
     ObjectPooler Pooler;
+    private float rotationAngle;
     [Header("Spell Settings")]
     [SerializeField] private Vector3 SpellGeneratePosition; // The real position to generate spell attack
     [SerializeField] private Vector3 spellGeneratePosition; // The relative position of spell compared to player
@@ -40,6 +41,22 @@ public class CharacterSpell : CharacterComponents
         projectilePooled.transform.position = SpellGeneratePosition;
         projectilePooled.SetActive(true);
 
+    }
+
+    private void SpellAttackBule()
+    {
+        GameObject firstAttack = Pooler.GetObjectFromPool();
+        GameObject secondAttack = Pooler.GetObjectFromPool();
+        GameObject thirdAttack = Pooler.GetObjectFromPool();
+
+        spellGeneratePosition = transform.position + spellGeneratePosition;
+        firstAttack.transform.position = spellGeneratePosition;
+        secondAttack.transform.position = spellGeneratePosition;
+        thirdAttack.transform.position = spellGeneratePosition;
+        firstAttack.SetActive(true);
+        firstAttack.SetActive(true);
+        firstAttack.SetActive(true);
+        
     }
 
 }
