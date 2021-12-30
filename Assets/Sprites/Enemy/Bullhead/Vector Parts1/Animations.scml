@@ -14,7 +14,7 @@
         <file id="10" name="Left Hand.png" width="140" height="128" pivot_x="0" pivot_y="1"/>
         <file id="11" name="Weapon.png" width="280" height="100" pivot_x="0" pivot_y="1"/>
     </folder>
-    <entity id="0" name="03">
+    <entity id="0" name="01">
         <obj_info name="bone_000" type="bone" w="98.7501" h="10"/>
         <obj_info name="bone_001" type="bone" w="45.4361" h="10"/>
         <obj_info name="bone_002" type="bone" w="95.3134" h="10"/>
