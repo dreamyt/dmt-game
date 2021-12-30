@@ -25,7 +25,7 @@ public class CharacterDetect : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Weapon"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("EnemyWeapon"))
         {
             currentHealth.TakeDamage(1);
         }

@@ -17,7 +17,7 @@ TagManager:
   - Tilemap_Platform
   - Enemy
   - Player
-  - Weapon
+  - EnemyWeapon
   - 
   - Spike
   - Collection
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Tile
     uniqueID: 2870789355
+    locked: 0
+  - name: Enemy
+    uniqueID: 3760653631
     locked: 0
   - name: Player
     uniqueID: 3806029255
