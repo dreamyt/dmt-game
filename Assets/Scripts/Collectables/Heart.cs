@@ -16,7 +16,7 @@ public class Heart : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         bc = GetComponent<BoxCollider2D>();
         //health = GameObject.Find("Player").GetComponent<Character>().health;
-        maxHealth = GameObject.Find("Player").GetComponent<Character>().maxHealth;
+        maxHealth = GameObject.Find("Player").GetComponent<Health>().maxHealth;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,14 +24,14 @@ public class Heart : MonoBehaviour
         if (collision.tag == "Player")
         {
             //pickAudio.Play();
-            if (GameObject.Find("Player").GetComponent<Character>().health < 10)
+            if (GameObject.Find("Player").GetComponent<Health>().health < 10)
             {
                 sr.enabled = false;
                 bc.enabled = false;
                 //health += 1;
                 //Debug.Log(health);
-                GameObject.Find("Player").GetComponent<Character>().health += 1;
-                UIManager.Instance.UpdateHealth(GameObject.Find("Player").GetComponent<Character>().health, maxHealth);
+                GameObject.Find("Player").GetComponent<Health>().health += 1;
+                UIManager.Instance.UpdateHealth(GameObject.Find("Player").GetComponent<Health>().health, maxHealth);
             }
             
 
