@@ -24,7 +24,7 @@ public class Rock : MonoBehaviour
     }
     void PhysicsCheck()
     {
-        RaycastHit2D headCheck = Raycast(new Vector2(-0.3f, 0f), Vector2.down, 0.5f, groundLayer);
+        RaycastHit2D headCheck = Raycast(new Vector2(0f, 0f), new Vector2(0.7f, 0.1f), groundLayer);
         if (headCheck)
         {
             isHeadBlocked = true;
@@ -62,13 +62,16 @@ public class Rock : MonoBehaviour
         Destroy(gameObject);
         Instantiate(bonus, transform.position, Quaternion.identity);
     }
-    RaycastHit2D Raycast(Vector2 offset, Vector2 rayDiration, float length, LayerMask layer)
+    RaycastHit2D Raycast(Vector2 offset, Vector2 boxSize, LayerMask layer)
     {
         Vector2 pos = transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(pos + offset, rayDiration, length, layer);
-        Debug.DrawRay(pos + offset, rayDiration*length);
+        Debug.Log(pos.x);
+        Debug.Log(pos.y);
+        //public static RaycastHit2D BoxCast(Vector2 origin, Vector2 size, float angle, Vector2 direction, float distance, int layerMask)
+        RaycastHit2D hit = Physics2D.BoxCast(pos, boxSize, 0, new Vector2(0, -0.4f), new Vector2(0, -0.4f).magnitude, layer);
+        
         return hit;
-    }
+     }
 
     
 }
