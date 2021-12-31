@@ -100,9 +100,9 @@ public class CharacterDetect : MonoBehaviour
             
         }
     }
-    private void OnCollisionExit2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.tag == "merchant")
+        if (collision.gameObject.layer == LayerMask.NameToLayer("merchant"))
             isMerchant = false;
     }
 
