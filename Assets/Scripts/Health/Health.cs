@@ -65,21 +65,20 @@ public class Health : MonoBehaviour
         if (dead)
         {
             Death();
-            if (Input.GetKey("h"))
+            if (character.CharacterType == Character.CharacterTypes.player)
             {
-                Revive();
-            }
-            else if (Input.GetKey("r"))
-            {
-                ReviveFromBeginning();
+                if (Input.GetKey("h"))
+                {
+                    Revive();
+                }
+                else if (Input.GetKey("r"))
+                {
+                    ReviveFromBeginning();
+                }
             }
         }
         else
         {
-            if (Input.GetKey("z"))
-            {
-                TakeDamage(1);
-            }
             IsDead();
             if (getHit)
             {
@@ -114,8 +113,8 @@ public class Health : MonoBehaviour
             rendererEndTime = Time.time + rendererEndInterval;
             check = true;
             rigid.simulated = false;
-            weapon.RemoveWeapon();
-            weapon.shootingAllowed = false;
+            //weapon.RemoveWeapon();
+            //weapon.shootingAllowed = false;
             /*BGM.Stop();
             Gameover.Play();
             //destroy weapon
@@ -139,8 +138,8 @@ public class Health : MonoBehaviour
          weapon.ShootingAllowed = true;
          deadNotice.SetActive(false);
          */
-        weapon.ShowWeapon();
-        weapon.shootingAllowed = true;
+        //weapon.ShowWeapon();
+        //weapon.shootingAllowed = true;
         dead = false;
         rigid.simulated = true;
         spriteRenderer.enabled = true;

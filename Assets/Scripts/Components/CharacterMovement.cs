@@ -30,6 +30,8 @@ public class CharacterMovement : CharacterComponents
 
     private void MoveCharacter()
     {
+        float moveInput = move;
+        bool jumpInput = jump;
         controller.SetMovement(move * MoveSpeed * Time.fixedDeltaTime, jump);
     }
 
@@ -58,4 +60,25 @@ public class CharacterMovement : CharacterComponents
             }
         }
     }
+
+    public void SetHorizontal(float value)
+    {
+        move = value;
+    }
+
+    public void SetJump(bool value)
+    {
+        jump = value;
+    }
+
+    public float GetHorizontal()
+    {
+        return move;
+    }
+
+    public bool GetJump()
+    {
+        return jump;
+    }
+    
 }
