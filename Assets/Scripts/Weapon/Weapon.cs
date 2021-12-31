@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,19 @@ public class Weapon : MonoBehaviour
 
     [Header("Weapon")]
     [SerializeField] private bool useXXX = true;
+    [SerializeField] private bool canShoot = true;
 
+    private Vector3 ProjectileGeneratePosition;
+    private Vector3 projectileGeneratePosition;
     public Character WeaponOwner { get; set; }
+    public  ObjectPooler Pooler { get; set; }
+
+    public void Start()
+    {
+        Pooler = GetComponent<ObjectPooler>();
+        
+        projectileGeneratePosition = new Vector3(0f, 0f, 0f);
+    }
 
     public void TriggerShot()
     {
@@ -21,6 +33,13 @@ public class Weapon : MonoBehaviour
     private void StartShooting()
     {
         Debug.Log("Shooting");
+        if (canShoot)
+        {
+            GameObject projectilePooled = Pooler.GetObjectFromPool();
+            ProjectileGeneratePosition = transform.position + projectileGeneratePosition;
+            projectilePooled.transform.position = ProjectileGeneratePosition;
+            projectilePooled.SetActive(true);
+        }
     }
 
     // Reference the owner of this Weapon
