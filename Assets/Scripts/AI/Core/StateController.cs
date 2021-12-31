@@ -12,10 +12,14 @@ public class StateController : MonoBehaviour
     public Transform Target { get; set; }
     
     public CharacterMovement CharacterMovement { get; set; }
+    
+    //Returns a reference to this enemy path
+    public PatrolPath Path { get; set; }
 
     private void Awake()
     {
         CharacterMovement = GetComponent<CharacterMovement>();
+        Path = GetComponent<PatrolPath>();
     }
     private void Update()
     {
