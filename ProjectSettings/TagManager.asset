@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Heart
   - Trampoline
+  - merchant
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -23,8 +25,8 @@ TagManager:
   - Collection
   - TriggerBox
   - MovingPlatform
-  - 
-  - 
+  - merchant
+  - NPC
   - 
   - 
   - 

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     [Header("Health")]
-    [SerializeField] private float initialHealth = 10f;
+    public float initialHealth = 10f;
     [SerializeField] private float MaxHealth = 10f;
     public float health;
     public float maxHealth;

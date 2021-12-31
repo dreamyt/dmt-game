@@ -28,6 +28,11 @@ public class CharacterMovement : CharacterComponents
         UpdateAnimations();
     }
 
+    public void changespeed(float sp)
+    {
+        Speed = sp;
+    }
+
     private void MoveCharacter()
     {
         float moveInput = move;
