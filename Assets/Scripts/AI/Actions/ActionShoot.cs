@@ -16,15 +16,11 @@ public class ActionShoot : AIAction
     private void ShootPlayer(StateController controller)
     {
         // Stop enemy
-        controller.CharacterMovement.SetHorizontal(0);
-        controller.CharacterMovement.SetJump(false);
+        controller.characterMovement.SetHorizontal(0);
+        controller.characterMovement.SetJump(false);
 
         // Shoot
-       /* if (controller.CharacterWeapon.CurrentWeapon != null)
-        {
-            controller.CharacterWeapon.CurrentWeapon.WeaponAim.SetAim(aimDirection);
-            controller.CharacterWeapon.CurrentWeapon.UseWeapon();
-        }*/
+        controller.characterSpell.useSpell();
     }
 
     private void DeterminateAim(StateController controller)

@@ -8,8 +8,8 @@ public class CharacterSpell : CharacterComponents
     private float rotationAngle;
     
     public bool isSpelling = false;
-    float spellTime = 0.7f;
-    float spellFinishTime;
+    public float spellTime = 0.7f;
+    public float spellFinishTime;
     public int spellMode = 0;
     public float currentMagicPower;
     public float maxMagicPower;
@@ -40,17 +40,39 @@ public class CharacterSpell : CharacterComponents
 
     protected override void InternalInput()
     {
-        if (!freezeInput)
+        if (character.CharacterType == Character.CharacterTypes.player)
         {
-            if (!isSpelling && controller.isGrounded)   
+            if (!freezeInput)
             {
-                if (Input.GetKey("l"))
+                if (!isSpelling && controller.isGrounded)
                 {
-                    spellFinishTime = Time.time + spellTime;
-                    isSpelling = true;
+                    if (Input.GetKey("l"))
+                    {
+                        spellFinishTime = Time.time + spellTime;
+                        isSpelling = true;
+                    }
+                }
+            }
+
+            if (isSpelling)
+            {
+                if (Time.time >= spellFinishTime)
+                {
+                    startSpellAttacking();
+                    isSpelling = false;
                 }
             }
         }
+    }
+    //used by ai
+    public void useSpell()
+    {
+        if (!isSpelling && controller.isGrounded)   
+        {
+            spellFinishTime = Time.time + spellTime;
+            isSpelling = true;
+        }
+    
 
         if (isSpelling)
         {
@@ -61,7 +83,6 @@ public class CharacterSpell : CharacterComponents
             }
         }
     }
-
 
 
     public void startSpellAttacking()
@@ -95,7 +116,10 @@ public class CharacterSpell : CharacterComponents
         }
 
         currentMagicPower -= magicPowerConsumption;
-        UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
+        if (character.CharacterType == Character.CharacterTypes.player)
+        {
+            UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
+        }
     }
 
     private void SpellAttackBlue()
@@ -113,7 +137,10 @@ public class CharacterSpell : CharacterComponents
         firstAttack.SetActive(true);
         
         currentMagicPower -= magicPowerConsumption;
-        UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
+        if (character.CharacterType == Character.CharacterTypes.player)
+        {
+            UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
+        }
     }
 
     private void UpdateAnimations()

@@ -10,8 +10,10 @@ public class StateController : MonoBehaviour
 
     //returns the target of the enemy
     public Transform Target { get; set; }
-    
-    public CharacterMovement CharacterMovement { get; set; }
+
+    public CharacterMovement characterMovement;
+    public CharacterController characterController;
+    public CharacterSpell characterSpell;
     public AIRaycast raycast;
     
     //Returns a reference to this enemy path
@@ -19,7 +21,9 @@ public class StateController : MonoBehaviour
 
     private void Awake()
     {
-        CharacterMovement = GetComponent<CharacterMovement>();
+        characterMovement = GetComponent<CharacterMovement>();
+        characterController = GetComponent<CharacterController>();
+        characterSpell = GetComponent<CharacterSpell>();
         raycast = GetComponent<AIRaycast>();
         Path = GetComponent<PatrolPath>();
     }

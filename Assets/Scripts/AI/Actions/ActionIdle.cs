@@ -7,8 +7,8 @@ public class ActionIdle : AIAction
 {
     public override void Act(StateController controller)
     {
-        controller.CharacterMovement.SetHorizontal(0);
-        controller.CharacterMovement.SetJump(false);
+        controller.characterMovement.SetHorizontal(0);
+        controller.characterMovement.SetJump(false);
     }
 }
 

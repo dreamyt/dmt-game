@@ -16,21 +16,21 @@ public class ActionPatrol : AIAction
         newDirection = controller.Path.CurrentPoint - controller.transform.position;
         if (newDirection.y > 0.4f)
         {
-            controller.CharacterMovement.SetJump(true);
+            controller.characterMovement.SetJump(true);
         }
         else if (newDirection.y < -0.4f)
         {
             if (!controller.raycast.forward_down)
             {
-                controller.CharacterMovement.SetJump(true);
+                controller.characterMovement.SetJump(true);
             }
         }
         else
         {
-            controller.CharacterMovement.SetJump(false);
+            controller.characterMovement.SetJump(false);
         }
         newDirection = newDirection.normalized;
-        controller.CharacterMovement.SetHorizontal(newDirection.x);
+        controller.characterMovement.SetHorizontal(newDirection.x);
         
     }
 }
