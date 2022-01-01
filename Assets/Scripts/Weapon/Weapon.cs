@@ -9,43 +9,74 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float timeBtwShots = 0.2f;
 
     [Header("Weapon")]
-    [SerializeField] private bool useXXX = true;
-    [SerializeField] private bool canShoot = true;
+    [SerializeField] private bool useMagazine = false;
+    [SerializeField] private float currentMagazine = 10.0f;
+    [SerializeField] public bool canShoot = true;
 
     private Vector3 ProjectileGeneratePosition;
     private Vector3 projectileGeneratePosition;
+    private float nextShotTime;
     public Character WeaponOwner { get; set; }
     public  ObjectPooler Pooler { get; set; }
+    
+    private CharacterController controller; 
 
-    public void Start()
+    protected virtual void Start()
     {
         Pooler = GetComponent<ObjectPooler>();
-        
+        canShoot = true;
         projectileGeneratePosition = new Vector3(0f, 0f, 0f);
     }
 
+    protected virtual void Update()
+    {
+        WeaponCanShoot(); 
+    }
+
+    
     public void TriggerShot()
     {
         StartShooting();
     }
 
     // Activates our weapon in order to shoot
-    private void StartShooting()
+    protected virtual void StartShooting()
     {
-        Debug.Log("Shooting");
-        if (canShoot)
+        if (useMagazine)
         {
-            GameObject projectilePooled = Pooler.GetObjectFromPool();
-            ProjectileGeneratePosition = transform.position + projectileGeneratePosition;
-            projectilePooled.transform.position = ProjectileGeneratePosition;
-            projectilePooled.SetActive(true);
+            if (currentMagazine > 0)
+            {
+                RequestShoot();
+            }
         }
+        else
+        {
+            RequestShoot();
+        }
+        
+    }
+    
+    // The final part to request shoot
+    protected virtual void RequestShoot()
+    {
+
     }
 
+    // Controls the next time we can shoot
+    protected virtual void WeaponCanShoot()
+    {
+        if (Time.time > nextShotTime)  //Actual time in the game GREATER THAN fire rate
+        {
+            canShoot = true;
+            nextShotTime = Time.time + timeBtwShots;
+        }
+    }
+    
     // Reference the owner of this Weapon
     public void SetOwner(Character owner)
     {
         WeaponOwner = owner;
+        controller = WeaponOwner.GetComponent<CharacterController>();
     }
     public void ShowWeapon()
     {
