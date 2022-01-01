@@ -26,9 +26,10 @@ public class CharacterSpell : CharacterComponents
         magicPowerConsumption = 5;
         spellGeneratePosition = new Vector3(0f, 0f, 0f);
         Pooler = GetComponent<ObjectPooler>();
-
+        
         maxMagicPower = 30;
         currentMagicPower = maxMagicPower;
+        UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
     }
 
     protected override void HandleAbility()
@@ -94,6 +95,7 @@ public class CharacterSpell : CharacterComponents
         }
 
         currentMagicPower -= magicPowerConsumption;
+        UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
     }
 
     private void SpellAttackBlue()
@@ -111,6 +113,7 @@ public class CharacterSpell : CharacterComponents
         firstAttack.SetActive(true);
         
         currentMagicPower -= magicPowerConsumption;
+        UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
     }
 
     private void UpdateAnimations()
