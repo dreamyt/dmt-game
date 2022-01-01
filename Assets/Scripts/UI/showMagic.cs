@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class timer : MonoBehaviour
+public class showMagic : MonoBehaviour
 {
     private float totalTime1 = 300;
     //private float totalTime2 = 100;
@@ -16,7 +16,7 @@ public class timer : MonoBehaviour
     {
         Countdown1Text.text = string.Format("{0:D2}:{1:D2}",
             (int)totalTime1 / 60, (int)totalTime1 % 60);
-        
+
 
         StartCoroutine(Countdown1());
     }
@@ -26,7 +26,7 @@ public class timer : MonoBehaviour
         while (totalTime1 > -1)
         {
             yield return new WaitForSeconds(1);
-            if(totalTime1 != 0)
+            if (totalTime1 != 0)
                 totalTime1--;
             Countdown1Text.text = string.Format("{0:D2}:{1:D2}",
             (int)totalTime1 / 60, (int)totalTime1 % 60);
@@ -36,6 +36,6 @@ public class timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

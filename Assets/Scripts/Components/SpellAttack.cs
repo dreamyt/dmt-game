@@ -59,9 +59,15 @@ public class SpellAttack : MonoBehaviour
         currentDirection = newDirection;
     }
 
+    public void TurnToRight()
+    {
+        facingRight = true;
+        transform.localScale = new Vector3(2,1,1);
+    }
     public void TurnToLeft()
     {
         facingRight = false;
+        transform.localScale = new Vector3(-2, 1, 1);
     }
     
     public void trackEnemy(GameObject enemy)
@@ -74,12 +80,17 @@ public class SpellAttack : MonoBehaviour
                 (enemy.transform.position.y - transform.position.y) *
                 (enemy.transform.position.y - transform.position.y));
             trackDirection = enemy.transform.position - transform.position;
+            //Debug.Log(trackDirection);
             setDirection(trackDirection / module);
-
-            rotationAngle = Mathf.Atan2(enemy.transform.position.x - transform.position.x,
-                enemy.transform.position.y - transform.position.y) * Mathf.Deg2Rad;
-            Debug.Log(rotationAngle);
-            transform.Rotate(0, 0, -rotationAngle);
+            
+            rotationAngle = Mathf.Atan2(currentDirection.y, currentDirection.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
+        }
+        else
+        {
+            Debug.Log("Left or Right!");
+            setDirection(facingRight? Vector2.right : Vector2.left);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 

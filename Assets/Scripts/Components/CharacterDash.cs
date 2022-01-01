@@ -17,6 +17,7 @@ public class CharacterDash : CharacterComponents
         maxStamina = 30;
         currentStamina = maxStamina;
         movement = GetComponent<CharacterMovement>();
+        UIManager.Instance.UpdateStamina(currentStamina, maxStamina);
     }
 
     // Update is called once per frame
@@ -44,6 +45,7 @@ public class CharacterDash : CharacterComponents
 
                     movement.MoveSpeed = 480;
                     currentStamina -= 1.0f;
+                    UIManager.Instance.UpdateStamina(currentStamina, maxStamina);
                 }
                         /*
                          * Consider the way to improve
@@ -64,6 +66,7 @@ public class CharacterDash : CharacterComponents
         {
             movement.MoveSpeed = movement.initialSpeed;
             currentStamina = (currentStamina >= maxStamina ? maxStamina : currentStamina + 0.3f);
+            UIManager.Instance.UpdateStamina(currentStamina, maxStamina);
         }
     }
 }
