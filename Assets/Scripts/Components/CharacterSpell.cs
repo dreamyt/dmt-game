@@ -63,6 +63,11 @@ public class CharacterSpell : CharacterComponents
         {
             spellAttackRed();
         }
+
+        if (spellMode == 1)
+        {
+            SpellAttackBule();
+        }
     }
 
     private void spellAttackRed()
@@ -89,9 +94,9 @@ public class CharacterSpell : CharacterComponents
         GameObject thirdAttack = Pooler.GetObjectFromPool();
 
         spellGeneratePosition = transform.position + spellGeneratePosition;
-        firstAttack.transform.position = spellGeneratePosition;
+        firstAttack.transform.position = spellGeneratePosition + new Vector3(0,1.0f,0);
         secondAttack.transform.position = spellGeneratePosition;
-        thirdAttack.transform.position = spellGeneratePosition;
+        thirdAttack.transform.position = spellGeneratePosition + new Vector3(0,-1.0f,0);
         firstAttack.SetActive(true);
         firstAttack.SetActive(true);
         firstAttack.SetActive(true);
