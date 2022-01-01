@@ -11,8 +11,6 @@ public class CharacterController : MonoBehaviour
     public bool isGrounded = true;
     const float k_GroundedRadius = 0.2f; //the radius of a small circle used to detect the ground
     private bool m_Grounded = true;    //whether player is on the ground
-    private bool m_FacingRight = true;  //whether the player is facing right
-    public bool FacingRight = true;
     private Vector3 m_Velocity = Vector3.zero;
 
     const float m_NextGroundCheckLag = 0.1f; //After a short period of time after the jump, you can not jump again. A solution to prevent continuous jumping
@@ -45,7 +43,6 @@ public class CharacterController : MonoBehaviour
             }
         }
         isGrounded = m_Grounded;
-        FacingRight = m_FacingRight;
     }
 
     private void FixedUpdate()
@@ -59,17 +56,7 @@ public class CharacterController : MonoBehaviour
         {
             //variable move decides the x velocity
             m_Rigidbody2D.velocity = new Vector2(move, m_Rigidbody2D.velocity.y);
-
-            //flip
-            if (move > 0 && !m_FacingRight)
-            {
-                Flip();
-            }
-            else if (move < 0 && m_FacingRight)
-            {
-                Flip();
-            }
-
+            
         }
 
         //press the jump key, player will jump if he's on the ground
@@ -89,13 +76,7 @@ public class CharacterController : MonoBehaviour
         this.move = m;
         this.jump = j;
     }
-    private void Flip()
-    {
-        //true -> false, false->true
-        m_FacingRight = !m_FacingRight;
-        transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
-    }
-
+    
     private void Recoil()
     {
         if (recoilMovement.magnitude > 0.1f)

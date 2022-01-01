@@ -35,7 +35,7 @@ public class CharacterComponents : MonoBehaviour
 
     protected virtual void HandleAbility()
     {
-        if (!currentHealth.dead&&!currentHealth.getHit)
+        if (!currentHealth.dead && !currentHealth.getHit)
         {
             InternalInput();
         }
@@ -46,9 +46,12 @@ public class CharacterComponents : MonoBehaviour
     {
         if (!freezeInput)
         {
-            move = Input.GetAxis("Horizontal");// Get horizontal movement
-            jump = Input.GetKey("k");//detect jumping 
-            dash = Input.GetKey("left shift"); 
+            if (character.CharacterType == Character.CharacterTypes.player)
+            {
+                move = Input.GetAxis("Horizontal"); // Get horizontal movement
+                jump = Input.GetKey("k"); //detect jumping 
+                dash = Input.GetKey("left shift");
+            }
         }
     }
 

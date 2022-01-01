@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 2294491805296442743}
   - component: {fileID: 5607704189573910653}
   - component: {fileID: 6748207607574455596}
+  - component: {fileID: 1827099450697297999}
   - component: {fileID: 6659395631232077015}
   - component: {fileID: 4727233089219389118}
   - component: {fileID: 1722458067379104228}
@@ -302,6 +303,19 @@ MonoBehaviour:
   weaponToUse: {fileID: 6888981609130747660, guid: e97fe7f52ac30e344a7513815d39ce8f, type: 3}
   weaponHolderPosition: {fileID: 6748207607454232950}
   shootingAllowed: 1
+--- !u!114 &1827099450697297999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748207607574455572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f20ad2f3409ff46829f4b315980b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FacingRight: 1
 --- !u!114 &6659395631232077015
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,15 @@ public class StateController : MonoBehaviour
     [SerializeField] private AIState currentState;
     [SerializeField] private AIState remainState;
 
+    //returns the target of the enemy
+    public Transform Target { get; set; }
+    
+    public CharacterMovement CharacterMovement { get; set; }
+
+    private void Awake()
+    {
+        CharacterMovement = GetComponent<CharacterMovement>();
+    }
     private void Update()
     {
         currentState.EvaluateState(this);
