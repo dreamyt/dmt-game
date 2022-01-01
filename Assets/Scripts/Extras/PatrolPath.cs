@@ -9,23 +9,26 @@ public class PatrolPath : MonoBehaviour
     [SerializeField] private float minDistanceToPoint = 0.1f;
  
     public Vector3 CurrentPoint => startPosition + currentPoint.Current;
+    //public Vector3 CurrentPoint2 => currentPoint.Current;
 
     private Vector3 currentPosition;
     private Vector3 startPosition;
     private IEnumerator<Vector3> currentPoint;
     private float distanceToPoint;
     private bool gameStared;
-
+    
     private void Start()
     {
         gameStared = true;
-
+        
         startPosition = transform.position;
         currentPoint = GetPoint();
         currentPoint.MoveNext();
         
         currentPosition = transform.position;
         transform.position = currentPosition + currentPoint.Current;
+        Debug.Log(CurrentPoint.x+"  "+CurrentPoint.y);
+       
     }
 
     // Update is called once per frame
@@ -48,11 +51,10 @@ public class PatrolPath : MonoBehaviour
 
     public IEnumerator<Vector3> GetPoint()
     {
+        bool reachEnd = false;
         int index = 0;
-        Debug.Log(path.Count);
         while (true)
         {
-            Debug.Log(index);
             yield return path[index];
             
             if (path.Count <= 1)
@@ -60,14 +62,22 @@ public class PatrolPath : MonoBehaviour
                 continue;  //If we don’t have enough point to go, we just continue
             }
 
-            index++;
-            if (index < 0)
+            if (!reachEnd)
             {
-                index = path.Count - 1;  
+                index++;
+            }
+            else
+            {
+                index--;
+            }
+            if (index == 0)
+            {
+                reachEnd = false;
             }
             else if (index > path.Count - 1)
             {
-                index = 0; //When go to last point, reset the index and go to the first point
+                reachEnd = true;
+                index = (index-2); //When go to last point, reset the index and go to the first point
             }
         }
     }

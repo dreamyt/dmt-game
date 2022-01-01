@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SpellAttack : MonoBehaviour
 {
+    [SerializeField] private LayerMask layer;
     Transform initialState;
     public Vector3 currentDirection;
     public Vector3 trackDirection;
@@ -44,6 +46,7 @@ public class SpellAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         transform.position = transform.position + currentDirection * speed;
         if (canDetect)
         {
@@ -83,7 +86,7 @@ public class SpellAttack : MonoBehaviour
     public GameObject detectEnemy()
     {
 
-        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, range, 1 << LayerMask.NameToLayer("Enemy"));
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, range, layer.value);
         //Collider[] cols = Physics.OverlapSphere(transform.position, 50f);
         //Collider[] cols = Physics.OverlapSphere(overlapSphereCube.position, range, 1 << LayerMask.NameToLayer("Enemy"));
         //if(cols!=null && cols.Length>0) Debug.Log(cols[0]);
@@ -105,9 +108,10 @@ public class SpellAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (1<<collision.gameObject.layer == layer.value)
         {
             gameObject.SetActive(false);
+            
         }
     }
 

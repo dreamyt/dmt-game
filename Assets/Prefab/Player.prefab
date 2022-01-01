@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 6748207607574455573}
   - component: {fileID: 6748207607574455598}
   - component: {fileID: 6748207607574455593}
+  - component: {fileID: 6748207607574455599}
   - component: {fileID: 8475345934293462805}
   - component: {fileID: 4603730678308648918}
   - component: {fileID: 6748207607574455595}
@@ -83,7 +84,7 @@ GameObject:
   - component: {fileID: 6659395631232077015}
   - component: {fileID: 4727233089219389118}
   - component: {fileID: 1722458067379104228}
-  - component: {fileID: 6748207607574455599}
+  - component: {fileID: 1154804252313925164}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -195,6 +196,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.0625, y: 2.125}
   m_Direction: 0
+--- !u!95 &6748207607574455599
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748207607574455572}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be3c83e3b158f3545bab66555b113754, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8475345934293462805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +361,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellMode: 0
   isSpelling: 0
+  currentMagicPower: 0
+  maxMagicPower: 0
   SpellGeneratePosition: {x: 0, y: 0, z: 0}
   spellGeneratePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1722458067379104228
@@ -358,22 +380,18 @@ MonoBehaviour:
   objectPrefab: {fileID: 3997034576274355607, guid: 84db769656f056545816db54d6e47cbb, type: 3}
   poolSize: 10
   poolCanExpand: 1
---- !u!95 &6748207607574455599
-Animator:
-  serializedVersion: 3
+--- !u!114 &1154804252313925164
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6748207607574455572}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be3c83e3b158f3545bab66555b113754, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd280f682eb7994bbfec1a6323fb0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetX: 0
+  offsetY: 0
+  dist: 1
