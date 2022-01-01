@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class Health : MonoBehaviour
     private float rendererEndInterval = 1.5f;
     private float rendererEndTime;
     bool check = false;//used to ensure death check only execute once
-    
+    public Text healthNumber;
     private bool isPlayer;
     private Character character;
     private CharacterController controller;
@@ -50,12 +51,12 @@ public class Health : MonoBehaviour
         previousHealth = health;
         maxHealth = MaxHealth; 
         UIManager.Instance.UpdateHealth(health, maxHealth);
-
+        healthNumber.text = health.ToString();
         /*if (character != null)
         {
             isPlayer = character.CharacterType == Character.CharacterTypes.player;
         }*/
-        
+
     }
     
 
@@ -147,6 +148,7 @@ public class Health : MonoBehaviour
         rigid.position = spawnPosition;
         check = false;
         health = previousHealth;
+        healthNumber.text = health.ToString();
         UIManager.Instance.UpdateHealth(health, maxHealth);
     }
     private void ReviveFromBeginning()
@@ -164,7 +166,7 @@ public class Health : MonoBehaviour
         getHit = true;
         HitFinishTime = Time.time + getHitTime;
         health -= damage;
-        
+        healthNumber.text = health.ToString();
         UIManager.Instance.UpdateHealth(health, maxHealth);
 
     }

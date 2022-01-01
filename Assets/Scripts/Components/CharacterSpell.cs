@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 
 public class CharacterSpell : CharacterComponents
 {
     ObjectPooler Pooler;
     private float rotationAngle;
-    
+    public Text magicNumber;
     public bool isSpelling = false;
     float spellTime = 0.7f;
     float spellFinishTime;
@@ -30,7 +33,10 @@ public class CharacterSpell : CharacterComponents
         maxMagicPower = 30;
         currentMagicPower = maxMagicPower;
         UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
+        magicNumber.text = currentMagicPower.ToString();
     }
+
+    
 
     protected override void HandleAbility()
     {
@@ -95,6 +101,7 @@ public class CharacterSpell : CharacterComponents
         }
 
         currentMagicPower -= magicPowerConsumption;
+        magicNumber.text = currentMagicPower.ToString();
         UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
     }
 
@@ -113,6 +120,7 @@ public class CharacterSpell : CharacterComponents
         firstAttack.SetActive(true);
         
         currentMagicPower -= magicPowerConsumption;
+        magicNumber.text = currentMagicPower.ToString();
         UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
     }
 
