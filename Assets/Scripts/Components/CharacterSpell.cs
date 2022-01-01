@@ -71,7 +71,7 @@ public class CharacterSpell : CharacterComponents
         SpellGeneratePosition = transform.position + spellGeneratePosition;
         projectilePooled.transform.position = SpellGeneratePosition;
         projectilePooled.SetActive(true);
-        if (controller.FacingRight)
+        if (GetComponent<CharacterFlip>().FacingRight)
         {
             SpellAttack.facingRight = true;
         }
