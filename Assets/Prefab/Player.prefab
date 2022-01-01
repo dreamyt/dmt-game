@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6748207607454232950
 Transform:
   m_ObjectHideFlags: 0
@@ -241,7 +241,6 @@ MonoBehaviour:
     m_Bits: 16448
   m_GroundCheck: {fileID: 6748207607137697997}
   isGrounded: 0
-  FacingRight: 1
   move: 0
   jump: 0
 --- !u!114 &8171239111021630034
@@ -300,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89608b3a85645744caf3eab40185250a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponToUse: {fileID: 6888981609130747660, guid: e97fe7f52ac30e344a7513815d39ce8f, type: 3}
+  weaponToUse: {fileID: 4881312924664726796, guid: a211e5ceca6171044893d0897a1c16f5, type: 3}
   weaponHolderPosition: {fileID: 6748207607454232950}
   shootingAllowed: 1
 --- !u!114 &1827099450697297999
