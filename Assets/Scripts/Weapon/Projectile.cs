@@ -112,13 +112,12 @@ public class Projectile : MonoBehaviour
     public void SetDirectionEnemy(Vector2 newDirection, Quaternion shootRotation)
     {
         Direction = newDirection;
-        // Debug.Log(Direction);
         /* Rotate the bullet */
         transform.rotation = shootRotation;
 
         /* Pass the bullet direction */
 
-        /* !!! To be add, new animation of it destory !!! */
+        /* !!! To be add, new animation of it destroy !!! */
     }
 
     /* Part 5 - Return to pool */

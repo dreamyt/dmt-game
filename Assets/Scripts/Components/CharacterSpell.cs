@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class CharacterSpell : CharacterComponents
 {
-    /* It's standing for the spell position togehter with the player */
-    public int spellMode = 0;
     ObjectPooler Pooler;
     private float rotationAngle;
     
     public bool isSpelling = false;
     float spellTime = 0.7f;
     float spellFinishTime;
+    public int spellMode = 0;
     public float currentMagicPower;
     public float maxMagicPower;
+    public float magicPowerConsumption;
     [Header("Spell Settings")]
     [SerializeField] private Vector3 SpellGeneratePosition; // The real position to generate spell attack
     [SerializeField] private Vector3 spellGeneratePosition; // The relative position of spell compared to player
@@ -23,6 +23,7 @@ public class CharacterSpell : CharacterComponents
     {
         base.Start();
         spellMode = 0;
+        magicPowerConsumption = 5;
         spellGeneratePosition = new Vector3(0f, 0f, 0f);
         Pooler = GetComponent<ObjectPooler>();
 
@@ -85,13 +86,14 @@ public class CharacterSpell : CharacterComponents
         SpellAttack spellAttack = projectilePooled.GetComponent<SpellAttack>();
         if (GetComponent<CharacterFlip>().FacingRight)
         {
-            spellAttack.facingRight = true;
+            spellAttack.TurnToRight();
         }
         else
         {
-            spellAttack.facingRight = false;
+            spellAttack.TurnToLeft();
         }
 
+        currentMagicPower -= magicPowerConsumption;
     }
 
     private void SpellAttackBlue()
@@ -108,6 +110,7 @@ public class CharacterSpell : CharacterComponents
         firstAttack.SetActive(true);
         firstAttack.SetActive(true);
         
+        currentMagicPower -= magicPowerConsumption;
     }
 
     private void UpdateAnimations()
