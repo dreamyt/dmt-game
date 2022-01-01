@@ -81,7 +81,15 @@ public class SpellAttack : MonoBehaviour
             setDirection(trackDirection / module);
             
             rotationAngle = Mathf.Atan2(currentDirection.y, currentDirection.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
+            
+            if (facingRight)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0,0, rotationAngle+180);
+            }
         }
         else
         {
