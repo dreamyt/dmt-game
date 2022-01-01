@@ -20,6 +20,7 @@ public class ActionShoot : AIAction
         controller.characterMovement.SetJump(false);
 
         // Shoot
+        
         controller.characterSpell.useSpell();
     }
 

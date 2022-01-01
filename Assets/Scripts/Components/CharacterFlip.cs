@@ -30,7 +30,7 @@ public class CharacterFlip : CharacterComponents
         FacingRight = m_FacingRight;
     }
 
-    private void Flip()
+    public void Flip()
     {
         //true -> false, false->true
         m_FacingRight = !m_FacingRight;

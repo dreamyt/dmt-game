@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     [Header("Health")]
     public float initialHealth = 10f;
     [SerializeField] private float MaxHealth = 10f;
+    [SerializeField] private bool destroyObject;
     public float health;
     public float maxHealth;
     public float previousHealth;
@@ -35,6 +36,8 @@ public class Health : MonoBehaviour
     private Rigidbody2D rigid;
     private Animator anim;
     private CharacterWeapon weapon;
+    private EnemyHealth enemyHealth;
+    private CharacterSpell characterSpell;
     private void Awake()
     {
         character = GetComponent<Character>();
@@ -44,14 +47,19 @@ public class Health : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         weapon = GetComponent<CharacterWeapon>();
+        enemyHealth = GetComponent<EnemyHealth>();
+        characterSpell = GetComponent<CharacterSpell>();
         dead = false;
         getHit = false;
         spawnPosition = rigid.position;
         health = initialHealth;
         previousHealth = health;
-        maxHealth = MaxHealth; 
-        UIManager.Instance.UpdateHealth(health, maxHealth);
-        healthNumber.text = health.ToString();
+        maxHealth = MaxHealth;
+        if (character.CharacterType == Character.CharacterTypes.player)
+        {
+            UIManager.Instance.UpdateHealth(health, maxHealth);
+            healthNumber.text = health.ToString();
+        }
         /*if (character != null)
         {
             isPlayer = character.CharacterType == Character.CharacterTypes.player;
@@ -66,7 +74,7 @@ public class Health : MonoBehaviour
         if (dead)
         {
             Death();
-            if (character.CharacterType == Character.CharacterTypes.player)
+            if (!destroyObject)
             {
                 if (Input.GetKey("h"))
                 {
@@ -107,29 +115,42 @@ public class Health : MonoBehaviour
             dead = true;
         }
     }
+    private void DestroyObject()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void Death()
     {
-        if (!check)
+        if (destroyObject)
         {
-            rendererEndTime = Time.time + rendererEndInterval;
-            check = true;
             rigid.simulated = false;
-            //weapon.RemoveWeapon();
-            //weapon.shootingAllowed = false;
-            /*BGM.Stop();
-            Gameover.Play();
-            //destroy weapon
-            weapon.RemoveWeapon();
-            deadNotice.SetActive(true);
-            //forbidden shooting
-            weapon.ShootingAllowed = false;*/
+            characterSpell.isSpelling = false;
+            Invoke("DestroyObject", 1.5f);
         }
-
-        if (Time.time > rendererEndTime)
+        else
         {
-            spriteRenderer.enabled = false;
+            if (!check)
+            {
+                rendererEndTime = Time.time + rendererEndInterval;
+                check = true;
+                rigid.simulated = false;
+                weapon.RemoveWeapon();
+                weapon.shootingAllowed = false;
+                /*BGM.Stop();
+                Gameover.Play();
+                //destroy weapon
+                deadNotice.SetActive(true);*/
+                
+            }
+
+            if (Time.time > rendererEndTime)
+            {
+                spriteRenderer.enabled = false;
+            }
         }
     }
+    
     private void Revive()
     {
         /*
@@ -139,17 +160,20 @@ public class Health : MonoBehaviour
          weapon.ShootingAllowed = true;
          deadNotice.SetActive(false);
          */
-        //weapon.ShowWeapon();
-        //weapon.shootingAllowed = true;
-        dead = false;
-        rigid.simulated = true;
-        spriteRenderer.enabled = true;
-        anim.SetBool("Death", false);
-        rigid.position = spawnPosition;
-        check = false;
-        health = previousHealth;
-        healthNumber.text = health.ToString();
-        UIManager.Instance.UpdateHealth(health, maxHealth);
+        if (!destroyObject)
+        {
+            weapon.ShowWeapon();
+            weapon.shootingAllowed = true;
+            dead = false;
+            rigid.simulated = true;
+            spriteRenderer.enabled = true;
+            anim.SetBool("Death", false);
+            rigid.position = spawnPosition;
+            check = false;
+            health = previousHealth;
+            healthNumber.text = health.ToString();
+            UIManager.Instance.UpdateHealth(health, maxHealth);
+        }
     }
     private void ReviveFromBeginning()
     {
@@ -166,11 +190,25 @@ public class Health : MonoBehaviour
         getHit = true;
         HitFinishTime = Time.time + getHitTime;
         health -= damage;
-        healthNumber.text = health.ToString();
-        UIManager.Instance.UpdateHealth(health, maxHealth);
+        UpdateCharacterHealth();
 
     }
 
+    private void UpdateCharacterHealth()
+    {
+        if (enemyHealth != null)
+        {
+            enemyHealth.UpdateEnemyHealth(health, maxHealth);
+        }  
+      
+        // Update Player health
+        if (character.CharacterType == Character.CharacterTypes.player)
+        {
+            healthNumber.text = health.ToString();
+            UIManager.Instance.UpdateHealth(health, maxHealth);
+        }
+
+    }
     private void UpdateAnimations()
     {
         if (dead)

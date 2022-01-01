@@ -62,7 +62,7 @@ public class SpellAttack : MonoBehaviour
     public void TurnToRight()
     {
         facingRight = true;
-        transform.localScale = new Vector3(2,1,1);
+        transform.localScale = new Vector3(2, 1, 1);
     }
     public void TurnToLeft()
     {
@@ -84,15 +84,7 @@ public class SpellAttack : MonoBehaviour
             setDirection(trackDirection / module);
             
             rotationAngle = Mathf.Atan2(currentDirection.y, currentDirection.x) * Mathf.Rad2Deg;
-            
-            if (facingRight)
-            {
-                transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
-            }
-            else
-            {
-                transform.rotation = Quaternion.Euler(0,0, rotationAngle+180);
-            }
+            transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
         }
         else
         {

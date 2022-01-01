@@ -32,8 +32,11 @@ public class CharacterSpell : CharacterComponents
         
         maxMagicPower = 30;
         currentMagicPower = maxMagicPower;
-        UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
-        magicNumber.text = currentMagicPower.ToString();
+        if(character.CharacterType==Character.CharacterTypes.player)
+        {
+            UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
+            magicNumber.text = currentMagicPower.ToString();
+        }
     }
 
     

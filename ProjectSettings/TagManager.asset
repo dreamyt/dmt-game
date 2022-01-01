@@ -9,6 +9,7 @@ TagManager:
   - Trampoline
   - merchant
   - NPC
+  - Bullet
   layers:
   - Default
   - TransparentFX
