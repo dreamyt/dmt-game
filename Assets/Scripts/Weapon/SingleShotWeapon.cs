@@ -50,7 +50,7 @@ public class SingleShotWeapon : Weapon
     // Calculates the position where our projectile is going to be fired
     private void EvaluateProjectileSpawnPosition()
     {
-        if (WeaponOwner.GetComponent<CharacterController>().FacingRight)
+        if (WeaponOwner.GetComponent<CharacterFlip>().FacingRight)
         {
             // Right side
             ProjectileGeneratePosition = transform.position + projectileGeneratePosition;

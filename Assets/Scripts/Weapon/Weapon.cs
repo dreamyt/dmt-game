@@ -13,8 +13,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float currentMagazine = 10.0f;
     [SerializeField] public bool canShoot = true;
 
-    private Vector3 ProjectileGeneratePosition;
-    private Vector3 projectileGeneratePosition;
+
     private float nextShotTime;
     public Character WeaponOwner { get; set; }
     public  ObjectPooler Pooler { get; set; }
@@ -25,7 +24,7 @@ public class Weapon : MonoBehaviour
     {
         Pooler = GetComponent<ObjectPooler>();
         canShoot = true;
-        projectileGeneratePosition = new Vector3(0f, 0f, 0f);
+        
     }
 
     protected virtual void Update()
