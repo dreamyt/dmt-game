@@ -80,7 +80,19 @@ public class Projectile : MonoBehaviour
 
     }
 
-    // Set the direction and rotation in order to move  
+    // Set the direction and rotation in order to move
+    public void SetDirection(Vector2 newDirection, bool isFacingRight = true)
+    {
+        Direction = newDirection;
+
+        if (FacingRight != isFacingRight)
+        {
+            FlipProjectile();
+        }
+
+        // transform.rotation = rotation;
+
+    }
     public void SetDirection(Vector2 newDirection, Quaternion rotation, bool isFacingRight = true)
     {
         Direction = newDirection;
