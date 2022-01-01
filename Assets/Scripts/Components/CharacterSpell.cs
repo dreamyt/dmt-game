@@ -12,6 +12,8 @@ public class CharacterSpell : CharacterComponents
     public bool isSpelling = false;
     float spellTime = 0.7f;
     float spellFinishTime;
+    public float currentMagicPower;
+    public float maxMagicPower;
     [Header("Spell Settings")]
     [SerializeField] private Vector3 SpellGeneratePosition; // The real position to generate spell attack
     [SerializeField] private Vector3 spellGeneratePosition; // The relative position of spell compared to player
@@ -23,6 +25,9 @@ public class CharacterSpell : CharacterComponents
         spellMode = 0;
         spellGeneratePosition = new Vector3(0f, 0f, 0f);
         Pooler = GetComponent<ObjectPooler>();
+
+        maxMagicPower = 30;
+        currentMagicPower = maxMagicPower;
     }
 
     protected override void HandleAbility()
@@ -66,7 +71,7 @@ public class CharacterSpell : CharacterComponents
 
         if (spellMode == 1)
         {
-            SpellAttackBule();
+            SpellAttackBlue();
         }
     }
 
@@ -76,18 +81,20 @@ public class CharacterSpell : CharacterComponents
         SpellGeneratePosition = transform.position + spellGeneratePosition;
         projectilePooled.transform.position = SpellGeneratePosition;
         projectilePooled.SetActive(true);
+
+        SpellAttack spellAttack = projectilePooled.GetComponent<SpellAttack>();
         if (GetComponent<CharacterFlip>().FacingRight)
         {
-            SpellAttack.facingRight = true;
+            spellAttack.facingRight = true;
         }
         else
         {
-            SpellAttack.facingRight = false;
+            spellAttack.facingRight = false;
         }
 
     }
 
-    private void SpellAttackBule()
+    private void SpellAttackBlue()
     {
         GameObject firstAttack = Pooler.GetObjectFromPool();
         GameObject secondAttack = Pooler.GetObjectFromPool();

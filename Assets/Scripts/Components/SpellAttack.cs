@@ -21,7 +21,7 @@ public class SpellAttack : MonoBehaviour
 
     public bool canDetect;
 
-    static public bool facingRight;
+    public bool facingRight;
     //public Transform overlapSphereCube;
     public float range = 25.0f;
 
@@ -56,7 +56,7 @@ public class SpellAttack : MonoBehaviour
         currentDirection = newDirection;
     }
 
-    public void turnToLeft()
+    public void TurnToLeft()
     {
         facingRight = false;
     }

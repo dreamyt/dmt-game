@@ -35,6 +35,9 @@ public class SingleShotWeapon : Weapon
             ProjectileGeneratePosition = transform.position + projectileGeneratePosition;
             projectilePooled.transform.position = ProjectileGeneratePosition;
             projectilePooled.SetActive(true);
+
+            Projectile projectile = projectilePooled.GetComponent<Projectile>();
+            projectile.SetDirection(WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? Vector2.right : Vector2.left);
             //nextShotTime = Time.time + timeBtwShots;
             canShoot = false;
         }
