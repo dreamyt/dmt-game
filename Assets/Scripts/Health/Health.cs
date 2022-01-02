@@ -125,7 +125,11 @@ public class Health : MonoBehaviour
         if (destroyObject)
         {
             rigid.simulated = false;
-            characterSpell.isSpelling = false;
+            if (characterSpell != null)
+            {
+                characterSpell.isSpelling = false;
+            }
+
             Invoke("DestroyObject", 1.5f);
         }
         else

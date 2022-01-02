@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3901374061590149591}
   m_Layer: 0
   m_Name: SpellAttack_Red
-  m_TagString: Bullet
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,3 +157,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 2
+  damage: 2

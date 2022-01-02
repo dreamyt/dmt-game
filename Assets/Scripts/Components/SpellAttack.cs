@@ -94,7 +94,7 @@ public class SpellAttack : MonoBehaviour
                 (enemy.transform.position.y - transform.position.y) *
                 (enemy.transform.position.y - transform.position.y));
             trackDirection = enemy.transform.position - transform.position;
-            //Debug.Log(trackDirection);
+            Debug.Log(trackDirection);
             setDirection(trackDirection / module);
 
             if ((facingRight && trackDirection.x < 0) || (!facingRight && trackDirection.x > 0))
