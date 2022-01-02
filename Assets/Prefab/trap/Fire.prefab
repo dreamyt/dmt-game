@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1424177941
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1919370392303291110, guid: bd07ad3b7feb09d4d87b7c2e43303d2d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hideSpikeBox: {fileID: 197402660853654373, guid: e66e51d52e3a2d94b911a431e9734b9e, type: 3}
-  time: 0.5
+  time: 0.1
