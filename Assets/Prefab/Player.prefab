@@ -374,7 +374,7 @@ MonoBehaviour:
   magicRed: {fileID: 3997034576274355607, guid: 84db769656f056545816db54d6e47cbb, type: 3}
   magicBlue: {fileID: 7129806828219133847, guid: 615576ca7b4288043898fab17166a9d6, type: 3}
   SpellGeneratePosition: {x: 0, y: 0, z: 0}
-  spellGeneratePosition: {x: 0, y: 0, z: 0}
+  spellGeneratePosition: {x: 2, y: 0, z: 0}
 --- !u!114 &1722458067379104228
 MonoBehaviour:
   m_ObjectHideFlags: 0

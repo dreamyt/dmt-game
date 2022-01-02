@@ -30,7 +30,7 @@ public class CharacterSpell : CharacterComponents
         base.Start();
         spellMode = 0;
         magicPowerConsumption = 5;
-        spellGeneratePosition = new Vector3(0f, 0f, 0f);
+        //spellGeneratePosition = new Vector3(0f, 0f, 0f);
         Pooler = GetComponent<ObjectPooler>();
         
         maxMagicPower = 30;

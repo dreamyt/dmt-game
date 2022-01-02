@@ -167,5 +167,5 @@ MonoBehaviour:
   lifeTime: 4
   layer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   damage: 1

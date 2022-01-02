@@ -28,7 +28,7 @@ public class ReturnToPool : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (1<<collision.gameObject.layer == layer.value)
+        if ((layer.value & 1<<collision.gameObject.layer) !=0)
         {
             Return();
         }

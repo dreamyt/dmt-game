@@ -2476,6 +2476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jar
       objectReference: {fileID: 0}
+    - target: {fileID: 4488741796812282225, guid: 30680c4f6dc078d47b120432818387a9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4488741796812282227, guid: 30680c4f6dc078d47b120432818387a9, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4590,6 +4594,14 @@ PrefabInstance:
       propertyPath: magicNumber
       value: 
       objectReference: {fileID: 659172846}
+    - target: {fileID: 4727233089219389118, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
+      propertyPath: spellGeneratePosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727233089219389118, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
+      propertyPath: spellGeneratePosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6748207607454232945, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_IsActive
       value: 1
