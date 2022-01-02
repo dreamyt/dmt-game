@@ -77,7 +77,6 @@ public class CharacterSpell : CharacterComponents
 
             if (Input.GetKeyDown("1"))
             {
-                Debug.Log("111");
                 spellMode = 1;
                 //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
                 newPrefab = magicBlue;
@@ -157,7 +156,7 @@ public class CharacterSpell : CharacterComponents
         GameObject firstAttack = Pooler.GetObjectFromPool();
         firstAttack.transform.position = SpellGeneratePosition + new Vector3(0,1.0f,0);
         firstAttack.SetActive(true);
-        
+
         GameObject secondAttack = Pooler.GetObjectFromPool();
         secondAttack.transform.position = SpellGeneratePosition;
         secondAttack.SetActive(true);
@@ -165,7 +164,23 @@ public class CharacterSpell : CharacterComponents
         GameObject thirdAttack = Pooler.GetObjectFromPool();
         thirdAttack.transform.position = SpellGeneratePosition + new Vector3(0,-1.0f,0);
         thirdAttack.SetActive(true);
-
+        
+        SpellAttack spellAttack1 = firstAttack.GetComponent<SpellAttack>();
+        SpellAttack spellAttack2 = secondAttack.GetComponent<SpellAttack>();
+        SpellAttack spellAttack3 = thirdAttack.GetComponent<SpellAttack>();
+        if (GetComponent<CharacterFlip>().FacingRight)
+        {
+            spellAttack1.facingRight = true;
+            spellAttack2.facingRight = true;
+            spellAttack3.facingRight = true;
+        }
+        else
+        {
+            spellAttack1.TurnToLeft();
+            spellAttack2.TurnToLeft();
+            spellAttack3.TurnToLeft();
+        }
+        
         currentMagicPower -= magicPowerConsumption;
         if (character.CharacterType == Character.CharacterTypes.player)
         {

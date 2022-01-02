@@ -1874,21 +1874,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 669658309}
     - target: {fileID: 4727233089219389118, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
-      propertyPath: magicRed
-      value: 
-      objectReference: {fileID: 3997034576274355607, guid: 84db769656f056545816db54d6e47cbb, type: 3}
-    - target: {fileID: 4727233089219389118, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
-      propertyPath: magicBlue
-      value: 
-      objectReference: {fileID: 7129806828219133847, guid: 615576ca7b4288043898fab17166a9d6, type: 3}
-    - target: {fileID: 4727233089219389118, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: magicNumber
       value: 
       objectReference: {fileID: 477685857}
-    - target: {fileID: 6748207607454232945, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455572, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1937,10 +1925,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6748207607574455596, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
-      propertyPath: weaponToUse
-      value: 
-      objectReference: {fileID: 4881312924664726796, guid: a211e5ceca6171044893d0897a1c16f5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
 --- !u!4 &1572058127 stripped
