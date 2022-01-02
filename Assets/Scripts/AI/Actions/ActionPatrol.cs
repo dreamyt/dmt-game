@@ -14,9 +14,6 @@ public class ActionPatrol : AIAction
     private void PatrolPath(StateController controller)
     {
         newDirection = controller.Path.CurrentPoint - controller.transform.position;
-        Vector2 NewDirection = newDirection.normalized;
-        controller.characterMovement.SetHorizontal(NewDirection.x);
-        
         if (newDirection.y > 0.4f)
         {
             controller.characterMovement.SetJump(true);
@@ -32,7 +29,8 @@ public class ActionPatrol : AIAction
         {
             controller.characterMovement.SetJump(false);
         }
-       
+        newDirection = newDirection.normalized;
+        controller.characterMovement.SetHorizontal(newDirection.x);
         
     }
 }

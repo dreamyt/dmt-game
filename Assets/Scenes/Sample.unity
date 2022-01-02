@@ -2582,7 +2582,19 @@ Transform:
   m_Children:
   - {fileID: 543631500}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 10
+=======
+  m_RootOrder: 9
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+=======
+  m_RootOrder: 9
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+=======
+  m_RootOrder: 9
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &958489152
 GameObject:
@@ -2855,7 +2867,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 12
+=======
+  m_RootOrder: 11
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+=======
+  m_RootOrder: 11
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+=======
+  m_RootOrder: 11
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1319982174
 GameObject:
@@ -4165,6 +4189,90 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45fead92344548947ac694c96cbf77c1, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+=======
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+--- !u!1001 &1495225649819412131
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1495225648981467233, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_Name
+      value: Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467238, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467238, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467238, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467238, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467238, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467238, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467238, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467238, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467238, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467238, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467238, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467241, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: Speed
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495225648981467250, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: magicRed
+      value: 
+      objectReference: {fileID: 3997034576274355607, guid: f6ce9a30a7eb0a9428e79e333e4bbafe, type: 3}
+    - target: {fileID: 1495225648981467250, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: spellTime
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+=======
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+=======
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
 --- !u!1001 &2180708927318803352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4309,10 +4417,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 1809076468359440543, guid: 2268be769a0675f46a5b6a5fd99961b4, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+=======
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+=======
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
     - target: {fileID: 2990626865789318433, guid: 2268be769a0675f46a5b6a5fd99961b4, type: 3}
       propertyPath: m_Name
       value: Fox
@@ -4323,7 +4440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990626865789318439, guid: 2268be769a0675f46a5b6a5fd99961b4, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2990626865789318439, guid: 2268be769a0675f46a5b6a5fd99961b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4467,10 +4584,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 6748207607574455573, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455594, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -4522,6 +4635,9 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6748207607574455592, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &7482890390373772290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4583,6 +4699,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+=======
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+=======
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
+=======
+>>>>>>> parent of 41dd877 (Merge branch 'main' into wyj)
 --- !u!1001 &7716747772904858180
 PrefabInstance:
   m_ObjectHideFlags: 0

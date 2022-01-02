@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     [Header("Health")]
-    public float initialHealth = 20f;
-    [SerializeField] private float MaxHealth = 20f;
+    public float initialHealth = 10f;
+    [SerializeField] private float MaxHealth = 10f;
     [SerializeField] private bool destroyObject;
     public float health;
     public float maxHealth;
@@ -125,11 +125,7 @@ public class Health : MonoBehaviour
         if (destroyObject)
         {
             rigid.simulated = false;
-            if (characterSpell != null)
-            {
-                characterSpell.isSpelling = false;
-            }
-
+            characterSpell.isSpelling = false;
             Invoke("DestroyObject", 1.5f);
         }
         else

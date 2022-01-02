@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8797027959798781663}
   m_Layer: 0
   m_Name: Projectile2
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,7 +165,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 4
-  layer:
-    serializedVersion: 2
-    m_Bits: 128
-  damage: 1

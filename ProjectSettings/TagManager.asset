@@ -10,10 +10,6 @@ TagManager:
   - merchant
   - NPC
   - Bullet
-  - Spell
-  - EnemySpell
-  - EnemyBullet
-  - Fox
   layers:
   - Default
   - TransparentFX
@@ -25,7 +21,7 @@ TagManager:
   - Enemy
   - Player
   - EnemyWeapon
-  - SpecialEnemy
+  - 
   - Spike
   - Collection
   - TriggerBox

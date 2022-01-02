@@ -205,6 +205,7 @@ public class CharacterSpell : CharacterComponents
                     animator.SetBool("Spelling", false);
                 }
             }
+           
         }
     }
 }

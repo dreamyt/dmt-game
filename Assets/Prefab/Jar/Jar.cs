@@ -54,7 +54,7 @@ public class Jar : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Bullet") || other.CompareTag("Spell"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
             TakeDamage();
         }
