@@ -30,7 +30,7 @@ public class timer : MonoBehaviour
                 totalTime1--;
             Countdown1Text.text = string.Format("{0:D2}:{1:D2}",
             (int)totalTime1 / 60, (int)totalTime1 % 60);
-            if (totalTime1 == 295)
+            if (totalTime1 == 100)
                 panal.SetActive(true);
         }
     }

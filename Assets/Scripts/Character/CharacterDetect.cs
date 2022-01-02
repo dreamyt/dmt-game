@@ -31,7 +31,7 @@ public class CharacterDetect : MonoBehaviour
             if (isMerchant)
             {
 
-                currentHealth.TakeDamage(0.1f);
+                currentHealth.TakeDamage(0.5f);
                 currentHealth.previousHealth -= 1;
                 if (currentHealth.previousHealth == 3)
                     panal1.SetActive(true);
