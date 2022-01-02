@@ -169,6 +169,7 @@ MonoBehaviour:
   characterSpell: {fileID: 0}
   characterFlip: {fileID: 0}
   raycast: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &1809076468359440517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,22 +243,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd280f682eb7994bbfec1a6323fb0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer:
+  ground_layer:
     serializedVersion: 2
     m_Bits: 64
+  detect_attack_layer:
+    serializedVersion: 2
+    m_Bits: 0
   face: 0
   forward_down: 0
   forward_top: 0
   forward_bottom: 0
+  player_behind: 0
+  attack_range: 0
   offsetX: 0
   offsetY: 0
-  offsetX2: 0
-  offsetY2: 0.3
-  offsetX3: 0
-  offsetY3: -0.3
+  offsetX_forwardTop: 0
+  offsetY_forwardTop: 0
+  offsetX_forwardDown: 0
+  offsetY_forwardDown: 0
   angle: -45
   dist_forward_down: 2
   dist_forward: 0.5
+  detectRange: 1
+  attackRange: 1
 --- !u!114 &1809076468359440540
 MonoBehaviour:
   m_ObjectHideFlags: 0
