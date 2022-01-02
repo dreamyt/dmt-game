@@ -24,7 +24,7 @@ public class Heart : MonoBehaviour
         if (collision.tag == "Player")
         {
             //pickAudio.Play();
-            if (GameObject.Find("Player").GetComponent<Health>().health < 10)
+            if (GameObject.Find("Player").GetComponent<Health>().health < maxHealth)
             {
                 sr.enabled = false;
                 bc.enabled = false;

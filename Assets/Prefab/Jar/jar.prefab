@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 884986007
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 413ae5c9fe6b4c445bfc77e851512311, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 1.3, y: 1.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &4488741796812282226
@@ -141,14 +141,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4488741796812282225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19c6b42488db5724ca0902ca5448d3ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 36c9bfc1f3f9b304e9c646a65f974fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
   health: 3
   xRandomPosition: 0
-  yRandomPosition: 1
+  yRandomPosition: 0
   rewards:
-  - {fileID: 1723830259739747116, guid: 7e1a01634fb3c0c42919512bf9312414, type: 3}
-  - {fileID: 3359036139928278796, guid: 11108f404d99b674c9d972fab133c737, type: 3}
-  - {fileID: 4177223645558465766, guid: 7fc43a8c35d879d4d8c0d2fc6355eee3, type: 3}
+  - {fileID: 4177223645558465766, guid: 1f46a8aaae4403d4bbb2ef29026b02f3, type: 3}
