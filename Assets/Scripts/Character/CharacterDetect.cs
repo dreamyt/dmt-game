@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterDetect : MonoBehaviour
 {
-    
+    public GameObject panal1;
     private Rigidbody2D rigid;
     private CharacterController controller;
     private Health currentHealth;
@@ -33,6 +33,8 @@ public class CharacterDetect : MonoBehaviour
 
                 currentHealth.TakeDamage(0.1f);
                 currentHealth.previousHealth -= 1;
+                if (currentHealth.previousHealth == 3)
+                    panal1.SetActive(true);
                 move.changespeed(1000);
                 if(controller.jumpForce <= 1100)
                     controller.jumpForce += 100;
