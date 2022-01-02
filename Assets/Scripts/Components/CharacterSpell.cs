@@ -17,6 +17,9 @@ public class CharacterSpell : CharacterComponents
     public float currentMagicPower;
     public float maxMagicPower;
     public float magicPowerConsumption;
+    public GameObject newPrefab;
+    public GameObject magicRed;
+    public GameObject magicBlue;
     [Header("Spell Settings")]
     [SerializeField] private Vector3 SpellGeneratePosition; // The real position to generate spell attack
     [SerializeField] private Vector3 spellGeneratePosition; // The relative position of spell compared to player
@@ -71,6 +74,20 @@ public class CharacterSpell : CharacterComponents
                     isSpelling = false;
                 }
             }
+
+            if (Input.GetKeyDown("1"))
+            {
+                Debug.Log("111");
+                spellMode = 1;
+                //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
+                newPrefab = magicBlue;
+                if (newPrefab == null)
+                {
+                    Debug.Log("error!");
+                }
+                Pooler.ChangePrefab(newPrefab);
+                Pooler.ChangePool();
+            }
         }
     }
     //used by ai
@@ -117,7 +134,7 @@ public class CharacterSpell : CharacterComponents
         SpellAttack spellAttack = projectilePooled.GetComponent<SpellAttack>();
         if (GetComponent<CharacterFlip>().FacingRight)
         {
-            spellAttack.TurnToRight();
+            spellAttack.facingRight = true;
         }
         else
         {
@@ -135,18 +152,20 @@ public class CharacterSpell : CharacterComponents
 
     private void SpellAttackBlue()
     {
+        SpellGeneratePosition = transform.position + spellGeneratePosition;
+        
         GameObject firstAttack = Pooler.GetObjectFromPool();
-        GameObject secondAttack = Pooler.GetObjectFromPool();
-        GameObject thirdAttack = Pooler.GetObjectFromPool();
-
-        spellGeneratePosition = transform.position + spellGeneratePosition;
-        firstAttack.transform.position = spellGeneratePosition + new Vector3(0,1.0f,0);
-        secondAttack.transform.position = spellGeneratePosition;
-        thirdAttack.transform.position = spellGeneratePosition + new Vector3(0,-1.0f,0);
-        firstAttack.SetActive(true);
-        firstAttack.SetActive(true);
+        firstAttack.transform.position = SpellGeneratePosition + new Vector3(0,1.0f,0);
         firstAttack.SetActive(true);
         
+        GameObject secondAttack = Pooler.GetObjectFromPool();
+        secondAttack.transform.position = SpellGeneratePosition;
+        secondAttack.SetActive(true);
+        
+        GameObject thirdAttack = Pooler.GetObjectFromPool();
+        thirdAttack.transform.position = SpellGeneratePosition + new Vector3(0,-1.0f,0);
+        thirdAttack.SetActive(true);
+
         currentMagicPower -= magicPowerConsumption;
         if (character.CharacterType == Character.CharacterTypes.player)
         {

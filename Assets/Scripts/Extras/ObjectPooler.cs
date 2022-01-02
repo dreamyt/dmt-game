@@ -59,4 +59,14 @@ public class ObjectPooler : MonoBehaviour
         return newObject;
     }
 
+    public void ChangePrefab(GameObject newPrefab)
+    {
+        objectPrefab = newPrefab;
+    }
+
+    public void ChangePool()
+    {
+        Refill();
+    }
+
 }
