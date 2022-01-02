@@ -289,12 +289,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 10
   MaxHealth: 10
+  destroyObject: 0
   health: 0
   maxHealth: 0
   previousHealth: 0
   spawnPosition: {x: 0, y: 0, z: 0}
   dead: 0
   getHit: 0
+  healthNumber: {fileID: 0}
 --- !u!114 &5607704189573910653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,10 +361,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20730998d0390ea4b8d2f8eb20b72f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellMode: 0
+  magicNumber: {fileID: 0}
   isSpelling: 0
+  spellTime: 0.7
+  spellFinishTime: 0
+  spellMode: 0
   currentMagicPower: 0
   maxMagicPower: 0
+  magicPowerConsumption: 0
+  newPrefab: {fileID: 0}
+  magicRed: {fileID: 3997034576274355607, guid: 84db769656f056545816db54d6e47cbb, type: 3}
+  magicBlue: {fileID: 7129806828219133847, guid: 615576ca7b4288043898fab17166a9d6, type: 3}
   SpellGeneratePosition: {x: 0, y: 0, z: 0}
   spellGeneratePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1722458067379104228
@@ -392,6 +401,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd280f682eb7994bbfec1a6323fb0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
+  face: 0
+  forward_down: 0
+  forward_top: 0
+  forward_bottom: 0
   offsetX: 0
   offsetY: 0
-  dist: 1
+  offsetX2: 0
+  offsetY2: 0
+  offsetX3: 0
+  offsetY3: 0
+  angle: 0
+  dist_forward_down: 1
+  dist_forward: 0

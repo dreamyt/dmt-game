@@ -60,6 +60,10 @@ public class SpellAttack : MonoBehaviour
         {
             trackEnemy(detectEnemy());
         }
+        else
+        {
+            normalFly();
+        }
     }
 
     public void setDirection(Vector2 newDirection)
@@ -71,6 +75,7 @@ public class SpellAttack : MonoBehaviour
     {   // Originally faces right, so just turn to left when spawning spell if needed.
         facingRight = false;
         transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
+        setDirection(Vector2.left);
     }
 
     public void SpellFlip()
@@ -129,6 +134,10 @@ public class SpellAttack : MonoBehaviour
         return null;
     }
 
+    public void normalFly()
+    {
+        setDirection(facingRight? Vector2.right : Vector2.left);
+    }
     public void ResetSpellAttack()
     {
         transform.rotation = initialRotation;
@@ -146,4 +155,11 @@ public class SpellAttack : MonoBehaviour
         }
     }
 
+    
+    private void OnEnable()
+    {
+        setDirection(facingRight? Vector2.right : Vector2.left);
+    }
+    
+    
 }
