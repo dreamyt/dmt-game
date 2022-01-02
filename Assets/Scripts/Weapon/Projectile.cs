@@ -105,20 +105,7 @@ public class Projectile : MonoBehaviour
         // transform.rotation = rotation;
 
     }
-
-
-    /* Part 4 - The  enemy projectile */
-    // Only used by enemy projectiles
-    public void SetDirectionEnemy(Vector2 newDirection, Quaternion shootRotation)
-    {
-        Direction = newDirection;
-        /* Rotate the bullet */
-        transform.rotation = shootRotation;
-
-        /* Pass the bullet direction */
-
-        /* !!! To be add, new animation of it destroy !!! */
-    }
+    
 
     /* Part 5 - Return to pool */
     public void ResetProjectile()
@@ -128,7 +115,7 @@ public class Projectile : MonoBehaviour
 
     public void DisableProjectile()
     {
-        spriteRenderer.enabled = false;  // If we don¡¯t disable the spriteRenderer, the bullet will fall down before disappear
+        spriteRenderer.enabled = false;  // If we don't disable the spriteRenderer, the bullet will fall down before disappear
         collider2D.enabled = false;
     }
 
