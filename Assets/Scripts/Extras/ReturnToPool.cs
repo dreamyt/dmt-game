@@ -23,6 +23,13 @@ public class ReturnToPool : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if ((layer.value & 1<<collision.gameObject.layer) !=0)
+        {
+            Return();
+        }
+    }
     private void OnEnable()
     {
         Invoke(nameof(Return), lifeTime);

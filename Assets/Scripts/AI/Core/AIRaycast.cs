@@ -7,22 +7,26 @@ using UnityEngine;
 public class AIRaycast : MonoBehaviour
 {
     private CharacterFlip flip;
-    public LayerMask layer;
+    public LayerMask ground_layer;
+    public LayerMask detect_attack_layer;
     public float face;
     public bool forward_down;
     public bool forward_top;
     public bool forward_bottom;
+    public bool player_behind;
+    public bool attack_range;
     [Header("Raycast offset settings")] 
     [SerializeField] private float offsetX=0;
     [SerializeField] private float offsetY=0;
-    [SerializeField] private float offsetX2=0;
-    [SerializeField] private float offsetY2=0;
-    [SerializeField] private float offsetX3=0;
-    [SerializeField] private float offsetY3=0;
-
+    [SerializeField] private float offsetX_forwardTop=0;
+    [SerializeField] private float offsetY_forwardTop=0;
+    [SerializeField] private float offsetX_forwardDown=0;
+    [SerializeField] private float offsetY_forwardDown=0;
     [SerializeField] private float angle = 0;
     [SerializeField] private float dist_forward_down = 1;
     [SerializeField] private float dist_forward;
+    [SerializeField] private float detectRange = 1;
+    [SerializeField] private float attackRange = 1;
     void Start()
     {
         flip = GetComponent<CharacterFlip>();
@@ -48,13 +52,27 @@ public class AIRaycast : MonoBehaviour
     private void Update()
     {
        
-        forward_down = Physics2D.Raycast(new Vector2(transform.position.x+face*offsetX, transform.position.y+offsetY), new Vector2(face, math.abs(face)*math.tan(angle*math.PI/180)), 1.3f*dist_forward_down, layer);
-        forward_top = Physics2D.Raycast(new Vector2(transform.position.x+face*offsetX2, transform.position.y+offsetY2), new Vector2(face, 0), 1.2f*dist_forward, layer);
-        forward_bottom = Physics2D.Raycast(new Vector2(transform.position.x+face*offsetX3, transform.position.y+offsetY3), new Vector2(face, 0), 1.2f*dist_forward, layer);
-
+        forward_down = Physics2D.Raycast(new Vector2(transform.position.x+face*offsetX, transform.position.y+offsetY), 
+            new Vector2(face, math.abs(face)*math.tan(angle*math.PI/180)), 1.3f*dist_forward_down, ground_layer);
+        forward_top = Physics2D.Raycast(new Vector2(transform.position.x+face*offsetX_forwardTop, transform.position.y+offsetY_forwardTop), 
+            new Vector2(face, 0), 1.2f*dist_forward, ground_layer);
+        forward_bottom = Physics2D.Raycast(new Vector2(transform.position.x+face*offsetX_forwardDown, transform.position.y+offsetY_forwardDown), 
+            new Vector2(face, 0), 1.2f*dist_forward, ground_layer);
+        player_behind =
+            Physics2D.Raycast(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
+                new Vector2(-face, 0), detectRange, detect_attack_layer);
+        attack_range =
+            Physics2D.Raycast(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
+                new Vector2(face, 0), attackRange, detect_attack_layer);
+        
         DebugLine(new Vector2(transform.position.x+face*offsetX, transform.position.y+offsetY), new Vector2(face, math.abs(face)*math.tan(angle*math.PI/180)), 1.3f*dist_forward_down, forward_down);
-        DebugLine(new Vector2(transform.position.x+face*offsetX2, transform.position.y+offsetY2), new Vector2(face, 0), 1.2f*dist_forward, forward_top);
-        DebugLine(new Vector2(transform.position.x+face*offsetX3, transform.position.y+offsetY3), new Vector2(face, 0), 1.2f*dist_forward, forward_bottom);
+        DebugLine(new Vector2(transform.position.x+face*offsetX_forwardTop, transform.position.y+offsetY_forwardTop), new Vector2(face, 0), 1.2f*dist_forward, forward_top);
+        DebugLine(new Vector2(transform.position.x+face*offsetX_forwardDown, transform.position.y+offsetY_forwardDown), new Vector2(face, 0), 1.2f*dist_forward, forward_bottom);
+        DebugLine(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
+            new Vector2(-face, 0), detectRange, player_behind);
+        DebugLine(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY), new Vector2(face, 0),
+            attackRange, attack_range);
+        
         face = transform.localScale.x;
    
     }

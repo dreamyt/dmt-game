@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2a573e35ccb5144a1d51b0c8ec55e0, type: 3}
-  m_Name: DecisionCanSeePlayer
+  m_Script: {fileID: 11500000, guid: 9a313ad724542d84d9938426084bd713, type: 3}
+  m_Name: DecisionMeleeAttack
   m_EditorClassIdentifier: 
-  detectArea: 5
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 256
