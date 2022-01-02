@@ -3210,6 +3210,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2268be769a0675f46a5b6a5fd99961b4, type: 3}
+--- !u!114 &1147462638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8475345934293462805, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
+  m_PrefabInstance: {fileID: 1656786463}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8c0a92f71216d47a2f91d0f8da6b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1188818612
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,6 +3232,7 @@ GameObject:
   - component: {fileID: 1188818622}
   - component: {fileID: 1188818621}
   - component: {fileID: 1188818620}
+  - component: {fileID: 1188818623}
   - component: {fileID: 1188818619}
   - component: {fileID: 1188818618}
   - component: {fileID: 1188818617}
@@ -3444,6 +3456,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1188818623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188818612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102b79291a9391241b410a6d81d7f171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemWeaponData: {fileID: 11400000, guid: bf0b0df7b71f14a41b99ad4f5bbf6670, type: 2}
+  coins: 30
+  character: {fileID: 1147462638}
 --- !u!1 &1195519286
 GameObject:
   m_ObjectHideFlags: 0
@@ -4689,6 +4716,7 @@ GameObject:
   - component: {fileID: 1820786710}
   - component: {fileID: 1820786713}
   - component: {fileID: 1820786714}
+  - component: {fileID: 1820786715}
   m_Layer: 0
   m_Name: witch
   m_TagString: Untagged
@@ -4817,6 +4845,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1820786715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820786709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102b79291a9391241b410a6d81d7f171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemWeaponData: {fileID: 0}
+  coins: 30
+  character: {fileID: 0}
 --- !u!1 &1853905742
 GameObject:
   m_ObjectHideFlags: 0
