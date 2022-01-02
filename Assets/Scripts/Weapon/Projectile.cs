@@ -80,7 +80,19 @@ public class Projectile : MonoBehaviour
 
     }
 
-    // Set the direction and rotation in order to move  
+    // Set the direction and rotation in order to move
+    public void SetDirection(Vector2 newDirection, bool isFacingRight = true)
+    {
+        Direction = newDirection;
+
+        if (FacingRight != isFacingRight)
+        {
+            FlipProjectile();
+        }
+
+        // transform.rotation = rotation;
+
+    }
     public void SetDirection(Vector2 newDirection, Quaternion rotation, bool isFacingRight = true)
     {
         Direction = newDirection;
@@ -93,21 +105,7 @@ public class Projectile : MonoBehaviour
         // transform.rotation = rotation;
 
     }
-
-
-    /* Part 4 - The  enemy projectile */
-    // Only used by enemy projectiles
-    public void SetDirectionEnemy(Vector2 newDirection, Quaternion shootRotation)
-    {
-        Direction = newDirection;
-        // Debug.Log(Direction);
-        /* Rotate the bullet */
-        transform.rotation = shootRotation;
-
-        /* Pass the bullet direction */
-
-        /* !!! To be add, new animation of it destory !!! */
-    }
+    
 
     /* Part 5 - Return to pool */
     public void ResetProjectile()
@@ -117,7 +115,7 @@ public class Projectile : MonoBehaviour
 
     public void DisableProjectile()
     {
-        spriteRenderer.enabled = false;  // If we don¡¯t disable the spriteRenderer, the bullet will fall down before disappear
+        spriteRenderer.enabled = false;  // If we don't disable the spriteRenderer, the bullet will fall down before disappear
         collider2D.enabled = false;
     }
 

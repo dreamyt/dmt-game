@@ -9,6 +9,7 @@ TagManager:
   - Trampoline
   - merchant
   - NPC
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -60,4 +61,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3806029255
+    locked: 0
+  - name: Projectile
+    uniqueID: 3662544659
     locked: 0

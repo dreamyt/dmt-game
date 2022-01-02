@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6748207607454232950
 Transform:
   m_ObjectHideFlags: 0
@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 6748207607574455573}
   - component: {fileID: 6748207607574455598}
   - component: {fileID: 6748207607574455593}
+  - component: {fileID: 6748207607574455599}
   - component: {fileID: 8475345934293462805}
   - component: {fileID: 4603730678308648918}
   - component: {fileID: 6748207607574455595}
@@ -83,7 +84,7 @@ GameObject:
   - component: {fileID: 6659395631232077015}
   - component: {fileID: 4727233089219389118}
   - component: {fileID: 1722458067379104228}
-  - component: {fileID: 6748207607574455599}
+  - component: {fileID: 1154804252313925164}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -195,6 +196,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.0625, y: 2.125}
   m_Direction: 0
+--- !u!95 &6748207607574455599
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748207607574455572}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be3c83e3b158f3545bab66555b113754, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8475345934293462805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +261,6 @@ MonoBehaviour:
     m_Bits: 16448
   m_GroundCheck: {fileID: 6748207607137697997}
   isGrounded: 0
-  FacingRight: 1
   move: 0
   jump: 0
 --- !u!114 &8171239111021630034
@@ -270,12 +289,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 10
   MaxHealth: 10
+  destroyObject: 0
   health: 0
   maxHealth: 0
   previousHealth: 0
   spawnPosition: {x: 0, y: 0, z: 0}
   dead: 0
   getHit: 0
+  healthNumber: {fileID: 0}
 --- !u!114 &5607704189573910653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89608b3a85645744caf3eab40185250a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponToUse: {fileID: 6888981609130747660, guid: e97fe7f52ac30e344a7513815d39ce8f, type: 3}
+  weaponToUse: {fileID: 4881312924664726796, guid: a211e5ceca6171044893d0897a1c16f5, type: 3}
   weaponHolderPosition: {fileID: 6748207607454232950}
   shootingAllowed: 1
 --- !u!114 &1827099450697297999
@@ -340,8 +361,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20730998d0390ea4b8d2f8eb20b72f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellMode: 0
+  magicNumber: {fileID: 0}
   isSpelling: 0
+  spellTime: 0.7
+  spellFinishTime: 0
+  spellMode: 0
+  currentMagicPower: 0
+  maxMagicPower: 0
+  magicPowerConsumption: 0
+  newPrefab: {fileID: 0}
+  magicRed: {fileID: 3997034576274355607, guid: 84db769656f056545816db54d6e47cbb, type: 3}
+  magicBlue: {fileID: 7129806828219133847, guid: 615576ca7b4288043898fab17166a9d6, type: 3}
   SpellGeneratePosition: {x: 0, y: 0, z: 0}
   spellGeneratePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1722458067379104228
@@ -359,22 +389,31 @@ MonoBehaviour:
   objectPrefab: {fileID: 3997034576274355607, guid: 84db769656f056545816db54d6e47cbb, type: 3}
   poolSize: 10
   poolCanExpand: 1
---- !u!95 &6748207607574455599
-Animator:
-  serializedVersion: 3
+--- !u!114 &1154804252313925164
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6748207607574455572}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be3c83e3b158f3545bab66555b113754, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd280f682eb7994bbfec1a6323fb0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
+  face: 0
+  forward_down: 0
+  forward_top: 0
+  forward_bottom: 0
+  offsetX: 0
+  offsetY: 0
+  offsetX2: 0
+  offsetY2: 0
+  offsetX3: 0
+  offsetY3: 0
+  angle: 0
+  dist_forward_down: 1
+  dist_forward: 0

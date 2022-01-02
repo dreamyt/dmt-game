@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 750621131086750313}
-  - component: {fileID: 6888981609130747660}
+  - component: {fileID: 1641876093946133571}
   - component: {fileID: 7014031548096515790}
   m_Layer: 0
   m_Name: WeaponBar1
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6888981609130747660
+--- !u!114 &1641876093946133571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,11 +42,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 750621131086750314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 155cdc576bf76f344a3864120115efa7, type: 3}
+  m_Script: {fileID: 11500000, guid: a86c9f5c528ecdd4aa137a494245a70e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeBtwShots: 0.2
-  useXXX: 1
+  useMagazine: 0
+  currentMagazine: 10
   canShoot: 1
 --- !u!114 &7014031548096515790
 MonoBehaviour:
@@ -132,7 +133,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -488938041
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e1aa457a1804d3b499438ed73921be4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
