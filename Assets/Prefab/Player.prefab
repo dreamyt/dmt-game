@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6748207607454232945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.25, y: 0, z: 0}
+  m_LocalPosition: {x: -0.28, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6748207607574455594}
@@ -402,19 +402,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd280f682eb7994bbfec1a6323fb0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer:
+  ground_layer:
+    serializedVersion: 2
+    m_Bits: 0
+  detect_attack_layer:
     serializedVersion: 2
     m_Bits: 0
   face: 0
   forward_down: 0
   forward_top: 0
   forward_bottom: 0
+  player_behind: 0
+  attack_range: 0
   offsetX: 0
   offsetY: 0
-  offsetX2: 0
-  offsetY2: 0
-  offsetX3: 0
-  offsetY3: 0
+  offsetX_forwardTop: 0
+  offsetY_forwardTop: 0
+  offsetX_forwardDown: 0
+  offsetY_forwardDown: 0
   angle: 0
   dist_forward_down: 1
   dist_forward: 0
+  detectRange: 1
+  attackRange: 1

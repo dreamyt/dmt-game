@@ -126,7 +126,14 @@ public class CharacterSpell : CharacterComponents
     private void spellAttackRed()
     {
         GameObject projectilePooled = Pooler.GetObjectFromPool();
-        SpellGeneratePosition = transform.position + spellGeneratePosition;
+        if (GetComponent<CharacterFlip>().FacingRight)
+        {
+            SpellGeneratePosition = transform.position + spellGeneratePosition;
+        }
+        else
+        {
+            SpellGeneratePosition = transform.position - spellGeneratePosition;
+        }
         projectilePooled.transform.position = SpellGeneratePosition;
         projectilePooled.SetActive(true);
 
