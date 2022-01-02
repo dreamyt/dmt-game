@@ -9,7 +9,6 @@ public class ActionShoot : AIAction
 
     public override void Act(StateController controller)
     {
-        DeterminateAim(controller);
         ShootPlayer(controller);
     }
 
@@ -23,9 +22,5 @@ public class ActionShoot : AIAction
         
         controller.characterSpell.useSpell();
     }
-
-    private void DeterminateAim(StateController controller)
-    {
-        aimDirection = controller.Target.position - controller.transform.position;
-    }
+    
 }

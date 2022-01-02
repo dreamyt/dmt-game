@@ -14,6 +14,7 @@ public class StateController : MonoBehaviour
     public CharacterMovement characterMovement;
     public CharacterController characterController;
     public CharacterSpell characterSpell;
+    public CharacterFlip characterFlip;
     public AIRaycast raycast;
     
     //Returns a reference to this enemy path
@@ -22,6 +23,7 @@ public class StateController : MonoBehaviour
     private void Awake()
     {
         characterMovement = GetComponent<CharacterMovement>();
+        characterFlip = GetComponent<CharacterFlip>();
         characterController = GetComponent<CharacterController>();
         characterSpell = GetComponent<CharacterSpell>();
         raycast = GetComponent<AIRaycast>();
