@@ -65,8 +65,6 @@ public class Rock : MonoBehaviour
     RaycastHit2D Raycast(Vector2 offset, Vector2 boxSize, LayerMask layer)
     {
         Vector2 pos = transform.position;
-        Debug.Log(pos.x);
-        Debug.Log(pos.y);
         //public static RaycastHit2D BoxCast(Vector2 origin, Vector2 size, float angle, Vector2 direction, float distance, int layerMask)
         RaycastHit2D hit = Physics2D.BoxCast(pos, boxSize, 0, new Vector2(0, -0.4f), new Vector2(0, -0.4f).magnitude, layer);
         

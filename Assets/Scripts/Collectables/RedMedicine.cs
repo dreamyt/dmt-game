@@ -27,13 +27,25 @@ public class RedMedicine : MonoBehaviour
         if (collision.tag == "Player")
         {
             //pickAudio.Play();
-
+            if (GameObject.Find("Player").GetComponent<Health>().health < GameObject.Find("Player").GetComponent<Health>().maxHealth)
+            {
                 PlayEffects();
                 sr.enabled = false;
                 bc.enabled = false;
 
                 RedMedicineNum += 1;
-     
+                if (GameObject.Find("Player").GetComponent<Health>().health+5 <= GameObject.Find("Player").GetComponent<Health>().maxHealth)
+                {
+                   GameObject.Find("Player").GetComponent<Health>().health += 5;   
+                }
+                else
+                {
+                    GameObject.Find("Player").GetComponent<Health>().health = GameObject.Find("Player").GetComponent<Health>().maxHealth;
+                }
+                UIManager.Instance.UpdateHealth(GameObject.Find("Player").GetComponent<Health>().health,
+                    GameObject.Find("Player").GetComponent<Health>().maxHealth);    
+                
+            }
 
         }
     }
