@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 2990626865789318432}
   - component: {fileID: 2990626865789318436}
   - component: {fileID: 2990626865789318437}
-  - component: {fileID: 2990626865789318438}
   - component: {fileID: 2990626865789318443}
-  - component: {fileID: 2990626865789318442}
-  m_Layer: 7
+  - component: {fileID: -3590477937595666523}
+  m_Layer: 17
   m_Name: Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -488938041
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -7232395021869492362, guid: d413d52dc544b61478111d0ee30c706f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,7 +94,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2990626865789318433}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -124,18 +123,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.05}
   m_Size: {x: 1.1875, y: 0.9}
   m_Direction: 1
---- !u!114 &2990626865789318438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2990626865789318433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0fb3f200a989d44adea53d31c304da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &2990626865789318443
 Animator:
   serializedVersion: 3
@@ -155,7 +142,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2990626865789318442
+--- !u!114 &-3590477937595666523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,8 +151,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2990626865789318433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4fe9b1c1db63ba48b71a30825a0c213, type: 3}
+  m_Script: {fileID: 11500000, guid: d0f887eee027ae945a9266abbe5a1634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FacingRight: 1
-  speed: 1
+  currentState: {fileID: 11400000, guid: dcec261a6f5dedd4f9895611a8d44e45, type: 2}
+  remainState: {fileID: 11400000, guid: 9af2ec9e1cebdcd4087b544fb7125117, type: 2}
+  characterMovement: {fileID: 0}
+  characterController: {fileID: 0}
+  characterSpell: {fileID: 0}
+  characterFlip: {fileID: 0}
+  raycast: {fileID: 0}
+  animator: {fileID: 0}

@@ -10,6 +10,8 @@ TagManager:
   - merchant
   - NPC
   - Bullet
+  - EnemySpell
+  - Spell
   layers:
   - Default
   - TransparentFX
@@ -28,7 +30,7 @@ TagManager:
   - MovingPlatform
   - merchant
   - NPC
-  - 
+  - SpecialEnemy
   - 
   - 
   - 

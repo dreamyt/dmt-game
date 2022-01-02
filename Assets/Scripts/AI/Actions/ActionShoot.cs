@@ -18,7 +18,10 @@ public override void Act(StateController controller)
         controller.characterMovement.SetJump(false);
 
         // Shoot
-        controller.characterSpell.useSpell();
+        if (controller.characterSpell != null)
+        {
+            controller.characterSpell.useSpell();
+        }
     }
     
 }
