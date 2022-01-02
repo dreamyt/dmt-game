@@ -5,9 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "AI/Actions/Shoot", fileName = "ActionShoot")]
 public class ActionShoot : AIAction
 {
-    private Vector2 aimDirection;
 
-    public override void Act(StateController controller)
+public override void Act(StateController controller)
     {
         ShootPlayer(controller);
     }
@@ -19,7 +18,6 @@ public class ActionShoot : AIAction
         controller.characterMovement.SetJump(false);
 
         // Shoot
-        
         controller.characterSpell.useSpell();
     }
     
