@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hideSpikeBox: {fileID: 197402660853654373, guid: e66e51d52e3a2d94b911a431e9734b9e, type: 3}
-  time: 0.5
+  time: 0.2
 --- !u!50 &6469330591152986183
 Rigidbody2D:
   serializedVersion: 4
