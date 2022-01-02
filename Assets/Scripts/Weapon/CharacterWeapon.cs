@@ -68,8 +68,9 @@ public class CharacterWeapon : CharacterComponents
     {
         if(CurrentWeapon!=null)
         {
-            Destroy(GameObject.Find("PlayerPool"));
+            //Destroy(GameObject.Find("Pool"));
             Destroy(CurrentWeapon.gameObject);
+            CurrentWeapon = Instantiate(weapon, weaponPosition.position, weaponPosition.rotation);
             /*if (characterController.FacingRight)
             {
                 CurrentWeapon = Instantiate(weapon, weaponPosition.position, weaponPosition.rotation);
