@@ -8,6 +8,9 @@ using UnityEngine.UI;
 public class CharacterSpell : CharacterComponents
 {
     ObjectPooler Pooler;
+    public bool isLearnt0 = false;
+    public bool isLearnt1 = false;
+    private bool isNPC = false;
     private float rotationAngle;
     public Text magicNumber;
     public bool isSpelling = false;
@@ -29,6 +32,9 @@ public class CharacterSpell : CharacterComponents
     {
         base.Start();
         spellMode = 0;
+        isLearnt0 = false;
+        isLearnt1 = false;
+        isNPC = false;
         magicPowerConsumption = 5;
         spellGeneratePosition = new Vector3(0f, 0f, 0f);
         Pooler = GetComponent<ObjectPooler>();
@@ -42,7 +48,18 @@ public class CharacterSpell : CharacterComponents
         }
     }
 
-    
+    protected override void Update()
+    {
+        base.Update();
+        if(isNPC)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+                isLearnt0 = true;
+            if (Input.GetKeyDown(KeyCode.E))
+                isLearnt1 = true;
+        }
+
+    }
 
     protected override void HandleAbility()
     {
@@ -56,10 +73,12 @@ public class CharacterSpell : CharacterComponents
         {
             if (!freezeInput)
             {
+                
                 if (!isSpelling && controller.isGrounded)
                 {
-                    if (Input.GetKey("l"))
+                    if (Input.GetKeyDown(KeyCode.L))
                     {
+                        Debug.Log("2");
                         spellFinishTime = Time.time + spellTime;
                         isSpelling = true;
                     }
@@ -78,6 +97,19 @@ public class CharacterSpell : CharacterComponents
             if (Input.GetKeyDown("1"))
             {
                 spellMode = 1;
+                //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
+                newPrefab = magicBlue;
+                if (newPrefab == null)
+                {
+                    Debug.Log("error!");
+                }
+                Pooler.ChangePrefab(newPrefab);
+                Pooler.ChangePool();
+            }
+
+            if (Input.GetKeyDown("0"))
+            {
+                spellMode = 0;
                 //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
                 newPrefab = magicBlue;
                 if (newPrefab == null)
@@ -114,12 +146,16 @@ public class CharacterSpell : CharacterComponents
     {
         if(spellMode == 0)
         {
-            spellAttackRed();
+            if (isLearnt0)
+             spellAttackRed();
         }
 
         if (spellMode == 1)
         {
-            SpellAttackBlue();
+            if (isLearnt1)
+              SpellAttackBlue();
+
+            
         }
     }
 
@@ -206,5 +242,17 @@ public class CharacterSpell : CharacterComponents
                 }
             }
         }
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("NPC"))
+            isNPC = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("NPC"))
+            isNPC = false;
     }
 }
