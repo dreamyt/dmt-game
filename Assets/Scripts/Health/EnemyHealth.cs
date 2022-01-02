@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private float damageToApply = 1;
-    
     private Health enemyHealth;
 
     private float enemyCurrentHealth;
@@ -27,7 +25,12 @@ public class EnemyHealth : MonoBehaviour
     {
         if (col.CompareTag("Bullet"))
         {
-            TakeDamage(damageToApply);
+            TakeDamage(col.GetComponent<ReturnToPool>().damage);
+        }
+
+        if (col.CompareTag("Spell"))
+        {
+            TakeDamage(col.GetComponent<SpellReturnToPool>().damage);
         }
     }
 

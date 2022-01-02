@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 6942867505962416085}
   - component: {fileID: 4791406169980259987}
   - component: {fileID: 2663201282296161388}
-  - component: {fileID: 222948743241140026}
+  - component: {fileID: 7035683060501241910}
   - component: {fileID: 1687981185711524963}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: EnemySpell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,14 +102,17 @@ MonoBehaviour:
     m_Bits: 256
   currentDirection: {x: 0, y: 0, z: 0}
   trackDirection: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   initialDirection: {x: 0, y: 0, z: 0}
-  speed: 0.05
+  speed: 0.01
+  damage: 2
   spellMode: 0
-  canDetect: 0
+  canDetect: 1
   facingRight: 1
   range: 8
   module: 0
---- !u!114 &222948743241140026
+--- !u!114 &7035683060501241910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,10 +121,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3997034576274355607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 447d6062240382e4a8ffd62bff78bbd2, type: 3}
+  m_Script: {fileID: 11500000, guid: e18402d3d87670a49bcbae08851d4513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 2
+  damage: 2
 --- !u!60 &1687981185711524963
 PolygonCollider2D:
   m_ObjectHideFlags: 0
