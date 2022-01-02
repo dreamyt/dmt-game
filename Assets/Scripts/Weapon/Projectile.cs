@@ -125,5 +125,7 @@ public class Projectile : MonoBehaviour
         spriteRenderer.enabled = true;
         collider2D.enabled = true;
     }
+    
+    
 }
 

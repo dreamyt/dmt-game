@@ -7,6 +7,8 @@ public class SpellReturnToPool : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float lifeTime = 2f;
 
+    public float damage;
+
     private SpellAttack spellAttack;
 
     private void Awake()
