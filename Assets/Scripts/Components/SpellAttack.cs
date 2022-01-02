@@ -94,7 +94,7 @@ public class SpellAttack : MonoBehaviour
                 (enemy.transform.position.y - transform.position.y) *
                 (enemy.transform.position.y - transform.position.y));
             trackDirection = enemy.transform.position - transform.position;
-            Debug.Log(trackDirection);
+            //Debug.Log(trackDirection);
             setDirection(trackDirection / module);
 
             if ((facingRight && trackDirection.x < 0) || (!facingRight && trackDirection.x > 0))
@@ -147,15 +147,23 @@ public class SpellAttack : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.layer);
+        Debug.Log(layer.value);
         if (1<<collision.gameObject.layer == layer.value)
         {
+            Debug.Log(collision.gameObject.layer);
+            Debug.Log(layer.value);
             ResetSpellAttack();
             gameObject.SetActive(false);
             
         }
     }
 
-    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        
+    }
+
     private void OnEnable()
     {
         setDirection(facingRight? Vector2.right : Vector2.left);
