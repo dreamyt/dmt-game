@@ -2016,7 +2016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455594, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455594, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2060,6 +2060,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455596, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: weaponToUse
+      value: 
+      objectReference: {fileID: 2267309292546658652, guid: 42eed93f628c51041865d4c4e9fd2f79, type: 3}
+    - target: {fileID: 6748207607574455596, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
+      propertyPath: SecondaryWeapon
       value: 
       objectReference: {fileID: 6510467591620277177, guid: 21d20b60f5926cc4a84efdbaa8d1da15, type: 3}
     m_RemovedComponents: []
@@ -2753,7 +2757,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2069540400
 GameObject:
