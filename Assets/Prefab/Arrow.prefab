@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2663201282296161388}
   - component: {fileID: 7035683060501241910}
   - component: {fileID: 3679199734279045354}
+  - component: {fileID: 3233361444236077884}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: EnemySpell
@@ -105,7 +106,7 @@ MonoBehaviour:
   initialRotation: {x: 0, y: 0, z: 0, w: 0}
   initialScale: {x: 0, y: 0, z: 0}
   initialDirection: {x: 0, y: 0, z: 0}
-  speed: 0.05
+  speed: 0.01
   damage: 2
   spellMode: 0
   canDetect: 1
@@ -180,3 +181,24 @@ PolygonCollider2D:
       - {x: -0.53333336, y: -0.083333336}
       - {x: -0.53333336, y: -0.06666667}
       - {x: 0.4666667, y: -0.06666667}
+--- !u!50 &3233361444236077884
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997034576274355607}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

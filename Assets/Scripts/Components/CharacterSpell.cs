@@ -32,8 +32,6 @@ public class CharacterSpell : CharacterComponents
     {
         base.Start();
         spellMode = 0;
-        isLearnt0 = false;
-        isLearnt1 = false;
         isNPC = false;
         magicPowerConsumption = 5;
         //spellGeneratePosition = new Vector3(0f, 0f, 0f);

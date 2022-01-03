@@ -332,6 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20730998d0390ea4b8d2f8eb20b72f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLearnt0: 1
+  isLearnt1: 1
   magicNumber: {fileID: 0}
   isSpelling: 0
   spellTime: 1.2
@@ -342,9 +344,9 @@ MonoBehaviour:
   magicPowerConsumption: 0
   newPrefab: {fileID: 0}
   magicRed: {fileID: 3997034576274355607, guid: f6ce9a30a7eb0a9428e79e333e4bbafe, type: 3}
-  magicBlue: {fileID: 3997034576274355607, guid: f6ce9a30a7eb0a9428e79e333e4bbafe, type: 3}
+  magicBlue: {fileID: 0}
   SpellGeneratePosition: {x: 0, y: 0, z: 0}
-  spellGeneratePosition: {x: 0, y: 0, z: 0}
+  spellGeneratePosition: {x: 1, y: -0.5, z: 0}
 --- !u!114 &7474909406570425316
 MonoBehaviour:
   m_ObjectHideFlags: 0
