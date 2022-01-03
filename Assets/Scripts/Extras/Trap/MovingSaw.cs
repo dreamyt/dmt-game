@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class MovingSaw : MonoBehaviour
 {
-    public float speed;
-    public float waitTime;
-    public Transform[] movePos;
-    //Gets the anchor point value
-    private int pos;
+    public Vector3 Direction;//Moving direction
+    public float timer;
+    public float DeltaTime;
+    public float MoveSpeed = 6;
     // Start is called before the first frame update
     void Start()
     {
-        pos = 1;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        DeltaTime -= Time.deltaTime;
+        if (DeltaTime <= 0)
+        {
+            DeltaTime = timer;
 
+            MoveSpeed = -MoveSpeed;
+        }
+        transform.Translate(Direction * Time.deltaTime * MoveSpeed);
     }
 }

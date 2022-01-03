@@ -168,5 +168,6 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u964C\u751F\u4EBA\uFF1A\u4F60\u597D\uFF0C\u6709\u4EC0\u4E48\u4E8B\u5417\uFF1F\n\u4F60\uFF1A\tQ:
-    Words annoying him\n\tE: Friendly"
+  m_Text: 'Learn magic?
+
+    ( C to spend 10)'
