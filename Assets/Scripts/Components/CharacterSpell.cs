@@ -11,7 +11,7 @@ public class CharacterSpell : CharacterComponents
     ObjectPooler Pooler;
     public bool isLearnt0 = false;
     public bool isLearnt1 = false;
-    private bool isNPC = false;
+    
     private float rotationAngle;
     public Text magicNumber;
     public bool isSpelling = false;
@@ -33,7 +33,7 @@ public class CharacterSpell : CharacterComponents
     {
         base.Start();
         spellMode = 0;
-        isNPC = false;
+        
         magicPowerConsumption = 5;
         //spellGeneratePosition = new Vector3(0f, 0f, 0f);
         Pooler = GetComponent<ObjectPooler>();
