@@ -15,6 +15,7 @@ TagManager:
   - EnemyBullet
   - Fox
   - LevelTransfer
+  - RevivePoint
   layers:
   - Default
   - TransparentFX

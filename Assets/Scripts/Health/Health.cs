@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,7 +52,7 @@ public class Health : MonoBehaviour
         characterSpell = GetComponent<CharacterSpell>();
         dead = false;
         getHit = false;
-        spawnPosition = rigid.position;
+        spawnPosition = rigid.position; // spwanPosition will be set at revive point
         health = initialHealth;
         previousHealth = health;
         maxHealth = MaxHealth;
@@ -236,6 +237,15 @@ public class Health : MonoBehaviour
             {
                 anim.SetBool("Hurt", false);
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "RevivePoint")
+        {
+            previousHealth = health;
+            spawnPosition = transform.position;
         }
     }
 }
