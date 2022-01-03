@@ -37,7 +37,8 @@ public class FallingRock : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        Debug.Log("111111");
+        if (other.tag == "Player")
         {
             Debug.Log("damage");
             other.GetComponent<Health>().TakeDamage(damage);
