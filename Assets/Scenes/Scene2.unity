@@ -1236,6 +1236,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1809076468359440543, guid: 2268be769a0675f46a5b6a5fd99961b4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809076468359440543, guid: 2268be769a0675f46a5b6a5fd99961b4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.82
+      objectReference: {fileID: 0}
     - target: {fileID: 2990626865789318433, guid: 2268be769a0675f46a5b6a5fd99961b4, type: 3}
       propertyPath: m_Name
       value: Fox
@@ -4589,6 +4597,14 @@ PrefabInstance:
     - target: {fileID: 2294491805296442743, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: initialHealth
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727233089219389118, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
+      propertyPath: isLearnt0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727233089219389118, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
+      propertyPath: isLearnt1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4727233089219389118, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: magicNumber

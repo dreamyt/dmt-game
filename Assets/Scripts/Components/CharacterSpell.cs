@@ -194,7 +194,14 @@ public class CharacterSpell : CharacterComponents
 
     private void SpellAttackBlue()
     {
-        SpellGeneratePosition = transform.position + spellGeneratePosition;
+        if (GetComponent<CharacterFlip>().FacingRight)
+        {
+            SpellGeneratePosition = transform.position + spellGeneratePosition;
+        }
+        else
+        {
+            SpellGeneratePosition = transform.position - spellGeneratePosition;
+        }
         
         GameObject firstAttack = Pooler.GetObjectFromPool();
         firstAttack.transform.position = SpellGeneratePosition + new Vector3(0,1.0f,0);
