@@ -43,13 +43,13 @@ public class CharacterWeapon : CharacterComponents
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) && SecondaryWeapon != null)
+        if (Input.GetKeyDown(KeyCode.U) && SecondaryWeapon != null)
         {
             Debug.Log("1111");
             EquipWeapon(weaponToUse , weaponHolderPosition);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) && SecondaryWeapon != null)
+        if (Input.GetKeyDown(KeyCode.I) && SecondaryWeapon != null)
         {
             Debug.Log("2222");
             EquipWeapon(SecondaryWeapon, weaponHolderPosition);
@@ -72,16 +72,16 @@ public class CharacterWeapon : CharacterComponents
         {
             //Destroy(GameObject.Find("Pool"));
             Destroy(CurrentWeapon.gameObject);
-            CurrentWeapon = Instantiate(weapon, weaponPosition.position, weaponPosition.rotation);
-            /*if (characterController.FacingRight)
+            //CurrentWeapon = Instantiate(weapon, weaponPosition.position, weaponPosition.rotation);
+            if (GetComponent<CharacterFlip>().FacingRight)
             {
                 CurrentWeapon = Instantiate(weapon, weaponPosition.position, weaponPosition.rotation);
             }
-            else if (!characterController.FacingRight)
+            else if (!GetComponent<CharacterFlip>().FacingRight)
             {
                 Quaternion flip = Quaternion.Euler(0f, 180, 0);
                 CurrentWeapon = Instantiate(weapon, weaponPosition.position, flip);
-            }*/
+            }
         }
         else
         {

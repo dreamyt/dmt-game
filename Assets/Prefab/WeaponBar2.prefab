@@ -131,6 +131,7 @@ MonoBehaviour:
   useMagazine: 0
   currentMagazine: 10
   canShoot: 1
+  projectileGeneratePosition: {x: 1, y: 0, z: 0}
 --- !u!114 &6580606754628452350
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class Chest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) && GameObject.Find("Key").GetComponent<Key>().keyNum > 0)
+        if (Input.GetKeyDown(KeyCode.F) && GameObject.Find("Key").GetComponent<Key>().keyNum > 0)
         {
             if (canOpen && !isOpened)
             {

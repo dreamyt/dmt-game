@@ -128,7 +128,7 @@ MonoBehaviour:
   lifeTime: 2
   layer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 192
   damage: 0
 --- !u!60 &8906321280965538307
 PolygonCollider2D:
