@@ -245,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground_layer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 16448
   detect_attack_layer:
     serializedVersion: 2
     m_Bits: 0
@@ -296,6 +296,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   previousHealth: 0
+  previousMagic: 0
   spawnPosition: {x: 0, y: 0, z: 0}
   dead: 0
   getHit: 0
