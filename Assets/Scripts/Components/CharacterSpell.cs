@@ -19,7 +19,7 @@ public class CharacterSpell : CharacterComponents
     public float spellFinishTime;
     public int spellMode = 0;
     public float currentMagicPower;
-    public float maxMagicPower;
+    public float maxMagicPower=30;
     public float magicPowerConsumption;
     public GameObject newPrefab;
     public GameObject magicRed;

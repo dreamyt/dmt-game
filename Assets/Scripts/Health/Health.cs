@@ -55,10 +55,6 @@ public class Health : MonoBehaviour
         getHit = false;
         spawnPosition = rigid.position; // spwanPosition will be set at revive point
         health = initialHealth;
-        if (characterSpell != null)
-        {
-            previousMagic = characterSpell.maxMagicPower;
-        }
 
         previousHealth = health;
         maxHealth = MaxHealth;
@@ -74,6 +70,13 @@ public class Health : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        if (characterSpell != null)
+        {
+            previousMagic = characterSpell.maxMagicPower;
+        }
+    }
     // Update is called once per frame
     private void Update()
     {
@@ -115,6 +118,12 @@ public class Health : MonoBehaviour
         if (transform.position.y < -10)
         {
             dead = true;
+            health = 0;
+            if (character.CharacterType == Character.CharacterTypes.player)
+            {
+                UIManager.Instance.UpdateHealth(health, maxHealth);
+                healthNumber.text = health.ToString();
+            }
         }
         if(health <= 0)
         {
@@ -252,9 +261,12 @@ public class Health : MonoBehaviour
     {
         if (collision.tag == "RevivePoint")
         {
-            previousHealth = health;
-            previousMagic = characterSpell.currentMagicPower;
-            spawnPosition = collision.transform.position;
+            if (!dead)
+            {
+                previousHealth = health;
+                previousMagic = characterSpell.currentMagicPower;
+                spawnPosition = collision.transform.position;
+            }
         }
     }
 }
