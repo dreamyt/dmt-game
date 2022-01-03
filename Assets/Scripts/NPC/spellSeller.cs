@@ -48,10 +48,12 @@ public class spellSeller : MonoBehaviour
                         enterDialog2.SetActive(false);
                     }
                     else
+                    { 
                         enterDialog21.SetActive(true);
                         
                         enterDialog2.SetActive(false);
-
+                       
+                    }
                 }
             }
             else if (!CoinManager.Instance.isSpellBought2)
@@ -91,6 +93,7 @@ public class spellSeller : MonoBehaviour
             character = collision.gameObject.GetComponent<Character>();
             isNPC = true;
             Debug.Log("100");
+            enterDialog2.SetActive(true);
         }
     }
 
