@@ -26,12 +26,14 @@ public class weaponSeller : MonoBehaviour
             {
                 Debug.Log("111");
                 
-                character.GetComponent<CharacterWeapon>().SecondaryWeapon = itemWeaponData.WeaponToEquip;
+                
                 
                 if (CoinManager.Instance.Coins >= coins)
                 {
                     Debug.Log("222");
                     CoinManager.Instance.LossCoins(coins);
+                    character.GetComponent<CharacterWeapon>().SecondaryWeapon = itemWeaponData.WeaponToEquip;
+                    CoinManager.Instance.isWeaponBought = true;
 
                 }
 
@@ -44,6 +46,7 @@ public class weaponSeller : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            character = collision.gameObject.GetComponent<Character>();
             Debug.Log("000");
 
             isNPC = true;

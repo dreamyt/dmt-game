@@ -324,6 +324,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponToUse: {fileID: 4881312924664726796, guid: a211e5ceca6171044893d0897a1c16f5, type: 3}
   weaponHolderPosition: {fileID: 6748207607454232950}
+  itemWeaponData: {fileID: 11400000, guid: a7b040b6f6ef7d14e8aa971ac38d09d1, type: 2}
+  SecondaryWeapon: {fileID: 0}
   shootingAllowed: 1
 --- !u!114 &1827099450697297999
 MonoBehaviour:
@@ -362,6 +364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20730998d0390ea4b8d2f8eb20b72f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLearnt0: 0
+  isLearnt1: 0
   magicNumber: {fileID: 0}
   isSpelling: 0
   spellTime: 0.7

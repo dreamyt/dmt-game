@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -111,30 +112,38 @@ public class CharacterSpell : CharacterComponents
                 }
             }
 
-            if (Input.GetKeyDown("1"))
+            if (CoinManager.Instance.isSpellBought2)
             {
-                spellMode = 1;
-                //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
-                newPrefab = magicBlue;
-                if (newPrefab == null)
+                if (Input.GetKeyDown("1"))
                 {
-                    Debug.Log("error!");
+                    spellMode = 1;
+                    //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
+                    newPrefab = magicBlue;
+                    if (newPrefab == null)
+                    {
+                        Debug.Log("error!");
+                    }
+
+                    Pooler.ChangePrefab(newPrefab);
+                    Pooler.ChangePool();
                 }
-                Pooler.ChangePrefab(newPrefab);
-                Pooler.ChangePool();
             }
 
-            if (Input.GetKeyDown("0"))
+            if (CoinManager.Instance.isSpellBought1)
             {
-                spellMode = 0;
-                //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
-                newPrefab = magicBlue;
-                if (newPrefab == null)
+                if (Input.GetKeyDown("0"))
                 {
-                    Debug.Log("error!");
+                    spellMode = 0;
+                    //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
+                    newPrefab = magicRed;
+                    if (newPrefab == null)
+                    {
+                        Debug.Log("error!");
+                    }
+
+                    Pooler.ChangePrefab(newPrefab);
+                    Pooler.ChangePool();
                 }
-                Pooler.ChangePrefab(newPrefab);
-                Pooler.ChangePool();
             }
         }
     }
@@ -274,16 +283,18 @@ public class CharacterSpell : CharacterComponents
             }
         }
     }
-    
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("NPC"))
             isNPC = true;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("NPC"))
             isNPC = false;
     }
+
+
 }
