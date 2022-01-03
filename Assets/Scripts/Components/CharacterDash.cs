@@ -43,7 +43,7 @@ public class CharacterDash : CharacterComponents
                 {
                     /* Notice: "speed" only controls the left or right moving, but not affects jumping */
 
-                    movement.MoveSpeed = 480;
+                    movement.MoveSpeed = 680;
                     currentStamina -= 1.0f;
                     UIManager.Instance.UpdateStamina(currentStamina, maxStamina);
                 }
