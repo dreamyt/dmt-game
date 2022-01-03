@@ -10,6 +10,8 @@ public class SpellReturnToPool : MonoBehaviour
     public LayerMask layer;
     public float damage;
 
+    public float damage;
+
     private SpellAttack spellAttack;
 
     private void Awake()

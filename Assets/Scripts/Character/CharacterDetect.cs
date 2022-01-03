@@ -31,7 +31,7 @@ public class CharacterDetect : MonoBehaviour
             if (isMerchant)
             {
 
-                currentHealth.TakeDamage(0.1f);
+                currentHealth.TakeDamage(0.5f);
                 currentHealth.previousHealth -= 1;
                 if (currentHealth.previousHealth == 3)
                     panal1.SetActive(true);
@@ -55,6 +55,15 @@ public class CharacterDetect : MonoBehaviour
             rigid.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
         }
         
+        if (collision.CompareTag("EnemyBullet"))
+        {
+            currentHealth.TakeDamage(collision.GetComponent<ReturnToPool>().damage);
+        }
+
+        if (collision.CompareTag("EnemySpell"))
+        {
+            currentHealth.TakeDamage(collision.GetComponent<SpellReturnToPool>().damage);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -70,15 +79,14 @@ public class CharacterDetect : MonoBehaviour
                 {
                     w = 0.5f;
                 }
-
                 Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.position, new Vector2(w, 0.2f), 0,
                     LayerMask.GetMask("SpecialEnemy"));
                 foreach (Collider2D c in colliders)
                 {
-                    RoleDie rd = c.GetComponent<RoleDie>();
+                    Health rd = c.GetComponent<Health>();
                     if (rd != null)
                     {
-                        rd.Die(c.transform);
+                        rd.dead = true;
                         // 反弹
                         rigid.velocity = new Vector2(rigid.velocity.x, 0);
                         rigid.AddForce(new Vector2(0, 300));
