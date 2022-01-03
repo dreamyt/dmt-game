@@ -30,7 +30,7 @@ public class Chest : MonoBehaviour
         {
             if (canOpen && !isOpened)
             {
-                rewardRandomPosition.y = 3;
+               
 
                 anim.SetTrigger("Opening");
                 isOpened = true;
