@@ -16,6 +16,7 @@ public class StateController : MonoBehaviour
     public CharacterSpell characterSpell;
     public CharacterFlip characterFlip;
     public AIRaycast raycast;
+    public Animator animator;
     
     //Returns a reference to this enemy path
     public PatrolPath Path { get; set; }
@@ -28,6 +29,7 @@ public class StateController : MonoBehaviour
         characterSpell = GetComponent<CharacterSpell>();
         raycast = GetComponent<AIRaycast>();
         Path = GetComponent<PatrolPath>();
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {

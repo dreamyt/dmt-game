@@ -145,15 +145,6 @@ public class SpellAttack : MonoBehaviour
         setDirection(new Vector2());
     }
     
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (1<<collision.gameObject.layer == layer.value)
-        {
-            ResetSpellAttack();
-            gameObject.SetActive(false);
-            
-        }
-    }
 
     
     private void OnEnable()

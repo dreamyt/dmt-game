@@ -60,7 +60,7 @@ public class CharacterDetect : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // 被敌人Enemy碰到
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("SpecialEnemy"))
         {
             // 如果在空中，要先检测是不是脚底踩到敌人
             if (!controller.isGrounded)
@@ -72,7 +72,7 @@ public class CharacterDetect : MonoBehaviour
                 }
 
                 Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.position, new Vector2(w, 0.2f), 0,
-                    LayerMask.GetMask("Enemy"));
+                    LayerMask.GetMask("SpecialEnemy"));
                 foreach (Collider2D c in colliders)
                 {
                     RoleDie rd = c.GetComponent<RoleDie>();

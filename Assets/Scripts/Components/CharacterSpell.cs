@@ -36,7 +36,7 @@ public class CharacterSpell : CharacterComponents
         isLearnt1 = false;
         isNPC = false;
         magicPowerConsumption = 5;
-        spellGeneratePosition = new Vector3(0f, 0f, 0f);
+        //spellGeneratePosition = new Vector3(0f, 0f, 0f);
         Pooler = GetComponent<ObjectPooler>();
         
         maxMagicPower = 30;
@@ -162,7 +162,14 @@ public class CharacterSpell : CharacterComponents
     private void spellAttackRed()
     {
         GameObject projectilePooled = Pooler.GetObjectFromPool();
-        SpellGeneratePosition = transform.position + spellGeneratePosition;
+        if (GetComponent<CharacterFlip>().FacingRight)
+        {
+            SpellGeneratePosition = transform.position + spellGeneratePosition;
+        }
+        else
+        {
+            SpellGeneratePosition = transform.position - spellGeneratePosition;
+        }
         projectilePooled.transform.position = SpellGeneratePosition;
         projectilePooled.SetActive(true);
 
