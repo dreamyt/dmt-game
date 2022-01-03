@@ -28,15 +28,14 @@ public class spellSeller : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 Debug.Log("111");
-
-
-
+                
                 if (CoinManager.Instance.Coins >= coin)
                 {
                     Debug.Log("222");
                     CoinManager.Instance.LossCoins(coin);
                     character.GetComponent<CharacterSpell>().isLearnt0 = true;
-                    CoinManager.Instance.isSpellBought2 = true;
+                    CoinManager.Instance.isSpellBought1 = true;
+                    character.GetComponent<CharacterSpell>().SwitchSpell1();
                 }
 
 
@@ -53,7 +52,8 @@ public class spellSeller : MonoBehaviour
                     Debug.Log("222");
                     CoinManager.Instance.LossCoins(coin);
                     character.GetComponent<CharacterSpell>().isLearnt1 = true;
-                    CoinManager.Instance.isSpellBought1 = true;
+                    CoinManager.Instance.isSpellBought2 = true;
+                    character.GetComponent<CharacterSpell>().SwitchSpell2();
                 }
 
 
