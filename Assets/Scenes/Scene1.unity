@@ -7588,7 +7588,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorBack
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2600741658811046957, guid: ea88bd4a12aff3f458ea348565c85ee5, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600741658811046957, guid: ea88bd4a12aff3f458ea348565c85ee5, type: 3}
+      propertyPath: m_TagString
+      value: LevelTransfer
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2600741658811046958, guid: ea88bd4a12aff3f458ea348565c85ee5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ea88bd4a12aff3f458ea348565c85ee5, type: 3}
 --- !u!4 &1057324116 stripped
 Transform:
@@ -12267,11 +12276,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455594, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.2
+      value: 225.6
       objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455594, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.4
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455594, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19983,7 +19992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027159603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03364849, y: -0.064415455, z: -10}
+  m_LocalPosition: {x: 222.29042, y: -0.36973572, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20571,7 +20580,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069540400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.199999, y: -5.4, z: -10}
+  m_LocalPosition: {x: 225.6, y: -0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1829440582}

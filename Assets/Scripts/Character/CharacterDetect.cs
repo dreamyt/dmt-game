@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterDetect : MonoBehaviour
 {
@@ -63,6 +64,11 @@ public class CharacterDetect : MonoBehaviour
         if (collision.CompareTag("EnemySpell"))
         {
             currentHealth.TakeDamage(collision.GetComponent<SpellReturnToPool>().damage);
+        }
+
+        if (collision.CompareTag("LevelTransfer"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1, LoadSceneMode.Single);
         }
     }
 
