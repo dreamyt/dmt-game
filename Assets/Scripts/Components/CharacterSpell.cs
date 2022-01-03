@@ -24,6 +24,7 @@ public class CharacterSpell : CharacterComponents
     public GameObject newPrefab;
     public GameObject magicRed;
     public GameObject magicBlue;
+    private bool canSpell = true;
     [Header("Spell Settings")]
     [SerializeField] private Vector3 SpellGeneratePosition; // The real position to generate spell attack
     [SerializeField] private Vector3 spellGeneratePosition; // The relative position of spell compared to player
@@ -64,7 +65,14 @@ public class CharacterSpell : CharacterComponents
     protected override void Update()
     {
         base.Update();
-        
+        if (currentMagicPower <= 0)
+        {
+            canSpell = false;
+        }
+        else
+        {
+            canSpell = true;
+        }
     }
 
     protected override void HandleAbility()
@@ -83,7 +91,7 @@ public class CharacterSpell : CharacterComponents
                 {
                     if (!isSpelling && controller.isGrounded)
                     {
-                        if (Input.GetKeyDown(KeyCode.L))
+                        if (canSpell&&Input.GetKeyDown(KeyCode.L))
                         {
                             Debug.Log("2");
                             spellFinishTime = Time.time + spellTime;
@@ -236,7 +244,11 @@ public class CharacterSpell : CharacterComponents
             spellAttack.TurnToLeft();
         }
 
-        currentMagicPower -= magicPowerConsumption;
+        if (currentMagicPower > 0)
+        {
+            currentMagicPower -= magicPowerConsumption;
+        }
+
         if (character.CharacterType == Character.CharacterTypes.player)
         {
             magicNumber.text = currentMagicPower.ToString();
@@ -283,8 +295,12 @@ public class CharacterSpell : CharacterComponents
             spellAttack2.TurnToLeft();
             spellAttack3.TurnToLeft();
         }
-        
-        currentMagicPower -= magicPowerConsumption;
+
+        if (currentMagicPower > 0)
+        {
+            currentMagicPower -= magicPowerConsumption;
+        }
+
         if (character.CharacterType == Character.CharacterTypes.player)
         {
             magicNumber.text = currentMagicPower.ToString();
