@@ -7,14 +7,7 @@ using System.Collections;
 
 public class EnterDialog : MonoBehaviour
 {
-    /*private bool isDialog = false;
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-            isDialog = true;
-    }
-    */
+    
     public GameObject enterDialog; 
     private void OnTriggerEnter2D(Collider2D collision)
     {
