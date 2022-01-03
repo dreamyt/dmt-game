@@ -7,6 +7,9 @@ public class CoinManager : Singleton<CoinManager>
     [SerializeField] int initialCoins = 50;
     public int Coins;
     public int tempCoins;
+    public bool isSpellBought2 = false;
+    public bool isSpellBought1 = false;
+    public bool isWeaponBought = false;
 
     private readonly string KEY_COIN = "Civilization_MyCoins_EnjoyOurGame";
 
@@ -17,6 +20,7 @@ public class CoinManager : Singleton<CoinManager>
         tempCoins = initialCoins;
         LoadCoins();
     }
+
 
     public void PushTempCoins()
     {

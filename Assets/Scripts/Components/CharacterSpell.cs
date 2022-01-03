@@ -46,6 +46,18 @@ public class CharacterSpell : CharacterComponents
             UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
             magicNumber.text = currentMagicPower.ToString();
         }
+
+        if(CoinManager.Instance.isSpellBought1)
+        {
+            isLearnt0 = true;
+        }
+
+        if (CoinManager.Instance.isSpellBought2)
+        {
+            isLearnt1 = true;
+        }
+
+        
     }
 
     protected override void Update()
@@ -54,9 +66,16 @@ public class CharacterSpell : CharacterComponents
         if(isNPC)
         {
             if (Input.GetKeyDown(KeyCode.Q))
+            {
                 isLearnt0 = true;
+                CoinManager.Instance.isSpellBought1 = true;
+            }
             if (Input.GetKeyDown(KeyCode.E))
+            {
                 isLearnt1 = true;
+                CoinManager.Instance.isSpellBought2 = true;
+            }
+                
         }
 
     }

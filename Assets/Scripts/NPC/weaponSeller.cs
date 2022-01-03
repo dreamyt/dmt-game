@@ -7,11 +7,13 @@ public class weaponSeller : MonoBehaviour
     [SerializeField] private ItemData itemWeaponData;
     [SerializeField] public int coins = 30;
     bool isNPC;
+    bool isWeapon;
     public Character character;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         
     }
 
@@ -23,9 +25,9 @@ public class weaponSeller : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.C))
             {
                 Debug.Log("111");
-                //collision.gameObject.GetComponent<CharacterWeapon>().SecondaryWeapon = itemWeaponData.WeaponToEquip;
+                
                 character.GetComponent<CharacterWeapon>().SecondaryWeapon = itemWeaponData.WeaponToEquip;
-
+                
                 if (CoinManager.Instance.Coins >= coins)
                 {
                     Debug.Log("222");

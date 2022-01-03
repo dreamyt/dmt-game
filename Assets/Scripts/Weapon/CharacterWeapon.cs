@@ -8,7 +8,7 @@ public class CharacterWeapon : CharacterComponents
     [Header("Weapon Settings")]
     [SerializeField] private Weapon weaponToUse;
     [SerializeField] private Transform weaponHolderPosition;
-
+    [SerializeField] private ItemData itemWeaponData;
 
     // The reference of Weapon being used by player
     public Weapon CurrentWeapon { get; set; }
@@ -21,6 +21,8 @@ public class CharacterWeapon : CharacterComponents
     {
         base.Start();
         EquipWeapon(weaponToUse, weaponHolderPosition);
+        if(CoinManager.Instance.isWeaponBought)
+            SecondaryWeapon = itemWeaponData.WeaponToEquip;
     }
 
     /*
