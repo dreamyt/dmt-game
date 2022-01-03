@@ -123,4 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlueMedicineNum: 0
-  medicineBonus: {fileID: 2105583752087139684, guid: 11086694ecc52be44af8e1449354c7d2, type: 3}
+  medicineBonus: {fileID: 2105583752087139684, guid: 3534b1af12b069e478ac7506d7659467, type: 3}
