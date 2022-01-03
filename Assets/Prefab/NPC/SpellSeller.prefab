@@ -198,9 +198,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isNPC: 0
-  coin: 27
-  enterDialog2: {fileID: 0}
-  enterDialog21: {fileID: 0}
-  enterDialog22: {fileID: 0}
-  enterDialog23: {fileID: 0}
+  coin: 10
   character: {fileID: 0}
