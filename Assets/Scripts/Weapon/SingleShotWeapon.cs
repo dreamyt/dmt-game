@@ -6,7 +6,7 @@ public class SingleShotWeapon : Weapon
 {
     
     private Vector3 ProjectileGeneratePosition;
-    private Vector3 projectileGeneratePosition;
+    public Vector3 projectileGeneratePosition;
     
     // Start is called before the first frame update
     protected override void Start()
@@ -32,7 +32,7 @@ public class SingleShotWeapon : Weapon
         if (canShoot)
         {
             GameObject projectilePooled = Pooler.GetObjectFromPool();
-            ProjectileGeneratePosition = transform.position + projectileGeneratePosition;
+            EvaluateProjectileSpawnPosition();
             projectilePooled.transform.position = ProjectileGeneratePosition;
             projectilePooled.SetActive(true);
 

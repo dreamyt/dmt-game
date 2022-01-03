@@ -11,7 +11,7 @@ public class CharacterSpell : CharacterComponents
     ObjectPooler Pooler;
     public bool isLearnt0 = false;
     public bool isLearnt1 = false;
-    
+    private bool isNPC;
     private float rotationAngle;
     public Text magicNumber;
     public bool isSpelling = false;
@@ -49,17 +49,23 @@ public class CharacterSpell : CharacterComponents
         if(CoinManager.Instance.isSpellBought1)
         {
             isLearnt0 = true;
+            SwitchSpell1();
         }
 
         if (CoinManager.Instance.isSpellBought2)
         {
             isLearnt1 = true;
+            SwitchSpell2();
         }
 
         
     }
 
-   
+    protected override void Update()
+    {
+        base.Update();
+        
+    }
 
     protected override void HandleAbility()
     {
@@ -73,14 +79,16 @@ public class CharacterSpell : CharacterComponents
         {
             if (!freezeInput)
             {
-                
-                if (!isSpelling && controller.isGrounded)
+                if (CoinManager.Instance.isSpellBought1 || CoinManager.Instance.isSpellBought2)
                 {
-                    if (Input.GetKeyDown(KeyCode.L))
+                    if (!isSpelling && controller.isGrounded)
                     {
-                        Debug.Log("2");
-                        spellFinishTime = Time.time + spellTime;
-                        isSpelling = true;
+                        if (Input.GetKeyDown(KeyCode.L))
+                        {
+                            Debug.Log("2");
+                            spellFinishTime = Time.time + spellTime;
+                            isSpelling = true;
+                        }
                     }
                 }
             }
@@ -96,7 +104,7 @@ public class CharacterSpell : CharacterComponents
 
             if (CoinManager.Instance.isSpellBought2)
             {
-                if (Input.GetKeyDown("1"))
+                if (Input.GetKeyDown("2"))
                 {
                     spellMode = 1;
                     //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
@@ -113,7 +121,7 @@ public class CharacterSpell : CharacterComponents
 
             if (CoinManager.Instance.isSpellBought1)
             {
-                if (Input.GetKeyDown("0"))
+                if (Input.GetKeyDown("1"))
                 {
                     spellMode = 0;
                     //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
@@ -127,6 +135,43 @@ public class CharacterSpell : CharacterComponents
                     Pooler.ChangePool();
                 }
             }
+        }
+    }
+
+    public void SwitchSpell1()
+    {
+        if (CoinManager.Instance.isSpellBought1)
+        {
+         
+                spellMode = 0;
+                //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
+                newPrefab = magicRed;
+                if (newPrefab == null)
+                {
+                    Debug.Log("error!");
+                }
+
+                Pooler.ChangePrefab(newPrefab);
+                Pooler.ChangePool();
+            
+        }
+    }
+
+    public void SwitchSpell2()
+    {
+        if (CoinManager.Instance.isSpellBought2)
+        {
+                spellMode = 1;
+                //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
+                newPrefab = magicBlue;
+                if (newPrefab == null)
+                {
+                    Debug.Log("error!");
+                }
+
+                Pooler.ChangePrefab(newPrefab);
+                Pooler.ChangePool();
+            
         }
     }
     //used by ai
@@ -265,7 +310,6 @@ public class CharacterSpell : CharacterComponents
             }
         }
     }
-
     
 
 

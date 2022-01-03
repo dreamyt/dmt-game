@@ -5,7 +5,7 @@ using UnityEngine;
 public class MultipleShotWeapon : Weapon
 {
     private Vector3 ProjectileGeneratePosition;
-    private Vector3 projectileGeneratePosition;
+    public Vector3 projectileGeneratePosition;
  
     // Start is called before the first frame update
     protected override void Start()
@@ -42,7 +42,7 @@ public class MultipleShotWeapon : Weapon
     {
         /* To be filled later */
         GameObject projectilePooled1 = Pooler.GetObjectFromPool();
-        ProjectileGeneratePosition = transform.position + projectileGeneratePosition;
+        EvaluateProjectileSpawnPosition();
         projectilePooled1.transform.position = ProjectileGeneratePosition;
         projectilePooled1.SetActive(true);
 
