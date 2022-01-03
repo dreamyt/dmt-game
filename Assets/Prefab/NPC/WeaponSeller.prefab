@@ -8,17 +8,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8308252317842713516}
-  - component: {fileID: 8308252317842713517}
-  - component: {fileID: 8308252317842713518}
-  - component: {fileID: 8308252317842713519}
-  - component: {fileID: 8308252317842713512}
-  - component: {fileID: 8308252317842713513}
-  - component: {fileID: 8308252317842713514}
-  - component: {fileID: 8308252317842713515}
-  - component: {fileID: 8308252317842707540}
-  - component: {fileID: 8308252317842707541}
-  - component: {fileID: 8308252317842707542}
+  - component: {fileID: 5714301508094147013}
+  - component: {fileID: 5714301508094147014}
+  - component: {fileID: 5714301508094147015}
+  - component: {fileID: 5714301508094147012}
+  - component: {fileID: 5714301508094147008}
+  - component: {fileID: 5714301508094147009}
+  - component: {fileID: 5714301508094147010}
+  - component: {fileID: 5714301508094147011}
+  - component: {fileID: 5714301508094147021}
+  - component: {fileID: 5714301508094147022}
   m_Layer: 15
   m_Name: WeaponSeller
   m_TagString: merchant
@@ -127,7 +126,10 @@ MonoBehaviour:
   itemWeaponData: {fileID: 11400000, guid: a7b040b6f6ef7d14e8aa971ac38d09d1, type: 2}
   coins: 30
   character: {fileID: 0}
---- !u!70 &8308252317842713512
+  enterDialog1: {fileID: 4426141842712711262, guid: 6a8c7edc8bf30824093e22381d13197d, type: 3}
+  enterDialog11: {fileID: 9048196823701082903, guid: 4aa90acca4bd60d47b3f9e345ed22991, type: 3}
+  enterDialog12: {fileID: 6399617045355177404, guid: 9636138de31f197429a121eca4bcf540, type: 3}
+--- !u!70 &5714301508094147008
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,20 +203,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.67409253, y: 0.34}
   m_EdgeRadius: 0
---- !u!114 &8308252317842707540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8308252317842707543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a368e80787e4ca848957ab6d0754c9f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enterDialog: {fileID: 0}
---- !u!114 &8308252317842707541
+--- !u!114 &5714301508094147021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
