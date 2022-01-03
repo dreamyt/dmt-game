@@ -11,7 +11,7 @@ public class CharacterSpell : CharacterComponents
     ObjectPooler Pooler;
     public bool isLearnt0 = false;
     public bool isLearnt1 = false;
-    private bool isNPC = false;
+    
     private float rotationAngle;
     public Text magicNumber;
     public bool isSpelling = false;
@@ -33,7 +33,7 @@ public class CharacterSpell : CharacterComponents
     {
         base.Start();
         spellMode = 0;
-        isNPC = false;
+        
         magicPowerConsumption = 5;
         //spellGeneratePosition = new Vector3(0f, 0f, 0f);
         Pooler = GetComponent<ObjectPooler>();
@@ -59,25 +59,7 @@ public class CharacterSpell : CharacterComponents
         
     }
 
-    protected override void Update()
-    {
-        base.Update();
-        if(isNPC)
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                isLearnt0 = true;
-                CoinManager.Instance.isSpellBought1 = true;
-            }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                isLearnt1 = true;
-                CoinManager.Instance.isSpellBought2 = true;
-            }
-                
-        }
-
-    }
+   
 
     protected override void HandleAbility()
     {
@@ -284,17 +266,7 @@ public class CharacterSpell : CharacterComponents
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("NPC"))
-            isNPC = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("NPC"))
-            isNPC = false;
-    }
+    
 
 
 }
