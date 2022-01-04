@@ -205,6 +205,7 @@ MonoBehaviour:
   isGrounded: 1
   move: 0
   jump: 0
+  JumpAudio: {fileID: 0}
 --- !u!114 &1809076468359440519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f20ad2f3409ff46829f4b315980b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FacingRight: 1
+  Face: 1
+  FacingRight: 0
 --- !u!114 &1809076468359440513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground_layer:
     serializedVersion: 2
-    m_Bits: 16448
+    m_Bits: 17472
   detect_attack_layer:
     serializedVersion: 2
     m_Bits: 0
@@ -258,13 +260,13 @@ MonoBehaviour:
   attack_range: 0
   offsetX: 0
   offsetY: 0
-  offsetX_forwardTop: 0
-  offsetY_forwardTop: 0
+  offsetX_forwardTop: 0.55
+  offsetY_forwardTop: -0.2
   offsetX_forwardDown: 0
   offsetY_forwardDown: 0
   angle: -45
   dist_forward_down: 2
-  dist_forward: 0.5
+  dist_forward: 0.1
   dist_down: 0
   detectRange: 1
   attackRange: 1

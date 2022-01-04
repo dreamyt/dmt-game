@@ -17,7 +17,6 @@ public class CoinManager : Singleton<CoinManager>
     {
         GameObject.DontDestroyOnLoad(gameObject);
         PlayerPrefs.SetInt(KEY_COIN, initialCoins);
-        Debug.Log(isWeaponBought);
         tempCoins = initialCoins;
         LoadCoins();
     }

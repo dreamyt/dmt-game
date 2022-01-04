@@ -16,7 +16,6 @@ public class ActionPatrol : AIAction
         Vector2 newDirection = controller.Path.CurrentPoint - controller.transform.position;
         newDirection = newDirection.normalized;
         controller.characterMovement.SetHorizontal(newDirection.x);
-        Debug.Log(newDirection.y);
         if (!controller.characterController.jump)
         {
             if (newDirection.y > 0.15f)
@@ -35,7 +34,7 @@ public class ActionPatrol : AIAction
         {
             controller.characterMovement.SetJump(false);
         }
-        
+        controller.raycast.face = controller.transform.localScale.x;
        
         
     }
