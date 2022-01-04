@@ -40,6 +40,8 @@ public class Health : MonoBehaviour
     private CharacterWeapon weapon;
     private EnemyHealth enemyHealth;
     private CharacterSpell characterSpell;
+
+    public AudioSource HitAudio;
     private void Awake()
     {
         character = GetComponent<Character>();
@@ -208,8 +210,10 @@ public class Health : MonoBehaviour
         {
             return;
         }
+
         //damage-shield
         getHit = true;
+        HitAudio.Play();
         HitFinishTime = Time.time + getHitTime;
         health -= damage;
         UpdateCharacterHealth();
