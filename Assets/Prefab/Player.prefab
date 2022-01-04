@@ -333,7 +333,7 @@ MonoBehaviour:
   weaponToUse: {fileID: 2267309292546658652, guid: 42eed93f628c51041865d4c4e9fd2f79, type: 3}
   weaponHolderPosition: {fileID: 6748207607454232950}
   itemWeaponData: {fileID: 11400000, guid: a7b040b6f6ef7d14e8aa971ac38d09d1, type: 2}
-  SecondaryWeapon: {fileID: 6510467591620277177, guid: 21d20b60f5926cc4a84efdbaa8d1da15, type: 3}
+  SecondaryWeapon: {fileID: 0}
   shootingAllowed: 1
   ShootAudio: {fileID: 1572058130}
 --- !u!114 &1827099450697297999
