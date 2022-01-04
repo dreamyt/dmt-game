@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Door: {fileID: 0}
-  OpenDoorAudio: {fileID: 0}
+  OpenDoorAudio: {fileID: 5517853478531378657}
 --- !u!61 &1477483420558512516
 BoxCollider2D:
   m_ObjectHideFlags: 0
