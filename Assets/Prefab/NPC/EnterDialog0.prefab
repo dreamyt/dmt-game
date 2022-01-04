@@ -168,6 +168,6 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Learn magic?
+  m_Text: 'Do you want to learn magic?
 
-    ( C to spend 10)'
+    (Press C to spend 10 coins to learn)'

@@ -168,4 +168,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bye
+  m_Text: Bye, You have owned the secondary weapon. Press U or I to switch weapon.
