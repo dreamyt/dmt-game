@@ -9,7 +9,8 @@ public class Heart : MonoBehaviour
     //public float health;
     public float maxHealth;
 
-
+    public AudioSource HeartAudio;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class Heart : MonoBehaviour
                 bc.enabled = false;
                 //health += 1;
                 //Debug.Log(health);
+                HeartAudio.Play();
                 GameObject.Find("Player").GetComponent<Health>().health += 1;
                 UIManager.Instance.UpdateHealth(GameObject.Find("Player").GetComponent<Health>().health, maxHealth);
             }
