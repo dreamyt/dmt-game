@@ -9,6 +9,8 @@ public class Rock : MonoBehaviour
     private int freq = 0;
     public bool isHeadBlocked;
     public LayerMask groundLayer;
+
+    public AudioSource BreakRockAudio;
     // Use this for initialization
     void Start()
     {
@@ -45,14 +47,17 @@ public class Rock : MonoBehaviour
     {
         if(freq==1)
         {
+            BreakRockAudio.Play();
             anim.SetTrigger("strike");
         }
         else if(freq==2)
-        {            
+        {
+            BreakRockAudio.Play();
             anim.SetTrigger("strike_2");            
         }
         else if(freq == 3)
         {
+            BreakRockAudio.Play();
             anim.SetTrigger("destroy");
             //destroyBox();
         }

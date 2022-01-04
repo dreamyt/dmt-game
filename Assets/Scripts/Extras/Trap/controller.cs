@@ -8,6 +8,8 @@ public class controller : MonoBehaviour
     private Animator anim;
     private bool theKey = false;
     public GameObject Door;
+
+    public AudioSource OpenDoorAudio;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -22,6 +24,7 @@ public class controller : MonoBehaviour
             if(theKey == true)
             {
                 anim.SetTrigger("open");
+                OpenDoorAudio.Play();
                 Door.GetComponent<DoorEnter>().canDoor = true;
                 
             }

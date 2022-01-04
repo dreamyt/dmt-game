@@ -12,7 +12,7 @@ public class CharacterDash : CharacterComponents
     private bool isfaster = false;
     private CharacterMovement movement;
     private bool audioPlaying;
-    private float audioDuringTime = 0.3f;
+    private float audioDuringTime = 1.0f;
     private float audioFinishTime;
 
     public AudioSource DashAudio;
