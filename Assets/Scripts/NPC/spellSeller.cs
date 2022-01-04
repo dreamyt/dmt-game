@@ -34,11 +34,9 @@ public class spellSeller : MonoBehaviour
             
                 if (Input.GetKeyDown(KeyCode.C))
                 {
-                    Debug.Log("111");
 
                     if (CoinManager.Instance.Coins >= coin)
                     {
-                        Debug.Log("222");
                         CoinManager.Instance.LossCoins(coin);
                         character.GetComponent<CharacterSpell>().isLearnt0 = true;
                         CoinManager.Instance.isSpellBought1 = true;

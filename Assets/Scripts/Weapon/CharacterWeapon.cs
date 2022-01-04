@@ -16,6 +16,9 @@ public class CharacterWeapon : CharacterComponents
     public Weapon SecondaryWeapon;
 
     public bool shootingAllowed = true;
+    
+    public AudioSource ShootAudio;
+    
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -45,13 +48,11 @@ public class CharacterWeapon : CharacterComponents
 
         if (Input.GetKeyDown(KeyCode.U) && SecondaryWeapon != null)
         {
-            Debug.Log("1111");
             EquipWeapon(weaponToUse , weaponHolderPosition);
         }
 
         if (Input.GetKeyDown(KeyCode.I) && SecondaryWeapon != null)
         {
-            Debug.Log("2222");
             EquipWeapon(SecondaryWeapon, weaponHolderPosition);
         }
     }
@@ -63,6 +64,7 @@ public class CharacterWeapon : CharacterComponents
             return;
         }
 
+        ShootAudio.Play();
         CurrentWeapon.TriggerShot();
     }
 

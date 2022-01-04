@@ -213,7 +213,12 @@ public class Health : MonoBehaviour
 
         //damage-shield
         getHit = true;
-        HitAudio.Play();
+        if (character.CharacterType == Character.CharacterTypes.player)
+        {
+            HitAudio.Play();
+        }
+        
+        
         HitFinishTime = Time.time + getHitTime;
         health -= damage;
         UpdateCharacterHealth();
