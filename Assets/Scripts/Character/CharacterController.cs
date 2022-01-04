@@ -21,6 +21,9 @@ public class CharacterController : MonoBehaviour
 
     public float move;
     public bool jump;
+
+    public AudioSource JumpAudio;
+        
     private void Awake()
     {
         isGrounded = true;
@@ -62,6 +65,8 @@ public class CharacterController : MonoBehaviour
         //press the jump key, player will jump if he's on the ground
         if (m_Grounded && jump)
         {
+            JumpAudio.Play();
+            
             m_Grounded = false;
             m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
 

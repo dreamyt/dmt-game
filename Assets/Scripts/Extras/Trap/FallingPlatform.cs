@@ -6,8 +6,8 @@ public class FallingPlatform : MonoBehaviour
 {
     public float fallingTime = 3;
     private TargetJoint2D _targeJoint2D;
-   
 
+    public AudioSource FallingPlatformAudio;
 
 
     // Start is called before the first frame update
@@ -27,6 +27,7 @@ public class FallingPlatform : MonoBehaviour
         
         if (other.gameObject.tag=="Player"&& transform.position.y<other.gameObject.transform.position.y)
         {
+            FallingPlatformAudio.Play();
             Invoke("Falling", fallingTime);
         }
     }
