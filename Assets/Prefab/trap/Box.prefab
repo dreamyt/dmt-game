@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a1bf47276b5794e9adbc369f7f7089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonus: {fileID: 4177223645558465766, guid: 1f46a8aaae4403d4bbb2ef29026b02f3, type: 3}
+  bonus: {fileID: 59650309787488374, guid: 2e0ff2502bc1353418e3af587d000f63, type: 3}
   isHeadBlocked: 0
   groundLayer:
     serializedVersion: 2
