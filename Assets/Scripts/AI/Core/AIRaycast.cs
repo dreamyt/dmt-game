@@ -25,6 +25,7 @@ public class AIRaycast : MonoBehaviour
     [SerializeField] private float angle = 0;
     [SerializeField] private float dist_forward_down = 1;
     [SerializeField] private float dist_forward;
+    [SerializeField] private float dist_down;
     [SerializeField] private float detectRange = 1;
     [SerializeField] private float attackRange = 1;
     void Start()
@@ -57,7 +58,7 @@ public class AIRaycast : MonoBehaviour
         forward_top = Physics2D.Raycast(new Vector2(transform.position.x+face*offsetX_forwardTop, transform.position.y+offsetY_forwardTop), 
             new Vector2(face, 0), 1.2f*dist_forward, ground_layer);
         forward_bottom = Physics2D.Raycast(new Vector2(transform.position.x+face*offsetX_forwardDown, transform.position.y+offsetY_forwardDown), 
-            new Vector2(face, 0), 1.2f*dist_forward, ground_layer);
+            new Vector2(face, 0), 1.2f*dist_down, ground_layer);
         player_behind =
             Physics2D.Raycast(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
                 new Vector2(-face, 0), detectRange, detect_attack_layer);
@@ -67,7 +68,7 @@ public class AIRaycast : MonoBehaviour
         
         DebugLine(new Vector2(transform.position.x+face*offsetX, transform.position.y+offsetY), new Vector2(face, math.abs(face)*math.tan(angle*math.PI/180)), 1.3f*dist_forward_down, forward_down);
         DebugLine(new Vector2(transform.position.x+face*offsetX_forwardTop, transform.position.y+offsetY_forwardTop), new Vector2(face, 0), 1.2f*dist_forward, forward_top);
-        DebugLine(new Vector2(transform.position.x+face*offsetX_forwardDown, transform.position.y+offsetY_forwardDown), new Vector2(face, 0), 1.2f*dist_forward, forward_bottom);
+        DebugLine(new Vector2(transform.position.x+face*offsetX_forwardDown, transform.position.y+offsetY_forwardDown), new Vector2(face, 0), 1.2f*dist_down, forward_bottom);
         DebugLine(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY),
             new Vector2(-face, 0), detectRange, player_behind);
         DebugLine(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY), new Vector2(face, 0),
