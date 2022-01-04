@@ -115,7 +115,7 @@ public class Health : MonoBehaviour
         {
             return;
         }
-        if (transform.position.y < -11)
+        if (transform.position.y < -13)
         {
             dead = true;
             health = 0;

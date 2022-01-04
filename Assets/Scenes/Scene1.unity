@@ -7592,6 +7592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnterDialog1
       objectReference: {fileID: 0}
+    - target: {fileID: 4426141842712711262, guid: 6a8c7edc8bf30824093e22381d13197d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4426141842712711263, guid: 6a8c7edc8bf30824093e22381d13197d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

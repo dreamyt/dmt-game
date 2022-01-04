@@ -16,20 +16,18 @@ public class ActionWanderTrack : AIAction
         controller.animator.SetBool("Spelling", false);
         bool flip = false;
         bool jump = false;
-        if (controller.characterController.isGrounded)
-        {
-
+        
             if (controller.raycast.forward_top)
             {
                 flip = true;
                 
             }
-            else if (!controller.raycast.forward_down)
+            if (!controller.raycast.forward_down)
             {
                 flip = true;
 
             }
-            else if (controller.raycast.player_behind)
+            if (controller.raycast.player_behind)
             {
                 flip = true;
             }
@@ -42,5 +40,5 @@ public class ActionWanderTrack : AIAction
             controller.characterMovement.SetHorizontal(controller.raycast.face);
             controller.characterMovement.SetJump(false);
         }
-    }
+    
 }

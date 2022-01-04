@@ -14,27 +14,25 @@ public class ActionWander : AIAction
         controller.animator.SetBool("Spelling", false);
         bool flip = false;
         bool jump = false;
-        if (controller.characterController.isGrounded)
+        if (controller.raycast.forward_top)
         {
+            flip = true;
 
-            if (controller.raycast.forward_top)
-            {
-                flip = true;
-                
-            }
-            else if (!controller.raycast.forward_down)
-            {
-                flip = true;
-
-            }
-
-            if (flip)
-            {
-                controller.characterFlip.Flip();
-            }
-            
-            controller.characterMovement.SetHorizontal(controller.raycast.face);
-            controller.characterMovement.SetJump(false);
         }
+
+        if (!controller.raycast.forward_down)
+        {
+            flip = true;
+
+        }
+
+        if (flip)
+        {
+            controller.characterFlip.Flip();
+        }
+
+        controller.characterMovement.SetHorizontal(controller.raycast.face);
+        controller.characterMovement.SetJump(false);
+
     }
 }
