@@ -444,6 +444,7 @@ MonoBehaviour:
   dead: 0
   getHit: 0
   healthNumber: {fileID: 0}
+  HitAudio: {fileID: 0}
 --- !u!114 &7943036859763537668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +478,7 @@ MonoBehaviour:
   angle: -62
   dist_forward_down: 1.5
   dist_forward: 0.8
+  dist_down: 0
   detectRange: 3
   attackRange: 2
 --- !u!114 &7943036859763537669
