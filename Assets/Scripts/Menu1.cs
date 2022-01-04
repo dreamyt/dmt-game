@@ -12,7 +12,7 @@ public class Menu1 : MonoBehaviour
     public void PlayGame()
     {
         CoinManager.Instance.PushTempCoins();
-        SceneManager.LoadScene(2, LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
     public void UIEnable()
@@ -30,10 +30,10 @@ public class Menu1 : MonoBehaviour
      #endif
     }
 
-    public void Introduction()
-    {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
-    }
+    //public void Introduction()
+    //{
+    //    SceneManager.LoadScene(1, LoadSceneMode.Single);
+    //}
 
     public void Back()
     {
@@ -59,38 +59,38 @@ public class Menu1 : MonoBehaviour
     public void PlayLevel1()
     {
         CoinManager.Instance.PushTempCoins();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void PlayLevel2()
     {
         CoinManager.Instance.PushTempCoins();
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
     public void PlayLevel3()
     {
         CoinManager.Instance.PushTempCoins();
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
 
-    public void PlayLevel4()
-    {
-        CoinManager.Instance.PushTempCoins();
-        SceneManager.LoadScene(5);
-    }
+    //public void PlayLevel4()
+    //{
+    //    CoinManager.Instance.PushTempCoins();
+    //    SceneManager.LoadScene(5);
+    //}
 
-    public void PlayLevel5()
-    {
-        CoinManager.Instance.PushTempCoins();
-        SceneManager.LoadScene(6);
-    }
+    //public void PlayLevel5()
+    //{
+    //    CoinManager.Instance.PushTempCoins();
+    //    SceneManager.LoadScene(6);
+    //}
 
-    public void PlayLevel6()
-    {
-        CoinManager.Instance.PushTempCoins();
-        SceneManager.LoadScene(7);
-    }
+    //public void PlayLevel6()
+    //{
+    //    CoinManager.Instance.PushTempCoins();
+    //    SceneManager.LoadScene(7);
+    //}
     public void ExitScene()
     {
         CoinManager.Instance.PullTempCoins();
