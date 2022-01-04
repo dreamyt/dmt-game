@@ -441,6 +441,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -2, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 13
+      m_TileSpriteIndex: 13
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -1, y: -3, z: 0}
     second:
       serializedVersion: 2
@@ -929,7 +939,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: f1d15482075beb5429c6d937fb2264de, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 4ace98d9929b6374784b9a5dba344a82, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 49a1500d00d3d884a9f425492551d530, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 4b7535e754dbab5429733cadc483162e, type: 2}
@@ -1054,7 +1064,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 6457b8086dcd91d4ea8dfc2963f00f07, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: e6430193464d3624e885cd3bfbb140b2, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: c190aaf74dcfd924c86d1138f515ef95, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: b7f7c0723128ae94d8749c43df99ee86, type: 3}
@@ -1153,7 +1163,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -7086819402528028293, guid: 0a5a6d7ccfb1b3547937b87f1c3065fa, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 86
+  - m_RefCount: 87
     m_Data:
       e00: 1
       e01: 0
@@ -1172,7 +1182,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 86
+  - m_RefCount: 87
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -1290,7 +1300,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &5707740084480444681
+--- !u!114 &8754976297163379537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
