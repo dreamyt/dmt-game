@@ -65,8 +65,11 @@ public class CharacterController : MonoBehaviour
         //press the jump key, player will jump if he's on the ground
         if (m_Grounded && jump)
         {
-            JumpAudio.Play();
-            
+            if (GetComponent<Character>().CharacterType == Character.CharacterTypes.player)
+            {
+                JumpAudio.Play();
+            }
+
             m_Grounded = false;
             m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
 

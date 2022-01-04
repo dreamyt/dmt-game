@@ -252,6 +252,7 @@ MonoBehaviour:
   isGrounded: 1
   move: 0
   jump: 0
+  JumpAudio: {fileID: 0}
 --- !u!114 &7474909406570425312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +286,7 @@ MonoBehaviour:
   - {x: 11, y: 2, z: 0}
   - {x: 13, y: 5, z: 0}
   - {x: 17, y: 5, z: 0}
-  minDistanceToPoint: 0.1
+  minDistanceToPoint: 0.3
 --- !u!114 &7474909406570425318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +319,7 @@ MonoBehaviour:
   offsetY_forwardDown: 0
   angle: -55
   dist_forward_down: 5
-  dist_forward: 0.6
+  dist_forward: 2
   dist_down: 0
   detectRange: 1
   attackRange: 1
@@ -348,7 +349,7 @@ MonoBehaviour:
   magicRed: {fileID: 3997034576274355607, guid: f6ce9a30a7eb0a9428e79e333e4bbafe, type: 3}
   magicBlue: {fileID: 0}
   SpellGeneratePosition: {x: 0, y: 0, z: 0}
-  spellGeneratePosition: {x: 1, y: -0.5, z: 0}
+  spellGeneratePosition: {x: 1, y: 0, z: 0}
   SpellAudio: {fileID: 0}
 --- !u!114 &7474909406570425316
 MonoBehaviour:

@@ -265,13 +265,16 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "RevivePoint")
+        if (character.CharacterType == Character.CharacterTypes.player)
         {
-            if (!dead)
+            if (collision.tag == "RevivePoint")
             {
-                previousHealth = health;
-                previousMagic = characterSpell.currentMagicPower;
-                spawnPosition = collision.transform.position;
+                if (!dead)
+                {
+                    previousHealth = health;
+                    previousMagic = characterSpell.currentMagicPower;
+                    spawnPosition = collision.transform.position;
+                }
             }
         }
     }

@@ -516,6 +516,7 @@ MonoBehaviour:
   isGrounded: 1
   move: 0
   jump: 0
+  JumpAudio: {fileID: 0}
 --- !u!114 &7943036859763537667
 MonoBehaviour:
   m_ObjectHideFlags: 0

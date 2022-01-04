@@ -192,7 +192,11 @@ public class CharacterSpell : CharacterComponents
             if (isLearnt0)
             {
                 Debug.Log("spell0 used");
-                SpellAudio.Play(); 
+                if (character.CharacterType == Character.CharacterTypes.player)
+                {
+                    SpellAudio.Play();
+                }
+
                 spellAttackRed();
             }
         }

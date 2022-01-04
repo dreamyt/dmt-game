@@ -14,8 +14,11 @@ public override void Act(StateController controller)
     private void ShootPlayer(StateController controller)
     {
         // Stop enemy
-        controller.characterMovement.SetHorizontal(0);
-        controller.characterMovement.SetJump(false);
+        if (controller.characterController.isGrounded)
+        {
+            controller.characterMovement.SetHorizontal(0);
+            controller.characterMovement.SetJump(false);
+        }
 
         // Shoot
         if (controller.characterSpell != null)

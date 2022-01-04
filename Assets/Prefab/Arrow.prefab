@@ -106,7 +106,7 @@ MonoBehaviour:
   initialRotation: {x: 0, y: 0, z: 0, w: 0}
   initialScale: {x: 0, y: 0, z: 0}
   initialDirection: {x: 0, y: 0, z: 0}
-  speed: 0.01
+  speed: 0.03
   damage: 2
   spellMode: 0
   canDetect: 1
