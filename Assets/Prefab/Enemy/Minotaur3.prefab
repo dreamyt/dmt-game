@@ -476,7 +476,7 @@ MonoBehaviour:
   offsetY_forwardDown: 0.2
   angle: -62
   dist_forward_down: 1.5
-  dist_forward: 0.6
+  dist_forward: 0.8
   detectRange: 3
   attackRange: 2
 --- !u!114 &7943036859763537669
