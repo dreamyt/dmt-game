@@ -2058,14 +2058,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6748207607574455596, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
-      propertyPath: weaponToUse
-      value: 
-      objectReference: {fileID: 2267309292546658652, guid: 42eed93f628c51041865d4c4e9fd2f79, type: 3}
-    - target: {fileID: 6748207607574455596, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
-      propertyPath: SecondaryWeapon
-      value: 
-      objectReference: {fileID: 6510467591620277177, guid: 21d20b60f5926cc4a84efdbaa8d1da15, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
 --- !u!4 &1572058127 stripped

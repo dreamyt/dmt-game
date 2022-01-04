@@ -29,6 +29,9 @@ public class CharacterSpell : CharacterComponents
     [SerializeField] private Vector3 SpellGeneratePosition; // The real position to generate spell attack
     [SerializeField] private Vector3 spellGeneratePosition; // The relative position of spell compared to player
 
+    
+    public AudioSource SpellAudio;
+    
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -93,7 +96,6 @@ public class CharacterSpell : CharacterComponents
                     {
                         if (canSpell&&Input.GetKeyDown(KeyCode.L))
                         {
-                            Debug.Log("2");
                             spellFinishTime = Time.time + spellTime;
                             isSpelling = true;
                         }
@@ -115,12 +117,7 @@ public class CharacterSpell : CharacterComponents
                 if (Input.GetKeyDown("2"))
                 {
                     spellMode = 1;
-                    //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
                     newPrefab = magicBlue;
-                    if (newPrefab == null)
-                    {
-                        Debug.Log("error!");
-                    }
 
                     Pooler.ChangePrefab(newPrefab);
                     Pooler.ChangePool();
@@ -132,12 +129,7 @@ public class CharacterSpell : CharacterComponents
                 if (Input.GetKeyDown("1"))
                 {
                     spellMode = 0;
-                    //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
                     newPrefab = magicRed;
-                    if (newPrefab == null)
-                    {
-                        Debug.Log("error!");
-                    }
 
                     Pooler.ChangePrefab(newPrefab);
                     Pooler.ChangePool();
@@ -152,12 +144,7 @@ public class CharacterSpell : CharacterComponents
         {
          
                 spellMode = 0;
-                //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
                 newPrefab = magicRed;
-                if (newPrefab == null)
-                {
-                    Debug.Log("error!");
-                }
 
                 Pooler.ChangePrefab(newPrefab);
                 Pooler.ChangePool();
@@ -170,12 +157,7 @@ public class CharacterSpell : CharacterComponents
         if (CoinManager.Instance.isSpellBought2)
         {
                 spellMode = 1;
-                //newPrefab = (GameObject)Resources.Load("Prefab/BlueMagicAttack") as GameObject;
                 newPrefab = magicBlue;
-                if (newPrefab == null)
-                {
-                    Debug.Log("error!");
-                }
 
                 Pooler.ChangePrefab(newPrefab);
                 Pooler.ChangePool();
@@ -208,15 +190,20 @@ public class CharacterSpell : CharacterComponents
         if(spellMode == 0)
         {
             if (isLearnt0)
-             spellAttackRed();
+            {
+                Debug.Log("spell0 used");
+                SpellAudio.Play(); 
+                spellAttackRed();
+            }
         }
 
         if (spellMode == 1)
         {
             if (isLearnt1)
-              SpellAttackBlue();
-
-            
+            {
+                SpellAudio.Play();
+                SpellAttackBlue();
+            }
         }
     }
 
