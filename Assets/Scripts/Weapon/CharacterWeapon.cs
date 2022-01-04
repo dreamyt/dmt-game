@@ -65,7 +65,7 @@ public class CharacterWeapon : CharacterComponents
                         
                     
                 }
-                if(CoinManager.Instance.Coins>0)
+                if(CoinManager.Instance.Coins>=0)
                     Shoot();
                 
             }
