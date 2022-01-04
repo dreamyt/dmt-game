@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharacterDash : CharacterComponents
 {
     private float currentStamina;     // The stamina is the value of physical strength.
-    private float maxStamina;         // The maximum of stamina. Stamina is used for dashing etc.
+    public float maxStamina;         // The maximum of stamina. Stamina is used for dashing etc.
     // maybe have dashing effect, an image or particle effects.
     private bool isSlower = false;
     private bool isfaster = false;
