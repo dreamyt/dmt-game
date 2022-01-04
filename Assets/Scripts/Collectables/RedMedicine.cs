@@ -10,6 +10,8 @@ public class RedMedicine : MonoBehaviour
 
     [SerializeField] private ParticleSystem medicineBonus;
 
+    public AudioSource MedicineAudio;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class RedMedicine : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            //pickAudio.Play();
+            MedicineAudio.Play();
            
                 PlayEffects();
                 sr.enabled = false;

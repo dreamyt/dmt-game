@@ -11,6 +11,11 @@ public class CharacterDash : CharacterComponents
     private bool isSlower = false;
     private bool isfaster = false;
     private CharacterMovement movement;
+    private bool audioPlaying;
+    private float audioDuringTime = 0.3f;
+    private float audioFinishTime;
+
+    public AudioSource DashAudio;
     protected override void Start()
     {
         base.Start();
@@ -42,11 +47,25 @@ public class CharacterDash : CharacterComponents
                 if (move > 0.3 || move < -0.3)
                 {
                     /* Notice: "speed" only controls the left or right moving, but not affects jumping */
-
                     movement.MoveSpeed = 680;
                     currentStamina -= 1.0f;
                     UIManager.Instance.UpdateStamina(currentStamina, maxStamina);
+                    
+                    if (!audioPlaying)
+                    {
+                        audioPlaying = true;
+                        DashAudio.Play();
+                        audioFinishTime = Time.time + audioDuringTime;
+                    }
+                    else
+                    {
+                        if (Time.time > audioFinishTime)
+                        {
+                            audioPlaying = false;
+                        }
+                    }
                 }
+                
                         /*
                          * Consider the way to improve
                          * if >= 0.1, is ok, but not necessary

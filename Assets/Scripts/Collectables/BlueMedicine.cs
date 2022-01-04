@@ -10,6 +10,8 @@ public class BlueMedicine : MonoBehaviour
 
     [SerializeField] private ParticleSystem medicineBonus;
 
+    public AudioSource MedicineAudio;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +28,10 @@ public class BlueMedicine : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            MedicineAudio.Play();
             PlayEffects();
             sr.enabled = false;
             bc.enabled = false;
-            //pickAudio.Play();
             CharacterSpell characterSpell = collision.gameObject.GetComponent<CharacterSpell>();
             characterSpell.currentMagicPower += 5;
             if (characterSpell.currentMagicPower>=characterSpell.maxMagicPower)
