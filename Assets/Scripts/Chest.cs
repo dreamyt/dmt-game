@@ -13,6 +13,8 @@ public class Chest : MonoBehaviour
 
     public Vector3 rewardRandomPosition;
 
+    public AudioSource ChestAudio;
+
     //public int keyNum;
 
     // Start is called before the first frame update
@@ -30,7 +32,7 @@ public class Chest : MonoBehaviour
         {
             if (canOpen && !isOpened)
             {
-               
+                ChestAudio.Play();
 
                 anim.SetTrigger("Opening");
                 isOpened = true;

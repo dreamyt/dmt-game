@@ -5,6 +5,7 @@ using UnityEngine;
 public class ReviveTrigger : MonoBehaviour
 {
     public GameObject Image;
+    public AudioSource RevivePointAudio;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class ReviveTrigger : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            RevivePointAudio.Play();
             Image.SetActive(true);
         }
 

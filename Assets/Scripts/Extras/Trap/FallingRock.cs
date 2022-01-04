@@ -10,6 +10,9 @@ public class FallingRock : MonoBehaviour
     // Start is called before the first frame update
     public LayerMask groundLayer;
     public GameObject player;
+
+    public AudioSource RockAudio;
+        
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -30,17 +33,13 @@ public class FallingRock : MonoBehaviour
         {
             rb.constraints =~ RigidbodyConstraints2D.FreezePositionY;
             anim.SetTrigger("fall");
-            
-
-
+            RockAudio.Play();
         }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("111111");
         if (other.tag == "Player")
         {
-            Debug.Log("damage");
             other.GetComponent<Health>().TakeDamage(damage);
         }
 

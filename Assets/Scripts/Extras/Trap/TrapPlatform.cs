@@ -6,6 +6,8 @@ public class TrapPlatform : MonoBehaviour
 {
     private Animator anim;
 
+    public AudioSource TrapPlatformAudio;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -21,6 +23,7 @@ public class TrapPlatform : MonoBehaviour
 
         if (other.gameObject.tag == "Player" && transform.position.y < other.gameObject.transform.position.y)
         {
+            TrapPlatformAudio.Play();
             anim.SetTrigger("Collapse");
         }
     }

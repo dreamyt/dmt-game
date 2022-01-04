@@ -27,6 +27,11 @@ public class ActionWanderTrack : AIAction
                 flip = true;
 
             }
+
+            if (controller.raycast.forward_bottom)
+            {
+                flip = true;
+            }
             if (controller.raycast.player_behind)
             {
                 flip = true;

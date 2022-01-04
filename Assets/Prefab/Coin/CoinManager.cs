@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinManager : Singleton<CoinManager>
 {
-    [SerializeField] int initialCoins = 50;
+    [SerializeField] int initialCoins = 0;
     public int Coins;
     public int tempCoins;
     public bool isSpellBought2 = false;
@@ -17,6 +17,7 @@ public class CoinManager : Singleton<CoinManager>
     {
         GameObject.DontDestroyOnLoad(gameObject);
         PlayerPrefs.SetInt(KEY_COIN, initialCoins);
+        Debug.Log(isWeaponBought);
         tempCoins = initialCoins;
         LoadCoins();
     }

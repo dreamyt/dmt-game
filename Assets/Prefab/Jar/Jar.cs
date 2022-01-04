@@ -16,6 +16,8 @@ public class Jar : MonoBehaviour
     bool broken = false;
     private bool rewardDelivered;
     private Vector3 rewardRandomPosition;
+
+    public AudioSource JarAudio;
     private void Start()
     {
     }
@@ -27,6 +29,7 @@ public class Jar : MonoBehaviour
         }
         if(rewardDelivered)
         {
+            JarAudio.Play();
             gameObject.SetActive(false);
         }
     }
