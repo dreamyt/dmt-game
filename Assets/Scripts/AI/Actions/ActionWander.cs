@@ -19,7 +19,11 @@ public class ActionWander : AIAction
             flip = true;
 
         }
+        if (controller.raycast.forward_bottom)
+        {
+            flip = true;
 
+        }
         if (!controller.raycast.forward_down)
         {
             flip = true;
