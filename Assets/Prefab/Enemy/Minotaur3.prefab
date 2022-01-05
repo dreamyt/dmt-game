@@ -385,7 +385,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 6
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -494,7 +494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f20ad2f3409ff46829f4b315980b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FacingRight: 1
+  Face: 0
+  FacingRight: 0
 --- !u!114 &7943036859763537666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,6 +517,7 @@ MonoBehaviour:
   isGrounded: 1
   move: 0
   jump: 0
+  JumpAudio: {fileID: 0}
 --- !u!114 &7943036859763537667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,7 +574,7 @@ AudioSource:
   m_GameObject: {fileID: 7943036859763537676}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 9fa8ab9c22054da47b0a687dab0b66ea, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9bf590b42c7e07b4890028a1cbd9eb01, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

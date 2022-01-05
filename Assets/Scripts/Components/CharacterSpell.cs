@@ -76,6 +76,14 @@ public class CharacterSpell : CharacterComponents
         {
             canSpell = true;
         }
+
+        if (character.CharacterType == Character.CharacterTypes.player)
+        {
+            magicNumber.text = currentMagicPower.ToString();
+            magicNumber.text += " / ";
+            magicNumber.text += maxMagicPower.ToString();
+            UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
+        }
     }
 
     protected override void HandleAbility()
@@ -191,7 +199,6 @@ public class CharacterSpell : CharacterComponents
         {
             if (isLearnt0)
             {
-                Debug.Log("spell0 used");
                 if (character.CharacterType == Character.CharacterTypes.player)
                 {
                     SpellAudio.Play();
@@ -205,7 +212,10 @@ public class CharacterSpell : CharacterComponents
         {
             if (isLearnt1)
             {
-                SpellAudio.Play();
+                if (character.CharacterType == Character.CharacterTypes.player)
+                {
+                    SpellAudio.Play();
+                }
                 SpellAttackBlue();
             }
         }
@@ -243,6 +253,8 @@ public class CharacterSpell : CharacterComponents
         if (character.CharacterType == Character.CharacterTypes.player)
         {
             magicNumber.text = currentMagicPower.ToString();
+            magicNumber.text += " / ";
+            magicNumber.text += maxMagicPower.ToString();
             UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
         }
         

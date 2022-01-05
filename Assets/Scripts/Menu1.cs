@@ -7,8 +7,7 @@ using UnityEngine.Audio;
 public class Menu1 : MonoBehaviour
 {
     public GameObject pauseMenu;
-
-    //public AudioMixer audioMixer;
+    public AudioMixer audioMixer;
     public void PlayGame()
     {
         CoinManager.Instance.PushTempCoins();
@@ -52,10 +51,10 @@ public class Menu1 : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    //public void SetVolume(float value)
-    //{
-    //    audioMixer.SetFloat("MainVolume", value);
-    //}
+    public void SetVolume(float value)
+    {
+        audioMixer.SetFloat("MainVolume", value);
+    }
     public void PlayLevel1()
     {
         CoinManager.Instance.PushTempCoins();

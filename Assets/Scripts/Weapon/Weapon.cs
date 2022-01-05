@@ -19,7 +19,7 @@ public class Weapon : MonoBehaviour
     public  ObjectPooler Pooler { get; set; }
     
     private CharacterController controller; 
-
+    public AudioSource ShootAudio;
     protected virtual void Start()
     {
         Pooler = GetComponent<ObjectPooler>();
@@ -58,7 +58,10 @@ public class Weapon : MonoBehaviour
     // The final part to request shoot
     protected virtual void RequestShoot()
     {
-
+        if (canShoot)
+        {
+            ShootAudio.Play();
+        }
     }
 
     // Controls the next time we can shoot

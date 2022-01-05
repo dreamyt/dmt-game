@@ -6,7 +6,7 @@ public class Chest : MonoBehaviour
 {
     public GameObject coin;
     //public GameObject medicine;
-
+    public bool needKey = true;
     private bool canOpen;
     private bool isOpened;
     private Animator anim;
@@ -28,21 +28,42 @@ public class Chest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && GameObject.Find("Key").GetComponent<Key>().keyNum > 0)
+        if (needKey)
         {
-            if (canOpen && !isOpened)
+            if (Input.GetKeyDown(KeyCode.F) && GameObject.Find("Key").GetComponent<Key>().keyNum > 0)
             {
-                ChestAudio.Play();
+                if (canOpen && !isOpened)
+                {
+                    ChestAudio.Play();
 
-                anim.SetTrigger("Opening");
-                isOpened = true;
-                Instantiate(coin, transform.position, Quaternion.identity);
-                //Instantiate(medicine, transform.position+ rewardRandomPosition, Quaternion.identity);
-                Instantiate(coin, transform.position + rewardRandomPosition, Quaternion.identity);
-                GameObject.Find("Key").GetComponent<Key>().keyNum -= 1;
+                    anim.SetTrigger("Opening");
+                    isOpened = true;
+                    //Instantiate(coin, transform.position, Quaternion.identity);
+                    //Instantiate(medicine, transform.position+ rewardRandomPosition, Quaternion.identity);
+                    Instantiate(coin, transform.position + rewardRandomPosition, Quaternion.identity);
+                    GameObject.Find("Key").GetComponent<Key>().keyNum -= 1;
+                }
+
+
             }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                if (canOpen && !isOpened)
+                {
+                    ChestAudio.Play();
+
+                    anim.SetTrigger("Opening");
+                    isOpened = true;
+                    //Instantiate(coin, transform.position, Quaternion.identity);
+                    //Instantiate(medicine, transform.position+ rewardRandomPosition, Quaternion.identity);
+                    Instantiate(coin, transform.position + rewardRandomPosition, Quaternion.identity);
+                }
 
 
+            }
         }
     }
 

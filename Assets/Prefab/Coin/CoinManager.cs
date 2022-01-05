@@ -10,14 +10,13 @@ public class CoinManager : Singleton<CoinManager>
     public bool isSpellBought2 = false;
     public bool isSpellBought1 = false;
     public bool isWeaponBought = false;
-
+    public bool isTimeout = false;
     private readonly string KEY_COIN = "Civilization_MyCoins_EnjoyOurGame";
 
     private void Start()
     {
         GameObject.DontDestroyOnLoad(gameObject);
         PlayerPrefs.SetInt(KEY_COIN, initialCoins);
-        Debug.Log(isWeaponBought);
         tempCoins = initialCoins;
         LoadCoins();
     }

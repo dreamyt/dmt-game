@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class AIRaycast : MonoBehaviour
@@ -31,14 +30,26 @@ public class AIRaycast : MonoBehaviour
     void Start()
     {
         flip = GetComponent<CharacterFlip>();
-        if (flip.FacingRight)
+        //Debug.Log("AIRaycast "+name+" "+flip.FacingRight);
+        if (flip.Face)
         {
+            Debug.Log("facingright "+name);
             face = transform.localScale.x;
         }
         else
         {
-            face = -transform.localScale.x;
+            Debug.Log("facingleft" + name);
+            //can't flip minotaur
+            if (transform.localScale.x > 0)
+            {
+                face = -transform.localScale.x;
+            }
+            else
+            {
+                face = transform.localScale.x;
+            }
         }
+        Debug.Log(face);
     }
     private void DebugLine(Vector3 pos, Vector3 dir, float dist, bool hit)
     {
@@ -55,6 +66,7 @@ public class AIRaycast : MonoBehaviour
        
         forward_down = Physics2D.Raycast(new Vector2(transform.position.x+face*offsetX, transform.position.y+offsetY), 
             new Vector2(face, math.abs(face)*math.tan(angle*math.PI/180)), 1.3f*dist_forward_down, ground_layer);
+        Debug.Log(name+ " AIRaycast: "+forward_down);
         forward_top = Physics2D.Raycast(new Vector2(transform.position.x+face*offsetX_forwardTop, transform.position.y+offsetY_forwardTop), 
             new Vector2(face, 0), 1.2f*dist_forward, ground_layer);
         forward_bottom = Physics2D.Raycast(new Vector2(transform.position.x+face*offsetX_forwardDown, transform.position.y+offsetY_forwardDown), 
@@ -73,9 +85,6 @@ public class AIRaycast : MonoBehaviour
             new Vector2(-face, 0), detectRange, player_behind);
         DebugLine(new Vector2(transform.position.x + offsetX, transform.position.y + offsetY), new Vector2(face, 0),
             attackRange, attack_range);
-        
-        face = transform.localScale.x;
-   
     }
     
 }

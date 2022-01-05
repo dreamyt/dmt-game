@@ -20,10 +20,10 @@ public class Health : MonoBehaviour
     public Vector3 spawnPosition;
     private float spawnPositionCheckInterval = 10.0f;//spawnPosition won't be update within 10 second
     private float nextCheckTime;
-    
+   
     public bool dead = false;
     public bool getHit = false;
-    float getHitTime = 0.15f;
+    public float getHitTime = 0.15f;
     float HitFinishTime;
     float spellFinishTime;
     private float rendererEndInterval = 1.5f;
@@ -44,6 +44,7 @@ public class Health : MonoBehaviour
     public AudioSource HitAudio;
     private void Awake()
     {
+        
         character = GetComponent<Character>();
         controller = GetComponent<CharacterController>();
         collider2D = GetComponent<Collider2D>();
@@ -84,16 +85,22 @@ public class Health : MonoBehaviour
     {
         if (dead)
         {
+            
             Death();
+            
             if (!destroyObject)
             {
+                
                 if (Input.GetKey("h"))
                 {
-                    Revive();
+                    if(!CoinManager.Instance.isTimeout)
+                        Revive();
+                    
                 }
                 else if (Input.GetKey("r"))
                 {
                     ReviveFromBeginning();
+                    
                 }
             }
         }
@@ -131,6 +138,9 @@ public class Health : MonoBehaviour
         {
             dead = true;
         }
+
+        if (CoinManager.Instance.isTimeout)
+            dead = true;
     }
     private void DestroyObject()
     {
@@ -151,6 +161,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+ 
             if (!check)
             {
                 rendererEndTime = Time.time + rendererEndInterval;
