@@ -14594,11 +14594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455594, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 51.3
+      value: -14.94
       objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455594, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.1
+      value: -5.91
       objectReference: {fileID: 0}
     - target: {fileID: 6748207607574455594, guid: 0523b9f9486450142bc9913b690c0cf9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21315,6 +21315,10 @@ PrefabInstance:
       propertyPath: path.Array.data[7].y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7474909406570425314, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: Speed
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 7474909406570425315, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
       propertyPath: jumpForce
       value: 4200
@@ -21326,6 +21330,10 @@ PrefabInstance:
     - target: {fileID: 7474909406570425318, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
       propertyPath: dist_forward_down
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474909406570425318, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
+      propertyPath: ground_layer.m_Bits
+      value: 16448
       objectReference: {fileID: 0}
     - target: {fileID: 7474909406570425323, guid: b2b6350a792d42f489c9b69f425a0697, type: 3}
       propertyPath: m_RootOrder
@@ -22520,7 +22528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027159603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.29985, y: -0.05129671, z: -10}
+  m_LocalPosition: {x: 0.033686638, y: -0.047609806, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -23096,7 +23104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069540400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.3, y: -6.2299995, z: -10}
+  m_LocalPosition: {x: -14.939999, y: -6.04, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1829440582}
