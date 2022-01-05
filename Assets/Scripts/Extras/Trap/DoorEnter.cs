@@ -10,6 +10,8 @@ public class DoorEnter : MonoBehaviour
     private bool isDoor = false;
     public bool canDoor = false;
     private Transform playerDefTransform;
+    
+    public AudioSource TransmissionAudio;
     // Start is called before the first frame update
     void Start() 
     {
@@ -31,6 +33,7 @@ public class DoorEnter : MonoBehaviour
     {
         if(isDoor==true&&canDoor==true )
         {
+            TransmissionAudio.Play();
             playerDefTransform.position = backDoor.position;
             anim.SetTrigger("openDoor");
         }
