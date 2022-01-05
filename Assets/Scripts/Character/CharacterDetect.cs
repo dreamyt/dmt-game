@@ -12,6 +12,7 @@ public class CharacterDetect : MonoBehaviour
     private CoinManager currentCoin;
     private CharacterMovement move;
     private CharacterDash characterDash;
+    private CharacterSpell characterspell;
     Transform groundCheck;
     private bool isMerchant = false;
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class CharacterDetect : MonoBehaviour
         groundCheck = transform.Find("GroundCheck");
         move = GetComponent<CharacterMovement>();
         characterDash = GetComponent<CharacterDash>();
+        characterspell = GetComponent<CharacterSpell>();
     }
 
     // Update is called once per frame
@@ -43,7 +45,11 @@ public class CharacterDetect : MonoBehaviour
                     controller.jumpForce += 100;
                     */
                 characterDash.maxStamina = 50;
+                Debug.Log("!!!");
+                characterspell.maxMagicPower += CoinManager.Instance.Coins;
+                characterspell.currentMagicPower += CoinManager.Instance.Coins;
                 CoinManager.Instance.Coins = 0;
+                UIManager.Instance.UpdateMagic(characterspell.currentMagicPower,characterspell.maxMagicPower);
             }
 
 

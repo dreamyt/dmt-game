@@ -76,6 +76,11 @@ public class CharacterSpell : CharacterComponents
         {
             canSpell = true;
         }
+        
+        magicNumber.text = currentMagicPower.ToString();
+        magicNumber.text += " / ";
+        magicNumber.text += maxMagicPower.ToString();
+        UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
     }
 
     protected override void HandleAbility()
@@ -243,6 +248,8 @@ public class CharacterSpell : CharacterComponents
         if (character.CharacterType == Character.CharacterTypes.player)
         {
             magicNumber.text = currentMagicPower.ToString();
+            magicNumber.text += " / ";
+            magicNumber.text += maxMagicPower.ToString();
             UIManager.Instance.UpdateMagic(currentMagicPower, maxMagicPower);
         }
         
