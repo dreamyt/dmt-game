@@ -294,17 +294,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57b96ec5f18cee4eb46661b6fc2e1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 10
-  MaxHealth: 10
+  initialHealth: 20
+  MaxHealth: 20
   destroyObject: 0
   health: 0
   maxHealth: 0
   previousHealth: 0
   previousMagic: 0
   spawnPosition: {x: 0, y: 0, z: 0}
+  panel: {fileID: 1211101466508068597, guid: 0cc24b6bc20a57f42964b9e0b5fbf29a, type: 3}
   dead: 0
   getHit: 0
-  healthNumber: {fileID: 0}
+  healthNumber: {fileID: 1564199487545579605, guid: 51da6cbb546c0fa4dbe1fd1367ebbb6d, type: 3}
   HitAudio: {fileID: 2512230829884300255}
 --- !u!114 &5607704189573910653
 MonoBehaviour:
@@ -363,6 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9edc0f9ec65b54dadbb467197de79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxStamina: 0
   DashAudio: {fileID: 3065523247560742005}
 --- !u!114 &4727233089219389118
 MonoBehaviour:
@@ -378,7 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLearnt0: 0
   isLearnt1: 0
-  magicNumber: {fileID: 0}
+  magicNumber: {fileID: 3104756580816974103, guid: 3818130c6e248bb4b8375fb372a84f89, type: 3}
   isSpelling: 0
   spellTime: 0.7
   spellFinishTime: 0
