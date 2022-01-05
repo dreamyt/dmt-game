@@ -55,7 +55,7 @@ public class SpellAttack : MonoBehaviour
     void Update()
     {
         
-        transform.position = transform.position + currentDirection * speed;
+        transform.position = (transform.position + currentDirection * speed);
         if (canDetect)
         {
             trackEnemy(detectEnemy());
@@ -65,7 +65,7 @@ public class SpellAttack : MonoBehaviour
             normalFly();
         }
     }
-
+    
     public void setDirection(Vector2 newDirection)
     {
         currentDirection = newDirection;
