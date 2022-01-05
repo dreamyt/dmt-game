@@ -104,8 +104,12 @@ public class CharacterSpell : CharacterComponents
                     {
                         if (canSpell&&Input.GetKeyDown(KeyCode.L))
                         {
-                            spellFinishTime = Time.time + spellTime;
-                            isSpelling = true;
+                            if (currentMagicPower >= magicPowerConsumption)
+                            {
+                                currentMagicPower -= magicPowerConsumption;
+                                spellFinishTime = Time.time + spellTime;
+                                isSpelling = true;
+                            }
                         }
                     }
                 }
@@ -195,6 +199,7 @@ public class CharacterSpell : CharacterComponents
 
     public void startSpellAttacking()
     {
+        
         if(spellMode == 0)
         {
             if (isLearnt0)
@@ -245,11 +250,6 @@ public class CharacterSpell : CharacterComponents
             spellAttack.TurnToLeft();
         }
 
-        if (currentMagicPower > 0)
-        {
-            currentMagicPower -= magicPowerConsumption;
-        }
-
         if (character.CharacterType == Character.CharacterTypes.player)
         {
             magicNumber.text = currentMagicPower.ToString();
@@ -272,7 +272,7 @@ public class CharacterSpell : CharacterComponents
         }
         
         GameObject firstAttack = Pooler.GetObjectFromPool();
-        firstAttack.transform.position = SpellGeneratePosition + new Vector3(0,1.0f,0);
+        firstAttack.transform.position = SpellGeneratePosition + new Vector3(0,0.5f,0);
         firstAttack.SetActive(true);
 
         GameObject secondAttack = Pooler.GetObjectFromPool();
@@ -280,7 +280,7 @@ public class CharacterSpell : CharacterComponents
         secondAttack.SetActive(true);
         
         GameObject thirdAttack = Pooler.GetObjectFromPool();
-        thirdAttack.transform.position = SpellGeneratePosition + new Vector3(0,-1.0f,0);
+        thirdAttack.transform.position = SpellGeneratePosition + new Vector3(0,-0.5f,0);
         thirdAttack.SetActive(true);
         
         SpellAttack spellAttack1 = firstAttack.GetComponent<SpellAttack>();
@@ -297,11 +297,6 @@ public class CharacterSpell : CharacterComponents
             spellAttack1.TurnToLeft();
             spellAttack2.TurnToLeft();
             spellAttack3.TurnToLeft();
-        }
-
-        if (currentMagicPower > 0)
-        {
-            currentMagicPower -= magicPowerConsumption;
         }
 
         if (character.CharacterType == Character.CharacterTypes.player)

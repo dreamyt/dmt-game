@@ -33,7 +33,7 @@ public class BlueMedicine : MonoBehaviour
             sr.enabled = false;
             bc.enabled = false;
             CharacterSpell characterSpell = collision.gameObject.GetComponent<CharacterSpell>();
-            characterSpell.currentMagicPower += 5;
+            characterSpell.currentMagicPower += 10;
             if (characterSpell.currentMagicPower>=characterSpell.maxMagicPower)
             {
                 characterSpell.currentMagicPower = characterSpell.maxMagicPower;
