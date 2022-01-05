@@ -6,6 +6,7 @@ public class DoorEnter : MonoBehaviour
 {
     public Transform backDoor;
     private Animator anim;
+    public GameObject image;
     private bool isDoor = false;
     public bool canDoor = false;
     private Transform playerDefTransform;
@@ -33,6 +34,9 @@ public class DoorEnter : MonoBehaviour
             playerDefTransform.position = backDoor.position;
             anim.SetTrigger("openDoor");
         }
+        if(canDoor==false)
+            if(isDoor)
+                image.SetActive(true);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -46,6 +50,7 @@ public class DoorEnter : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isDoor = false;
+            image.SetActive(false);
         }
     }
 }
