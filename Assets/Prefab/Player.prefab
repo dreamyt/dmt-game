@@ -302,9 +302,9 @@ MonoBehaviour:
   previousHealth: 0
   previousMagic: 0
   spawnPosition: {x: 0, y: 0, z: 0}
-  panel: {fileID: 1211101466508068597, guid: 0cc24b6bc20a57f42964b9e0b5fbf29a, type: 3}
   dead: 0
   getHit: 0
+  getHitTime: 0.4
   healthNumber: {fileID: 1564199487545579605, guid: 51da6cbb546c0fa4dbe1fd1367ebbb6d, type: 3}
   HitAudio: {fileID: 2512230829884300255}
 --- !u!114 &5607704189573910653

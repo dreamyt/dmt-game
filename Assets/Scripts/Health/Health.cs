@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
    
     public bool dead = false;
     public bool getHit = false;
-    float getHitTime = 0.15f;
+    public float getHitTime = 0.15f;
     float HitFinishTime;
     float spellFinishTime;
     private float rendererEndInterval = 1.5f;

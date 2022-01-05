@@ -6540,6 +6540,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6538260962045532980, guid: 1e0f6cbe56156794cb315437f54c6e9f, type: 3}
+      propertyPath: m_Text
+      value: You need to pay more
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e0f6cbe56156794cb315437f54c6e9f, type: 3}
 --- !u!4 &693529422 stripped
@@ -10354,7 +10358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1699678769858067352, guid: 95652486a52b9084991f730877ecd71b, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95652486a52b9084991f730877ecd71b, type: 3}
