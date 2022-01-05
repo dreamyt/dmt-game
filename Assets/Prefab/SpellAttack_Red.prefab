@@ -130,7 +130,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
+    oldSize: {x: 0.8, y: 0.8}
     newSize: {x: 0.625, y: 1.5625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   lifeTime: 3
   layer:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 128
   damage: 2
 --- !u!50 &-493001745136716291
 Rigidbody2D:

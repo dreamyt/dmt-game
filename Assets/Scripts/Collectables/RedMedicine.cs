@@ -6,7 +6,6 @@ public class RedMedicine : MonoBehaviour
 {
     private SpriteRenderer sr;
     private BoxCollider2D bc;
-    public int RedMedicineNum;
 
     [SerializeField] private ParticleSystem medicineBonus;
 
@@ -34,18 +33,13 @@ public class RedMedicine : MonoBehaviour
                 sr.enabled = false;
                 bc.enabled = false;
 
-                RedMedicineNum += 1;
                 Health health = collision.gameObject.GetComponent<Health>();
-                if (health.health+5 <= health.maxHealth)
+                health.health += 5;
+                if (health.health >= health.maxHealth)
                 {
-                   health.health += 5;   
+                    health.health = health.maxHealth;
                 }
-                else
-                {
-                   health.health = health.maxHealth;
-                }
-                UIManager.Instance.UpdateHealth(health.health,
-                    health.maxHealth);    
+                UIManager.Instance.UpdateHealth(health.health, health.maxHealth);    
                 
         }
 

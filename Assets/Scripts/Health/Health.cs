@@ -106,6 +106,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+            healthNumber.text = health.ToString();
             IsDead();
             if (getHit)
             {
