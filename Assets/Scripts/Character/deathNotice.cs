@@ -7,7 +7,7 @@ public class deathNotice : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Notice;
     public GameObject Notice2;
-    private float hp;
+    
     public Health H;
     void Start()
     {

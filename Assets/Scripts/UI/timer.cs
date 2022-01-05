@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class timer : MonoBehaviour
 {
-    private float totalTime1 = 300;
+    public float totalTime1 = 300;
     //private float totalTime2 = 100;
     private float intervalTime = 1;
     public GameObject panal;
