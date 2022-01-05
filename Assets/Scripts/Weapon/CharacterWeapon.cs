@@ -19,7 +19,6 @@ public class CharacterWeapon : CharacterComponents
 
     public bool shootingAllowed = true;
     
-    public AudioSource ShootAudio;
     
     // Start is called before the first frame update
     protected override void Start()
@@ -90,8 +89,7 @@ public class CharacterWeapon : CharacterComponents
         {
             return;
         }
-
-        ShootAudio.Play();
+        
         CurrentWeapon.TriggerShot();
     }
 
