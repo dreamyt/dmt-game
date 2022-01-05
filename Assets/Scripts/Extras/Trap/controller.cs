@@ -7,7 +7,7 @@ public class controller : MonoBehaviour
     // Start is called before the first frame update
     private Animator anim;
     private bool theKey = false;
-    public GameObject Door;
+    public GameObject[] Door;
 
     public AudioSource OpenDoorAudio;
     void Start()
@@ -25,7 +25,11 @@ public class controller : MonoBehaviour
             {
                 anim.SetTrigger("open");
                 OpenDoorAudio.Play();
-                Door.GetComponent<DoorEnter>().canDoor = true;
+                foreach (var D in Door)
+                {
+                    D.GetComponent<DoorEnter>().canDoor = true;
+                }
+               // Door.GetComponent<DoorEnter>().canDoor = true;
                 
             }
             

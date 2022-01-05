@@ -118,7 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a5f9b715dd9dc4e98c395b93b0f2d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Door: {fileID: 0}
+  Door:
+  - {fileID: 0}
   OpenDoorAudio: {fileID: 5517853478531378657}
 --- !u!61 &1477483420558512516
 BoxCollider2D:
@@ -176,7 +177,7 @@ AudioSource:
   m_GameObject: {fileID: 1477483420558512513}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 8bd67588dd58b98499427ebb5de2452e, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 9fa8ab9c22054da47b0a687dab0b66ea, type: 2}
   m_audioClip: {fileID: 8300000, guid: 66b9b4513ba3f0c4e866f68bdbd5127b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

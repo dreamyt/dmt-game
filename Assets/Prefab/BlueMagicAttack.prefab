@@ -107,7 +107,7 @@ MonoBehaviour:
   initialScale: {x: 0, y: 0, z: 0}
   initialDirection: {x: 0, y: 0, z: 0}
   speed: 0.05
-  damage: 2
+  damage: 4
   spellMode: 0
   canDetect: 0
   facingRight: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18402d3d87670a49bcbae08851d4513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 2
+  lifeTime: 3
   layer:
     serializedVersion: 2
     m_Bits: 192
