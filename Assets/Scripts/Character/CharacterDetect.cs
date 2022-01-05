@@ -11,6 +11,7 @@ public class CharacterDetect : MonoBehaviour
     private Health currentHealth;
     private CoinManager currentCoin;
     private CharacterMovement move;
+    private CharacterDash characterDash;
     Transform groundCheck;
     private bool isMerchant = false;
     // Start is called before the first frame update
@@ -22,16 +23,17 @@ public class CharacterDetect : MonoBehaviour
         currentCoin = GetComponent<CoinManager>();
         groundCheck = transform.Find("GroundCheck");
         move = GetComponent<CharacterMovement>();
+        characterDash = GetComponent<CharacterDash>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (isMerchant)
             {
-
+                /*
                 currentHealth.TakeDamage(0.5f);
                 currentHealth.previousHealth -= 1;
                 if (currentHealth.previousHealth == 3)
@@ -39,6 +41,9 @@ public class CharacterDetect : MonoBehaviour
                 move.changespeed(1000);
                 if(controller.jumpForce <= 1100)
                     controller.jumpForce += 100;
+                    */
+                characterDash.maxStamina = 50;
+                CoinManager.Instance.Coins = 0;
             }
 
 
