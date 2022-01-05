@@ -19,9 +19,9 @@ GameObject:
   - component: {fileID: 8308252317842707540}
   - component: {fileID: 8308252317842707541}
   - component: {fileID: 8308252317842707542}
-  m_Layer: 15
+  m_Layer: 16
   m_Name: WeaponSeller
-  m_TagString: merchant
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +127,9 @@ MonoBehaviour:
   itemWeaponData: {fileID: 11400000, guid: a7b040b6f6ef7d14e8aa971ac38d09d1, type: 2}
   coins: 30
   character: {fileID: 0}
+  enterDialog1: {fileID: 0}
+  enterDialog11: {fileID: 0}
+  enterDialog12: {fileID: 0}
 --- !u!70 &8308252317842713512
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
