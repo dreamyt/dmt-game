@@ -8,16 +8,16 @@ public class deathNotice : MonoBehaviour
     public GameObject Notice;
     public GameObject Notice2;
     private float hp;
-    public Health H;
+    private Health h;
     void Start()
     {
-        H = GetComponent<Health>();
+        h = GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (H.dead)
+        if (h.dead)
         {
             Debug.Log("die");
             if(CoinManager.Instance.isTimeout)
