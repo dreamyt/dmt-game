@@ -19,11 +19,11 @@ public class ActionWander : AIAction
             flip = true;
 
         }
-        if (controller.raycast.forward_bottom)
+        /*if (controller.raycast.forward_bottom)
         {
             flip = true;
 
-        }
+        }*/
         if (!controller.raycast.forward_down)
         {
             flip = true;
@@ -33,10 +33,13 @@ public class ActionWander : AIAction
         if (flip)
         {
             controller.characterFlip.Flip();
+            controller.raycast.face = (-controller.raycast.face);
         }
-
+        
         controller.characterMovement.SetHorizontal(controller.raycast.face);
         controller.characterMovement.SetJump(false);
+        //Debug.Log("AictionWander: "+name+" "+controller.transform.localScale.x);
+        
 
     }
 }
