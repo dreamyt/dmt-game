@@ -1294,6 +1294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minotaur1
       objectReference: {fileID: 0}
+    - target: {fileID: 7943036860269950109, guid: a353745a0e96a174b81ce62a2bea0e02, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.941
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a353745a0e96a174b81ce62a2bea0e02, type: 3}
 --- !u!1001 &378569555
@@ -2082,6 +2086,14 @@ PrefabInstance:
     - target: {fileID: 7943036859763537668, guid: f9ec15614dc89274a9824facf7ab360c, type: 3}
       propertyPath: dist_forward_down
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943036859763537669, guid: f9ec15614dc89274a9824facf7ab360c, type: 3}
+      propertyPath: Face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943036859763537669, guid: f9ec15614dc89274a9824facf7ab360c, type: 3}
+      propertyPath: FacingRight
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7943036859763537671, guid: f9ec15614dc89274a9824facf7ab360c, type: 3}
       propertyPath: m_RootOrder
