@@ -41,7 +41,7 @@ public class Chest : MonoBehaviour
                     //Instantiate(coin, transform.position, Quaternion.identity);
                     //Instantiate(medicine, transform.position+ rewardRandomPosition, Quaternion.identity);
                     Instantiate(coin, transform.position + rewardRandomPosition, Quaternion.identity);
-                    GameObject.Find("Key").GetComponent<Key>().keyNum -= 1;
+                    Destroy(GameObject.Find("Key"));
                 }
 
 

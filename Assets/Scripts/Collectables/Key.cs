@@ -6,7 +6,7 @@ public class Key : MonoBehaviour
 {
     private SpriteRenderer sr;
     private BoxCollider2D bc;
-    [SerializeField] public int keyNum;
+    [SerializeField] public int keyNum=0;
 
     // Start is called before the first frame update
     void Start()
