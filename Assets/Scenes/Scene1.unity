@@ -1262,7 +1262,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Notice: {fileID: 1593495747}
   Notice2: {fileID: 1727784275}
-  H: {fileID: 0}
 --- !u!1001 &171848221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1287,12 +1286,20 @@ PrefabInstance:
       value: Menu1, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 588629533314367445, guid: e47bcf94630b6ba41b03a45d62fc9a8a, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+      propertyPath: m_MinValue
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 588629533314367445, guid: e47bcf94630b6ba41b03a45d62fc9a8a, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 588629533314367445, guid: e47bcf94630b6ba41b03a45d62fc9a8a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 431785435}
+    - target: {fileID: 588629533314367445, guid: e47bcf94630b6ba41b03a45d62fc9a8a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetVolume
       objectReference: {fileID: 0}
     - target: {fileID: 588629533419911955, guid: e47bcf94630b6ba41b03a45d62fc9a8a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1435,6 +1442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 171848223}
+  audioMixer: {fileID: 0}
 --- !u!1001 &172822730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4102,6 +4110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 171848223}
+  audioMixer: {fileID: 24100000, guid: 9fa8ab9c22054da47b0a687dab0b66ea, type: 2}
 --- !u!1001 &432878947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10203,7 +10212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7262999125973258686, guid: 341f6c68132d3a34f934030314f7f98c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36374342
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7262999125973258686, guid: 341f6c68132d3a34f934030314f7f98c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13801,7 +13810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8511441623141417908, guid: 91303bcd9b15e364c989c4a55bfd9014, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.8802047
+      value: -7.31
       objectReference: {fileID: 0}
     - target: {fileID: 8511441623141417908, guid: 91303bcd9b15e364c989c4a55bfd9014, type: 3}
       propertyPath: m_LocalPosition.z
