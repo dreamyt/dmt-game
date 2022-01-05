@@ -4372,7 +4372,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Hello, student. You can move with A or D, shoot with J, \njump with K,
-    dash with SHIFT"
+    dash with SHIFT, interact with F"
 --- !u!222 &464679340
 CanvasRenderer:
   m_ObjectHideFlags: 0
