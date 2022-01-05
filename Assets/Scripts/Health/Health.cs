@@ -106,7 +106,11 @@ public class Health : MonoBehaviour
         }
         else
         {
-            healthNumber.text = health.ToString();
+            if (character.CharacterType == Character.CharacterTypes.player)
+            {
+                healthNumber.text = health.ToString();
+            }
+
             IsDead();
             if (getHit)
             {
