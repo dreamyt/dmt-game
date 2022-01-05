@@ -166,7 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: {fileID: 4177223645558465766, guid: 1f46a8aaae4403d4bbb2ef29026b02f3, type: 3}
-  rewardRandomPosition: {x: 0, y: 0, z: 0}
+  needKey: 1
+  rewardRandomPosition: {x: 0, y: 1, z: 0}
   ChestAudio: {fileID: 4540687360120441847}
 --- !u!82 &4540687360120441847
 AudioSource:

@@ -10,7 +10,7 @@ public class FallingRock : MonoBehaviour
     // Start is called before the first frame update
     public LayerMask groundLayer;
     public GameObject player;
-
+    public float length = 10;
     public AudioSource RockAudio;
         
     void Start()
@@ -28,7 +28,7 @@ public class FallingRock : MonoBehaviour
     }
     void PhysicsCheck()
     {
-        RaycastHit2D headCheck = Raycast(new Vector2(0f, 0f), Vector2.down, 10, groundLayer);
+        RaycastHit2D headCheck = Raycast(new Vector2(0f, 0f), Vector2.down, length, groundLayer);
         if (headCheck)
         {
             rb.constraints =~ RigidbodyConstraints2D.FreezePositionY;

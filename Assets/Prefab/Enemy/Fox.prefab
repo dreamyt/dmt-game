@@ -258,7 +258,7 @@ MonoBehaviour:
   forward_bottom: 0
   player_behind: 0
   attack_range: 0
-  offsetX: 0
+  offsetX: 0.6
   offsetY: 0
   offsetX_forwardTop: 0.55
   offsetY_forwardTop: -0.2

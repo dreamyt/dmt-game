@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Face: 0
-  FacingRight: 1
+  FacingRight: 0
 --- !u!114 &7943036859763537666
 MonoBehaviour:
   m_ObjectHideFlags: 0

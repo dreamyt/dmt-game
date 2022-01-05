@@ -16,7 +16,7 @@ public class ActionWanderTrack : AIAction
         controller.animator.SetBool("Spelling", false);
         bool flip = false;
         bool jump = false;
-
+        
         if (controller.raycast.forward_top)
         {
             Debug.Log("forward_top");
@@ -41,11 +41,14 @@ public class ActionWanderTrack : AIAction
             flip = true;
         }
 
-        if (flip)
+        if (!controller.GetComponent<Health>().dead)
         {
-            Debug.Log("action" + " flip");
-            controller.characterFlip.Flip();
-            controller.raycast.face = (-controller.raycast.face);
+            if (flip)
+            {
+                Debug.Log("action" + " flip");
+                controller.characterFlip.Flip();
+                controller.raycast.face = (-controller.raycast.face);
+            }
         }
 
         Debug.Log("action " + controller.raycast.face);
