@@ -40,24 +40,22 @@ public class Rock : MonoBehaviour
             &&isHeadBlocked
             )
         {
-            freq++;         
+            freq++;
+            BreakRockAudio.Play();
         }
     }
     void SpikeBox()
     {
         if(freq==1)
         {
-            BreakRockAudio.Play();
             anim.SetTrigger("strike");
         }
         else if(freq==2)
         {
-            BreakRockAudio.Play();
             anim.SetTrigger("strike_2");            
         }
         else if(freq == 3)
         {
-            BreakRockAudio.Play();
             anim.SetTrigger("destroy");
             //destroyBox();
         }
