@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class timer : MonoBehaviour
         StartCoroutine(Countdown1());
     }
 
+    
+
     private IEnumerator Countdown1()
     {
         while (totalTime1 > -1)
@@ -28,16 +31,24 @@ public class timer : MonoBehaviour
             yield return new WaitForSeconds(1);
             if(totalTime1 != 0)
                 totalTime1--;
+            else
+            {
+                CoinManager.Instance.isTimeout = true;
+            }
             Countdown1Text.text = string.Format("{0:D2}:{1:D2}",
             (int)totalTime1 / 60, (int)totalTime1 % 60);
             if (totalTime1 == 100)
-                panal.SetActive(true);
+                panal.SetActive(false);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            totalTime1 = 300;
+            CoinManager.Instance.isTimeout = false;
+        }
     }
 }
